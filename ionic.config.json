@@ -1,0 +1,7 @@
+{
+  "name": "POSSIBL POS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

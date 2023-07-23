@@ -1,0 +1,40 @@
+.parent {
+
+    .option {
+
+        display: flex;
+        flex-flow: column;
+        gap: 15px;
+
+        .label {
+
+            font-family: "Poppins-Medium", sans-serif;
+            font-size: 20px;
+
+        }
+
+        .content {
+
+            display: flex;
+
+            button {
+
+                color: white;
+
+            }
+
+        }
+
+        .divider {
+
+            height: 1px;
+            background: lightgrey;
+            width: 100%;
+            align-self: center;
+            margin-top: 10px;
+
+        }
+
+    } 
+
+}

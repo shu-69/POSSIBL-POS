@@ -1,0 +1,50 @@
+<ion-content>
+
+  <div class="settingsAnimationContainer" id="settingsAnimationContainer">
+    <ng-lottie [options]="settingsAnimationOption" (animationCreated)="settingAnimationCreated($event)"></ng-lottie>
+  </div>
+
+  <section class="parent">
+
+    <section class="segement1">
+
+      <div class="header">
+
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="home" icon="chevron-back"></ion-back-button>
+        </ion-buttons>
+
+        <span class="titleText">Settings</span>
+
+      </div>
+
+      <div class="itemsContainer">
+
+        <a class="item" *ngFor="let item of settingsItem" (click)="item.click()" [routerLink]="[item.routerLink]"
+          routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+
+          <img [src]="item.img">
+          <ion-label>{{item.label}}</ion-label>
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <section class="segement2">
+
+      <ion-tabs #tabs>
+
+        <ion-router-outlet style="display:none;"></ion-router-outlet>
+
+      </ion-tabs>
+
+    </section>
+
+  </section>
+
+
+
+
+</ion-content>

@@ -1,0 +1,227 @@
+.parent {
+
+    height: 100%;
+    padding: 0;
+
+    .reprint-container {
+
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 50% 50%);
+
+        .loadingContainer-lastOrder {
+
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+            color: black;
+            font-family: 'Poppins-Regular';
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid lightgray;
+
+        }
+
+        .loadingContainer-prevOrders {
+
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+            color: black;
+            font-family: 'Poppins-Regular';
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid lightgray;
+
+        }
+
+        .lastOrder {
+
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+            padding: 30px;
+            border-right: 1px solid lightgray;
+            overflow: auto;
+
+            .orderInfo {
+
+                display: grid;
+                grid-template-columns: repeat(2, 60% 40%);
+                font-family: 'Poppins-Regular';
+                color: black;
+                font-size: 14px;
+
+                div {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 2px;
+
+                }
+
+                .bold {
+
+                    font-family: 'Poppins-Medium';
+
+                }
+
+            }
+
+            .imageContainer {
+
+                height: 40%;
+                background: cadetblue;
+                padding: 10%;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+
+                img {}
+
+            }
+
+            .otherOptions {
+
+                display: grid;
+                grid-template-columns: repeat(3, calc(50% - 10px) 20px calc(50% - 10px));
+
+                button, a {
+
+                    padding: 30px 25px;
+                    border-radius: 0;
+                    width: 100%;
+                    font-family: 'Poppins-Regular';
+                    font-size: 16px;
+                    display: flex;
+                    gap: 15px;
+                    justify-content: center;
+                    align-items: center;
+
+                    ion-icon {
+
+                        width: 25px;
+                        height: 25px;
+
+                    }
+
+                }
+
+                .view {
+
+                    background: #105c10;
+
+                }
+
+                .download {
+
+                    background: #0a0a43;
+
+                }
+
+
+
+            }
+
+        }
+
+        .prevOrders {
+
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+            padding: 30px;
+            border-left: 1px solid lightgray;
+            overflow: hidden;
+
+            .orders {
+
+                display: flex;
+                flex-flow: column;
+                gap: 20px;
+                overflow: auto;
+
+                .order {
+
+                    display: flex;
+                    gap: 15px;
+                    color: black;
+                    background: #eeeeee;
+                    padding: 10px 15px;
+                    font-size: 14px;
+                    font-family: 'Poppins-Regular';
+
+                    div {
+
+                        display: flex;
+                        flex-flow: column;
+                        gap: 2px;
+
+                    }
+
+                    .bold {
+
+                        font-family: 'Poppins-Medium';
+
+                    }
+
+                    .options {
+
+                        display: flex;
+                        flex-flow: column;
+                        gap: 5px;
+
+                        button {
+
+                            padding: 10px 15px;
+                            border-radius: 0;
+                            font-family: 'Poppins-Regular';
+                            font-size: 14px;
+                            display: flex;
+                            gap: 10px;
+                            justify-content: center;
+                            align-items: center;
+
+                            ion-icon {
+
+                                width: 15px;
+                                height: 15px;
+
+                            }
+
+                        }
+
+                        .view {
+
+                            background: #105c10;
+
+                        }
+
+                        .download {
+
+                            background: #0a0a43;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .title {
+
+            color: black;
+            font-family: 'Oswald-SemiBold';
+            font-size: 26px;
+            width: 100%;
+            display: flex;
+            border-bottom: 3px solid black;
+
+        }
+
+    }
+
+}

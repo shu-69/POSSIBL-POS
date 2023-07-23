@@ -1,0 +1,341 @@
+<section class="parent">
+
+  <div class="detailsContainer">
+
+    <div class="orderSummary">
+
+      <div class="header">
+
+        <span class="title">Order Summary</span>
+
+        <ion-spinner name="crescent" *ngIf="isLoading"></ion-spinner>
+
+      </div>
+
+      <div class="content">
+
+        <div class="content1">
+
+          <div class="card customerDetails">
+
+            <div class="header">
+
+              <div class="image">
+
+                <ion-icon name="person"></ion-icon>
+
+              </div>
+
+              <span class="title">Customer details</span>
+
+            </div>
+
+            <div class="cardContent">
+
+              <div class="detailsDiv">
+
+                <span>Name : <span class="bold">{{customerDetails.name}}</span></span>
+
+                <span>Contact : <span class="bold">{{customerDetails.contact}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Address : <span class="bold">{{customerDetails.address}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <div class="inputContainer">
+                  <span>GSTIN : </span>
+                  <input type="text" [(ngModel)]="customerDetails.gstno">
+                </div>
+
+                <div class="inputContainer">
+                  <span>DL No. : </span>
+                  <input type="text" [(ngModel)]="customerDetails.dlno">
+                </div>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <div class="inputContainer">
+                  <span>State :</span>
+                  <input type="text" [(ngModel)]="customerDetails.state">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="card orderDetails">
+
+            <div class="header">
+
+              <div class="image">
+
+                <ion-icon name="bag-handle"></ion-icon>
+
+              </div>
+
+              <span class="title">Order details</span>
+
+            </div>
+
+            <div class="cardContent">
+
+              <div class="detailsDiv">
+
+                <span>Total Items : <span class="bold">{{items.length}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Amount Total : <span
+                    class="bold"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas(calculateTotalAmount().toFixed(2))}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Amount in Words : <span
+                    class="bold">{{calculateTotalAmountInWords(calculateTotalAmount().toFixed(2))}}</span></span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="content2">
+
+          <div class="card chargesDetails">
+
+            <div class="header">
+
+              <div class="image">
+
+                <ion-icon name="pricetag"></ion-icon>
+
+              </div>
+
+              <span class="title">Charges</span>
+
+            </div>
+
+            <div class="cardContent">
+
+              <div class="detailsDiv">
+
+                <span>Sub Total : <span
+                    class="bold"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas(charges.subtotal.toFixed(2))}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Tax : <span
+                    class="bold"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas(charges.tax.toFixed(2))}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Tips : <span
+                    class="bold"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas(charges.tips)}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Charges : <span
+                    class="bold"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas(charges.charges)}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Round off : <span
+                    class="bold"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas(charges.roundoff)}}</span></span>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <span>Discount : <span
+                    class="bold"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas(charges.discount!.discountAmount!.toFixed(2))}}</span></span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="card options">
+
+            <label class="radiOption checkbox" for="saveFileCheckBox">Save invoice
+              <input type="checkbox" id="saveFileCheckBox" [(ngModel)]="saveInvoiceLocally">
+            </label>
+
+            <label class="radiOption checkbox" for="printPreviewCheckBox">Print preview
+              <input type="checkbox" id="printPreviewCheckBox" [(ngModel)]="showPrintPreview">
+            </label>
+
+          </div>
+
+        </div>
+
+        <div class="content3">
+
+          <div class="card shippingDetails">
+
+            <div class="header">
+
+              <div class="image">
+
+                <ion-icon name="location"></ion-icon>
+
+              </div>
+
+              <span class="title">Shipping details</span>
+
+            </div>
+
+            <div class="cardContent">
+
+              <div class="detailsDiv">
+
+                <div class="inputContainer">
+                  <span>Name :</span>
+                  <input type="text" [(ngModel)]="shippingDetails.name">
+                </div>
+
+              </div>
+
+              <div class="detailsDiv">
+
+                <div class="inputContainer">
+                  <span>Address :</span>
+                  <input type="text" [(ngModel)]="shippingDetails.address">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="card paymentDetails">
+
+            <div class="header">
+
+              <div class="image">
+
+                <ion-icon name="card"></ion-icon>
+
+              </div>
+
+              <span class="title">Payment details</span>
+
+            </div>
+
+            <div class="cardContent">
+
+              <div class="detailsDiv">
+
+                <label for="paidCheck" class="radiOption checkbox">
+                  Paid
+                  <input type="checkbox" id="paidCheck" [(ngModel)]="paid">
+                </label>
+
+              </div>
+
+              <div class="detailsDiv" *ngIf="!paid">
+
+                <div class="inputContainer">
+                  <span>Received amount :</span>
+                  <input type="text" style="width: 60px;" [(ngModel)]="receivedAmount">
+                </div>
+
+              </div>
+
+              <div class="detailsDiv" *ngIf="!paid">
+
+                <div class="inputContainer">
+                  <span>Due date :</span>
+                  <input type="text" [(ngModel)]="dueDate" readonly (click)="isDueDatePopupOpen = !isDueDatePopupOpen">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="itemsContainer">
+
+      <div class="item" *ngFor="let item of items">
+
+        <div class="image">
+          <img [src]="item.item.images[0]" alt="">
+        </div>
+
+        <div class="details">
+          <span class="name">{{item.item.name}}</span>
+          <div class="priceDetails">
+            <span>{{item.details.quantity + ' x ' + generalService.addCommas(item.item.price)}}</span>
+            <span><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{generalService.addCommas((item.details.quantity
+              * item.item.price).toFixed(2))}}</span>
+          </div>
+          <img class="edit" src="../../../assets/iconsaxicons/bold/edit.svg" 
+          (click)="editItem(item)">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <ngx-slide-to-confirm class="confirmationSlider" placeHolder="Slide to confirm order" (confirm)="save()"
+    *ngIf="!isSaving"></ngx-slide-to-confirm>
+
+  <div class="loadingContainer" *ngIf="isSaving">
+
+    <span class="loader"></span>
+
+    <span class="loadingMessage">{{loadingMessage}}</span>
+
+  </div>
+
+</section>
+
+<ion-popover [isOpen]="isDueDatePopupOpen">
+  <ng-template #datePickerTemplate>
+    <ion-list>
+      <ion-item>
+        <ion-label>Select Due Date</ion-label>
+        <ion-datetime display-format="DD/MM/YYYY" picker-format="DD/MM/YYYY" (ionChange)="changeDueDate($event)"
+        presentation="date"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-button slot="end" (click)="isDueDatePopupOpen = false">OK</ion-button>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-popover>

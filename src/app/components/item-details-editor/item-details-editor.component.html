@@ -1,0 +1,30 @@
+<section class="parent">
+
+  <span class="title">Edit Item Details</span>
+
+  <div class="content">
+
+    <div class="row">
+
+      <div class="inputGroup">
+        <input type="text" required="" autocomplete="off">
+        <label for="name">Name</label>
+      </div>
+
+      <div class="inputGroup">
+        <input type="text" required="" autocomplete="off">
+        <label for="name">Name</label>
+      </div>
+
+      <div class="inputGroup">
+        <input type="text" required="" autocomplete="off" [(ngModel)]="item.bonus">
+        <label for="name">Bonus</label>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="save" (click)="close()">Save</button>
+
+</section>

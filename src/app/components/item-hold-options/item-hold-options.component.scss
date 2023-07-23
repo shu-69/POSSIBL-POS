@@ -1,0 +1,41 @@
+.parent {
+
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    padding: 20px;
+
+    .option {
+
+        display: flex;
+        gap: 30px;
+        padding: 20px 25px;
+        border-radius: 20px;
+        border: 1px solid lightgray;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .label {
+
+            font-family: 'Poppins-Regular', sans-serif;
+            font-size: 14px;
+
+        }
+
+    }
+
+    .option.close {
+
+        background: #e36464;
+        color: white;
+        justify-content: center;
+
+        .label {
+            font-family: 'Poppins-Medium';
+        }
+        
+
+    }
+
+}

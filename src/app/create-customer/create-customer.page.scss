@@ -1,0 +1,266 @@
+ion-content {
+
+    .header {
+
+        margin: 30px;
+        margin-bottom: 0;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-family: 'Poppins-SemiBold';
+
+        .title {
+
+            font-size: 26px;
+
+        }
+
+        ion-back-button {
+
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            padding: 5px;
+            align-items: center;
+            display: flex;
+            --padding-end: 0;
+            --padding-start: 0;
+            color: black;
+            background: #dddddd;
+            border-radius: 10px;
+
+            ::part(icon) {
+
+                width: 100%;
+                height: 100%;
+
+            }
+
+        }
+
+        ion-back-button::part(icon) {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+    }
+
+}
+
+.parent {
+
+    padding: 40px;
+    gap: 30px;
+    display: grid;
+    height: calc(100% - 70px);
+    grid-template-columns: repeat(2, 70% 30%);
+
+    .form-section {
+
+        display: flex;
+        flex-flow: column;
+        gap: 30px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .input-row {
+
+            .input-group {
+                position: relative;
+
+                input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+                input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+                input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+                input[type="date"]:in-range::-webkit-datetime-edit-text {
+                    color: transparent;
+                }
+
+                input[type="month"]:in-range::-webkit-datetime-edit-year-field,
+                input[type="month"]:in-range::-webkit-datetime-edit-month-field,
+                input[type="month"]:in-range::-webkit-datetime-edit-day-field,
+                input[type="month"]:in-range::-webkit-datetime-edit-text {
+                    color: transparent;
+                }
+
+            }
+
+            .input {
+                border: solid 3px gray;
+                border-radius: 1rem;
+                background: white;
+                padding: 15px 20px;
+                font-size: 24px;
+                color-scheme: auto;
+                transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .user-label {
+                background: white;
+                font-family: 'Poppins-Regular';
+                font-size: 20px;
+                position: absolute;
+                left: 15px;
+                pointer-events: none;
+                transform: translateY(0.9rem);
+                transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .input:focus,
+            .input:valid {
+                outline: none;
+                border: 3px solid #1a73e8;
+            }
+
+            .input:focus~label,
+            .input:valid~label {
+                transform: translateY(-50%) scale(0.8);
+                //background-color: #212121;
+                padding: 0 .2em;
+                color: #2196f3;
+            }
+
+            // select.input:valid~label {
+
+            //     transform: translateY(-50%) scale(0.8);
+            //     //background-color: #212121;
+            //     padding: 0 .2em;
+            //     color: #2196f3;
+
+            // }
+
+        }
+
+        .input-row.one {
+
+            .input-group .input {
+
+                width: 100%;
+
+            }
+
+        }
+
+        .input-row.two {
+
+            display: flex;
+            gap: 30px;
+
+            .input-group {
+
+                width: 50%;
+
+                .input {
+
+                    width: 100%;
+
+                }
+
+            }
+
+        }
+
+        .label {
+
+            font-size: 18px;
+            font-family: 'Poppins-Regular';
+
+        }
+
+        .details-section {
+
+            display: flex;
+            flex-flow: column;
+            gap: 30px;
+
+            .label {
+
+                margin-bottom: -15px;
+
+            }
+
+        }
+
+    }
+
+    .other-details-section {
+
+        margin-right: 20px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+
+        .item-image-container {
+
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+
+            .label {
+
+                font-size: 18px;
+                font-family: 'Poppins-Regular';
+
+            }
+
+            .item-display-image-chooser {
+
+                background: #cdcdcd;
+                border-radius: 16px;
+                padding: 20px;
+                display: flex;
+                flex-flow: column;
+                gap: 20px;
+
+                img {
+
+                    max-height: 200px;
+                    object-fit: contain;
+
+                }
+
+            }
+
+        }
+
+        .right-footer {
+
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+
+            .options {
+
+                button {
+
+                    background: gray;
+                    padding: 15px 20px;
+                    display: flex;
+                    gap: 15px;
+                    border-radius: 10px;
+                    background: #231e97;
+                    font-family: 'Poppins-Regular';
+
+                }
+
+            }
+
+            .submit {
+
+                width: 100%;
+                padding: 22px;
+                border-radius: 16px;
+                font-family: 'Poppins-Regular';
+                font-size: 18px;
+                background: black;
+                color: white;
+
+            }
+
+        }
+
+    }
+
+}

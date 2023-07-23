@@ -1,0 +1,17 @@
+<div class="parent">
+
+  <span class="title">Enter Quantity:</span>
+
+  <div class="inputContainer">
+    <input type="number" [(ngModel)]="quantity" min="1">
+    <img src="assets/iconsaxicons/bold/minus-square.svg" style="margin-right: 4px;" (click)="updateQuantity(-1)">
+    <img src="assets/iconsaxicons/bold/add-square.svg" (click)="updateQuantity(1)">
+  </div>
+  
+  <span class="errorText" *ngIf="this.quantity == undefined || this.quantity != undefined && this.quantity <= 0">
+    Enter valid quantity
+  </span>
+
+  <span class="confirmButton" (click)="returnData()">Done!</span>
+
+</div>

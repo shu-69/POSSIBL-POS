@@ -1,0 +1,468 @@
+.parent {
+
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background: white;
+
+    .detailsContainer {
+
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        // display: grid;
+        // grid-template-columns: repeat(2, 70% 30%);
+        padding: 20px;
+        overflow: hidden;
+
+        .orderSummary {
+
+            display: flex;
+            flex-flow: column;
+            gap: 16px;
+            overflow-y: hidden;
+
+            .header {
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .title {
+                    color: black;
+                    font-family: 'Poppins-Light';
+                    font-size: 36px;
+                }
+
+                ion-spinner {
+
+                    color: black;
+                    margin: 10px;
+
+                }
+
+            }
+
+            .content {
+
+                height: -webkit-fill-available;
+                padding-right: 20px;
+                display: flex;
+                gap: 20px;
+                overflow: hidden;
+
+                .content1 {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 20px;
+                    max-width: 50%;
+                    overflow: auto;
+                    padding-bottom: 20px;
+
+                }
+
+                .content2 {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 20px;
+                    overflow: auto;
+
+                }
+
+                .content3 {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 20px;
+                    overflow: auto;
+
+                }
+
+                .card {
+
+                    width: fit-content;
+                    height: fit-content;
+                    border-radius: 16px;
+                    border: 6px solid rgba(238, 238, 238, 0.5411764706);
+
+                    .header {
+
+                        padding: 10px 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        gap: 15px;
+
+                        .image {
+
+                            border-radius: 30px;
+                            background: rgb(85, 85, 231);
+                            width: 35px;
+                            height: 35px;
+                            color: white;
+                            aspect-ratio: 1;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                        }
+
+                        .title {
+
+                            font-size: 18px;
+                            font-family: 'Poppins-Medium', sans-serif;
+
+                        }
+
+                    }
+
+                    .cardContent {
+
+                        color: black;
+                        padding: 5px 15px 15px 15px;
+                        display: flex;
+                        flex-flow: column;
+                        gap: 4px;
+                        font-family: 'Poppins-Regular', sans-serif;
+
+                        .bold {
+
+                            font-family: 'Poppins-Medium', sans-serif;
+
+                        }
+
+                        .detailsDiv {
+
+                            display: flex;
+                            gap: 15px;
+
+                            .radiOption {
+
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+
+                            }
+
+                            .checkbox {
+
+                                input {
+
+                                    width: 16px;
+
+                                }
+
+                            }
+
+                            div.inputContainer {
+
+                                display: flex;
+                                align-items: center;
+                                white-space: nowrap;
+                                gap: 10px;
+
+                                input {
+
+                                    font-size: 14px;
+                                    width: 120px;
+                                    border: 2px solid lightgray;
+                                    outline: none;
+                                    border-radius: 6px;
+                                    background: #f3f3f3;
+                                    padding: 3px 6px;
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                .customerDetails {
+
+                    width: fit-content;
+
+                }
+
+                .chargesDetails {
+
+                    padding-right: 25px;
+
+                    .header .image {
+
+                        background: rgb(231 85 85);
+
+                    }
+
+                }
+
+                .shippingDetails {
+
+                    .header .image {
+
+                        background: rgb(85 231 130);
+
+                    }
+
+                }
+
+                .paymentDetails {
+
+                    .header .image {
+
+                        background: rgb(170 20 220);
+
+                    }
+
+                }
+
+                .options {
+
+                    width: 100%;
+                    color: black;
+                    font-family: 'Poppins-Regular';
+                    padding: 15px;
+                    display: flex;
+                    flex-flow: column;
+                    gap: 10px;
+
+                    .radiOption {
+
+                        display: flex;
+                        justify-content: space-between;
+
+                    }
+
+                }
+
+                .options label:hover {
+
+                    cursor: pointer;
+
+                }
+
+                .orderDetails {
+
+                    .header .image {
+
+                        background: rgb(231 163 85);
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .itemsContainer {
+
+            min-width: 280px;
+            border-radius: 30px;
+            background: #ececec;
+            padding: 10px;
+            display: flex;
+            flex-flow: column;
+            gap: 8px;
+            overflow: auto;
+
+            .item {
+
+                display: flex;
+                color: black;
+                gap: 10px;
+                background: white;
+                padding: 8px;
+                border-radius: 20px;
+
+                .image {
+
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 14px;
+                    box-shadow: 0 0 4px 5px #e2e2e24f;
+                    padding: 4px;
+                    background: white;
+                    aspect-ratio: 1;
+
+                    img {
+
+                        //border-radius: 14px;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                        mix-blend-mode: multiply;
+
+                    }
+
+                }
+
+            }
+
+            .details {
+
+                display: flex;
+                flex-flow: column;
+                width: -webkit-fill-available;
+
+                .name {
+                    font-family: 'Poppins-Medium';
+                }
+
+                .priceDetails {
+
+                    display: flex;
+                    flex-flow: column;
+                    font-size: 12px;
+                    height: -webkit-fill-available;
+                    justify-content: space-evenly;
+
+                }
+
+                .edit {
+
+                    width: 20px;
+                    align-self: flex-end;
+                    margin-top: -20px;
+                    margin-right: 5px;
+                    cursor: pointer;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .loadingContainer {
+
+        background: #9172cb;
+        height: 80px;
+        box-shadow: 0px 0px 0px 6px #eeeeee8a;
+        margin: 20px;
+        margin-top: 0;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .loadingMessage {
+
+            font-family: 'Poppins-Regular', sans-serif;
+            font-size: 18px;
+
+        }
+
+        .loader {
+
+            height: 60%;
+            aspect-ratio: 1;
+            border: 5px dotted #FFF;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            animation: rotation 2s linear infinite;
+
+        }
+
+        @keyframes rotation {
+
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+    }
+
+}
+
+::ng-deep {
+
+    .confirmationSlider {
+
+        .slide-to-confirm-wrapper {
+
+            margin-top: 0 !important;
+            height: 80px;
+            box-shadow: 0px 0px 0px 6px #eeeeee8a;
+
+            .slide-to-hint-text {
+
+                font-family: 'Poppins-Regular', sans-serif !important;
+                font-size: 22px;
+
+            }
+
+            .slide-to-confirm-boundry-wrapper {
+
+                height: 100%;
+
+                .slide-to-confirm-source {
+
+                    height: 100%;
+                    width: 100px;
+
+                    .slide-to-confirm-handle {
+
+                        width: 100%;
+                        height: 100%;
+
+                        .slide-to-icon {
+
+                            color: black;
+
+                        }
+
+                    }
+                }
+
+                .slide-to-confirm-target {
+
+                    height: 100%;
+                    width: 100px;
+
+                    .slide-to-confirm-handle {
+
+                        width: 100%;
+                        height: 100%;
+
+                        .slide-to-icon {
+
+                            color: black;
+                            background: #d3d3d34a;
+                            padding: 10px;
+                            border-radius: 20px;
+                            width: 80%;
+                            height: 80%;
+                            text-align: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

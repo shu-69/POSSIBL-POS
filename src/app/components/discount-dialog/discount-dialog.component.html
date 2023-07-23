@@ -1,0 +1,36 @@
+
+<section class="parent">
+  
+  <div class="titleImage">
+
+    <img src="assets/images/discountTag.png" alt="">
+
+  </div>
+
+  <div class="content">
+    
+    <ion-label>Discount percent</ion-label>
+
+    <div class="percentInput">
+
+      <input type="number"[value]="discount.discountPercentage" #percentInput>
+
+      <span>%</span>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+
+    <button class="close" (click)="close(false)">
+      Close
+    </button>
+
+    <button class="done" (click)="close(true, 'percent', percentInput.value)">
+      Done
+    </button>
+
+  </div>
+
+</section>

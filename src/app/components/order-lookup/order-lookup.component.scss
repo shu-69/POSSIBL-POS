@@ -1,0 +1,237 @@
+.parent {
+
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+
+    .header {
+
+        padding: 25px 30px;
+        color: black;
+        background-image: url('../../../assets/images/gradient_bg2.jpg');
+        background-size: cover;
+
+        .title {
+
+            font-family: 'Poppins-Medium', sans-serif;
+            font-size: 28px;
+
+        }
+
+    }
+
+    .options {
+
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+        padding-bottom: 0;
+        padding-top: 30px;
+
+        .first {}
+
+        .second {
+
+            span.imageContainer {
+                display: block;
+                height: 18px;
+                width: 18px;
+            }
+
+        }
+
+        .totalTransactions {
+            font-family: 'Poppins-Regular', sans-serif;
+            font-size: 16px;
+        }
+
+    }
+
+    .content {
+
+        padding: 30px;
+        display: grid;
+        gap: 30px;
+        height: 100%;
+        overflow: auto;
+        max-height: 100%;
+
+        .transactionCard {
+
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 14px;
+
+            .transactionHeader {
+
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                margin-bottom: 20px;
+
+                .invoiceId {
+
+                    background: black;
+                    color: white;
+                    padding: 15px 20px;
+                    border-top-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    font-family: 'Poppins-Regular';
+
+                }
+
+                .headerContent {
+
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 10px;
+
+                    ion-icon {
+
+                        width: 25px;
+                        height: 25px;
+
+                    }
+
+                    .invoiceDate {
+
+                        display: flex;
+                        gap: 12px;
+                        align-items: center;
+                        background: black;
+                        color: white;
+                        padding: 15px 20px;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        font-family: 'Poppins-Regular';
+
+                    }
+
+                    .share {
+
+                        display: flex;
+                        gap: 12px;
+                        align-items: center;
+                        background: black;
+                        color: white;
+                        padding: 15px 20px;
+                        border-top-right-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        font-family: 'Poppins-Regular';
+
+                    }
+
+                }
+
+            }
+
+            .transactionContent {
+
+                padding: 20px;
+                padding-top: 0;
+                display: grid;
+                grid-template-columns: repeat(2, 80% calc(20% - 20px));
+                gap: 20px;
+
+                .card {
+
+                    padding: 20px;
+                    display: flex;
+                    flex-flow: column;
+                    gap: 10px;
+                    border-radius: 12px;
+                    background: black;
+                    font-family: 'Poppins-Regular';
+
+                    .title {
+
+                        margin-bottom: 5px;
+
+                    }
+
+                    .field {
+
+                        font-size: 12px;
+
+                    }
+
+
+                    .bold {
+
+                        font-family: 'Poppins-Medium';
+                        font-size: 14px;
+
+                    }
+
+                }
+
+                .copyIcon {
+
+                    margin-left: 20px;
+                    padding: 5px;
+                    background: white;
+                    color: black;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    cursor: pointer;
+
+                }
+
+                .content1 {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 20px;
+
+                }
+
+                .content2 {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 20px;
+
+                    button {
+
+                        width: 100%;
+                        padding: 15px 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+                        font-family: 'Poppins-Regular';
+                        border-radius: 14px;
+                        background: black;
+
+                        ion-icon {
+
+                            width: 20px;
+                            height: 20px;
+
+                        }
+
+                    }
+
+                    .viewInvoice {
+
+                        background: orangered;
+
+                    }
+
+                    .downloadInvoice {
+
+                        background: darkgreen;
+
+                    }
+
+                }
+
+
+            }
+
+        }
+
+    }
+
+}

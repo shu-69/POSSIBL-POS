@@ -1,0 +1,100 @@
+<section class="parent">
+
+  <div class="header">
+
+    <ion-label class="title">Draft Orders</ion-label>
+
+  </div>
+
+  <div class="content">
+
+    <div class="header">
+      <div class="first">
+        <span class="totalOrders">Showing {{draftOrders.length}} saved orders</span>
+      </div>
+      <div class="second">
+        <span class="imageContainer" (click)="toggleExpand()">
+          <img [src]="isExpanded ? 'assets/iconspichon/icons8_collapse_100px.png' : 'assets/iconspichon/icons8_expand_100px.png'">
+        </span>
+      </div>
+    </div>
+
+    <div class="orders">
+      <div class="orderContainer" *ngFor="let order of draftOrders; let i = index">
+
+        <article class="card">
+          <div class="temporary_text">
+            <ion-label class="order_title">{{order.label}}</ion-label>
+            <ion-label class="text2">{{order.items.length}} Items</ion-label>
+            <div class="itemImages">
+              <div *ngFor="let item of order.items; let i = index;">
+                <span class="image" *ngIf="i < 6" >
+                  <img [src]="item.item.images[0]">
+                </span>
+              </div>
+              <span *ngIf="order.items.length > 6" style="position: absolute; right: 55px; margin-top: 5px;"> + {{ order.items.length - 6 }}</span>     
+            </div>
+          </div>
+          <!-- 192.168.125.64:8100/splash-screen -->
+          <div class="card_content" [ngStyle]="{'transform': isExpanded ? 'translateY(0)' : ''}">
+            <span class="card_title">{{getDate(order.added_on)}}&nbsp;<span style="color: gray; font-size: 10px; font-weight: normal;">{{compareTime(order.added_on)}}</span></span>
+            <span class="card_subtitle">
+              <span style="display: flex; align-items: flex-end; gap: 5px;
+              font-size: 14px; font-family: 'Poppins-Medium'; margin-bottom: 5px;"><ion-icon name="person-circle-outline" style="width: 20px; height: 20px;"></ion-icon>Customer details:</span>
+              Name: {{order.customer.name}} <br>
+              Contact: {{order.customer.contact}}
+            </span>
+            <span class="card_description" [ngStyle]="{'opacity': isExpanded ? '1' : '', 'transition-delay': isExpanded ? '.25s' : '' }">
+              <span style="display: flex; align-items: flex-end; gap: 5px;
+              font-size: 14px; font-family: 'Poppins-Medium'; margin-bottom: 5px;"><ion-icon name="cash-outline" style="width: 20px; height: 20px;"></ion-icon>Charges:</span>
+              Subtotal: <span>&#x20B9;</span> {{order.charges.subtotal}} <br>
+              Total: <span>&#x20B9;</span> {{order.charges.subtotal + order.charges.tips + order.charges.charges - order.charges.roundoff + order.charges.tax - order.charges.discount.discountAmount!}}
+              <span style="position: absolute; right: 22px; bottom: 62px;
+              background: lightgray; display: flex; width: 25px; height: 25px; border-radius: 18px; align-items: center; justify-content: center;"
+              (click)="presentDeletePopover($event, order)">
+                <ion-icon name="trash" style="width: 16px; height: 16px;"></ion-icon>
+              </span>
+            </span>
+              <div class="footerOptions">
+                <span class="editButton">
+                  <ion-icon name="create"></ion-icon>
+                  <ion-label>Edit</ion-label>
+                </span>
+                <span class="checkoutButton" (click)="openSavDialog(order.items, order.customer, order.charges, order.notes, order)">
+                  <ion-icon name="bag-check"></ion-icon>
+                  <ion-label>Checkout</ion-label>
+                </span>
+              </div>
+          </div>
+        </article>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<ion-popover #popover mode="ios" [isOpen]="isDeletePopupOpen" (didDismiss)="isDeletePopupOpen = false" style="" >
+  <ng-template>
+    <ion-content class="ion-padding">
+      <div>
+        <ion-grid style="padding: 0;">
+          <ion-row style="justify-content: center; margin-top: 5px;">
+            Delete?
+          </ion-row>
+          <ion-row style="margin-top: 20px;     border-top: 0.5px solid #ffffff30;">
+            <ion-col style="justify-content: center; align-items: center; display: flex; padding: 0; height: 30px; border-right: .5px solid #ffffff30;"
+            (click)="isDeletePopupOpen = false">
+              No
+            </ion-col>
+            <ion-col style="justify-content: center; align-items: center; display: flex; padding: 0; height: 30px;" (click)="removeOrder()">
+              Yes
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-popover> 

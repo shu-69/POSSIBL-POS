@@ -1,0 +1,80 @@
+.parent {
+
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    height: 100%;
+
+    .title {
+
+        font-family: 'Poppins-SemiBold';
+        font-size: 20px;
+
+    }
+
+    .content {
+
+        height: -webkit-fill-available;
+
+        .row {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;            
+
+        }
+
+    }
+
+}
+
+button.save {
+    width: -webkit-fill-available;
+    border: none;
+    background: black;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-family: 'Poppins-Medium';
+}
+
+.inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+}
+
+.inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 15px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: white;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+}

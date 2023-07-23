@@ -1,0 +1,570 @@
+[
+	{
+		"_id": 1,
+		"category_name" : "Juices",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Cocktail",
+				"image" : "https://thumbs.dreamstime.com/b/three-layers-cocktail-juice-6978887.jpg",
+				"image_source_tpye" : "url",
+				"price" : 40.20,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Mango",
+				"image" : "https://tiimg.tistatic.com/fp/1/007/615/dark-yellow-mango-juice-preservative-good-source-of-dietary-fiber--608.jpg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Papaya",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6GYpRo9ZR4RvRASi-Xo-epujXa92UXQFfxg&usqp=CAU",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Apple",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLqavXXHO77JSI9Bj8y03eB0qw8mnmIvQBEr6ct611y7LGAnZbpXFtU6xjCMR_mttGvYg&usqp=CAU",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Lemon",
+				"image" : "https://niftyfoodz.com/cdn/recipes/lemon-juice_drink_(2).jpg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Orange",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLNl6S6Xnm1awr8w8W4krqO6IZtNvwRA9Y6Q&usqp=CAU",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531252,
+				"name" : "Sweet Melon",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUuasD2gdsPQgBqgQZvacfLySA6fxSRay_L69F99ptY_dqlqtC5wbHGw9UVrNmHCu279M&usqp=CAU",
+				"image_source_tpye" : "base64",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531253,
+				"name" : "Kiwi",
+				"image" : "data:image/jpeg;base64,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",
+				"image_source_tpye" : "base64",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531254,
+				"name" : "Carrot",
+				"image" : "https://www.starhealth.in/blog/wp-content/uploads/2022/11/cropped-Benefits-of-carrot-juice.jpg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531255,
+				"name" : "Water Melon",
+				"image" : "https://annamodisha.com/wp-content/uploads/2021/05/Watermelon-Juice-2.jpg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531256,
+				"name" : "Avocado",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VydrqmiMZnvbtcI44N6NxOggWPwndeus7g&usqp=CAU",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531257,
+				"name" : "Pineapple",
+				"image" : "https://ankurpavbhaji.com/wp-content/uploads/2021/03/Pineapple-juice.jpg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531258,
+				"name" : "Guava",
+				"image" : "https://5.imimg.com/data5/YV/JM/ZE/SELLER-8455061/guava-juice-500x500.png",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531259,
+				"name" : "Green Juice",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQoUpnY1Lwiedx7fT0piaixq4WrqLqa7YLlA&usqp=CAU",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531260,
+				"name" : "Grape",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2-UUUj67icVOLKU_6Qm0cU2ARj8zKSVWRyQ&usqp=CAU",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531261,
+				"name" : "Banana",
+				"image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDBS-w62oq5OY1GASEetHTb4e2U_QDMj_F_g&usqp=CAU",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+
+		]
+	},
+	{
+		"_id": 2,
+		"category_name" : "Sandwitch",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Cheese Sandwitch",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	},
+	{
+		"_id": 3,
+		"category_name" : "SHAWARMA",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Mango Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	},
+	{
+		"_id": 4,
+		"category_name" : "Grill",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Mango Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	},
+	{
+		"_id": 5,
+		"category_name" : "Roasted",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Mango Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	},
+	{
+		"_id": 6,
+		"category_name" : "Chips",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Mango Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	},
+	{
+		"_id": 7,
+		"category_name" : "Italian",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Mango Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	},
+	{
+		"_id": 8,
+		"category_name" : "Indian",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Mango Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	},
+	{
+		"_id": 9,
+		"category_name" : "South Indian",
+		"items" : [ 
+			{
+				"_id" : 134531246,
+				"name" : "Mango Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531247,
+				"name" : "Papaya Juice",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531248,
+				"name" : "Apple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531249,
+				"name" : "Lemon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531250,
+				"name" : "Water Melon",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}, 
+			{
+				"_id" : 134531251,
+				"name" : "Pineapple",
+				"image" : "https://www.alphafoodie.com/wp-content/uploads/2022/02/How-to-make-Mango-Juice-Square.jpeg",
+				"image_source_tpye" : "url",
+				"price" : 40,
+				"qty" : "250 ml"
+			}
+		]
+	}
+
+]

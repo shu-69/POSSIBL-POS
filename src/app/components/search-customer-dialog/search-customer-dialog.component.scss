@@ -1,0 +1,101 @@
+.parent {
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    overflow: hidden;
+    padding: 0;
+    background: transparent;
+
+    .inputContainer {
+
+        width: 100%;
+        color: black;
+        padding: 20px 25px;
+        background: white;
+        border-radius: 0px;
+
+        input {
+
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: 'Poppins-Regular';
+            font-size: 22px;
+
+        }
+
+    }
+
+    .searchDetailsContainer {
+
+        width: 100%;
+
+        .totalSearchCount {
+
+            font-size: 20px;
+            color: black;
+
+
+        }
+
+
+    }
+
+    .searchResults {
+
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        gap: 15px;
+        overflow-x: auto;
+
+        .result {
+
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 15px 20px;
+            background: #ffffff80;
+            color: black;
+
+            .first {
+
+                display: flex;
+                flex-flow: column;
+                gap: 6px;
+                color: black;
+
+            }
+
+            .bold {
+
+                font-weight: bold;
+
+            }
+
+            span.address {
+
+                margin-right: 120px;
+
+            }
+
+            button.select {
+
+                // height: 100%;
+                align-self: center;
+                padding: 15px 20px;
+                font-family: 'Poppins-Regular';
+                background: #ffffff75;
+                color: black;
+
+            }
+
+        }
+
+    }
+
+}

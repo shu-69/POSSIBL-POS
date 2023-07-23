@@ -1,0 +1,156 @@
+
+<ion-content #content>
+
+  <div class="parentGrid loginFormContainer" >
+
+    <div class="seg1">
+
+      <svg class="svg">
+        <clipPath id="bg-clip-path" clipPathUnits="objectBoundingBox"><path d="M0.727,0.934 C0.963,0.798,1,0.255,0.999,0 H0 V0.898 C0.144,0.967,0.491,1,0.727,0.934"></path></clipPath>
+      </svg>
+      
+      <div id="clipped-bg" class="topContainer clipped">
+
+        <span class="welcomeText">Welcome to<br>POSSIBL</span>
+
+        <div class="deviceCircleContainer">
+          <img src="assets/login_assets/devices.png" style="margin-top: 30px; max-width: 110%;">
+        </div>
+  
+      </div>
+
+      <img class="dottedDesign" src="assets/login_assets/dot_design.svg">
+
+      <div class="swiperContainer">
+
+        <swiper class="swiper" #swiper [spaceBetween]="50" [pagination]="{ clickable: true }" [autoplay]="{ delay: 4000, disableOnInteraction: false }" [loop]="true" [speed]="1800">
+          <ng-template *ngFor="let slide of swiperContent" swiperSlide>
+            <div class="slide">
+              {{slide.content}}
+            </div>
+          </ng-template>
+        </swiper>
+
+      </div>
+ 
+    </div>
+
+    <div class="seg2">
+
+      <span class="logoContainer">
+        <img src="assets/logo.png">
+      </span>
+
+      <div style="color: black; padding-top: 2vh; padding-bottom: 2vh;">
+        <span style="font-family: 'Poppins-Bold'; font-size: 6.5vh;">Login</span>
+        <span style="font-family: 'Poppins-Medium'; font-size: 3.5vh;">&nbsp;to access your account</span>
+      </div>
+
+      <form [formGroup]="formData" class="form" (ngSubmit)="authenticate()">
+
+        <ion-item [id]="usernameInputContainerId" class="inputContainer" lines="none">
+          <ion-input class="input" placeholder="Email" (ionFocus)="focusInputContainer(usernameInputContainerId)" (ionBlur)="removeFocus(usernameInputContainerId)"
+          formControlName="username" ></ion-input>
+          <ion-icon class="inputIcon" name="at-circle"></ion-icon>
+        </ion-item>
+        
+        <ion-item [id]="passInputContainerId" class="inputContainer" lines="none">
+          <ion-input [type]="passwordFieldType" class="input" placeholder="Password" (ionFocus)="focusInputContainer(passInputContainerId)" (ionBlur)="removeFocus(passInputContainerId)"
+          formControlName="password"></ion-input>
+          <ion-icon class="inputIcon" [name]="passwordEyeIcon" (click)="tooglePasswordType()"></ion-icon>
+        </ion-item>
+        
+        <ion-item class="rememberMeContainer" lines="none">
+          <ion-checkbox class="rememberMeCheckbox" formControlName="rememberMe"></ion-checkbox>
+          <ion-label style="margin: 0; color: #646464; margin-left: 15px; font-family: 'Poppins-Regular'; font-size: 18px;">Remember me</ion-label>
+        </ion-item>
+
+        <ion-button type="submit" class="loginButton">
+          <span *ngIf="isLoading" class="loginButtonLoader"></span>
+          <span *ngIf="!isLoading">LOGIN</span>
+        </ion-button>
+
+        <ion-button id="switch-account-dialog" class="switchAccountButton"> 
+          <span >Switch Account</span>
+        </ion-button>
+        
+      </form>
+
+      
+
+    </div>
+
+  </div>
+
+  <div class="loderContainer">
+
+    <div class="centerContainer">
+
+      <span class="profileImageContainer">
+        <img src="assets/default_user_icon.png" >
+        <!-- <ng-lottie [options]="userProfileAnimationOption" (animationCreated)="profileAnimationCreated($event)"></ng-lottie> -->
+      </span>
+
+      <ion-text class="welcomeText" id="welcomeText">Hii</ion-text>
+
+      <ion-spinner name="crescent" style="--color: black; margin-top: 20px;"></ion-spinner>
+
+      <!-- <ion-text class="loadingMessage">{{loadingMessage}}</ion-text> -->
+
+    </div>
+
+    <div class="bottomContainer">
+
+      <ion-text class="loadingMessage">{{loadingMessage}}</ion-text>
+
+    </div>
+    
+
+  </div>
+
+  <div class="bottomMessageContainer" #bottomMessageContainer>
+
+    <span class="message" id="bottomMessageContainerMessage"></span>
+
+    <button class="okay" (click)="removeCustomNotification()">OK</button>
+
+  </div>
+
+</ion-content>
+
+<ion-modal id="switch-account-modal" class="switchAccountModal" #modal trigger="switch-account-dialog">
+  <ng-template>
+    <div class="wrapper">
+
+      <div class="header">
+        <div class="details">
+          <h1>Select Account</h1>
+          <ion-text>Previously logged in accounts</ion-text>
+        </div>
+        <ion-icon name="close-circle" style="align-self: center; width: 30px; height: 30px;" (click)="modal.dismiss()"></ion-icon>
+      </div>     
+
+      <div class="content">
+        <ion-list class="usersListContainer" lines="none">
+          <div *ngFor="let user of loggedInUsers" class="userContainer" button="true" detail="false" (click)="switchAccount(user.id); modal.dismiss()">
+            <div class="profileImg">
+              <img src="assets/default_user_icon.png" >
+            </div>
+            <div class="details">
+              <span style="display: flex; flex-flow: column; max-height: 100%; justify-content: center;">
+                <ion-label style="font-family: 'Poppins-Medium', sans-serif; font-size: 22px;">{{user.name}}</ion-label>
+                <ion-label style="font-family: 'Poppins-Regular', sans-serif; font-size: 14px;">Logged on : {{changeTimeFormat(user.logged_in_on)}}</ion-label>
+              </span> 
+              <img src="assets/icon/forward.png" style="height: 30px; width: 30px; align-self: center; right: 0; position: absolute;">
+            </div>
+          </div>
+        </ion-list>
+      </div> 
+      
+    </div>
+  </ng-template>
+</ion-modal>
+<!-- 
+<main [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main> -->

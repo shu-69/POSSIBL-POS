@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PossiblPOS</string>
+    <string name="title_activity_main">PossiblPOS</string>
+    <string name="package_name">com.possibl.pos</string>
+    <string name="custom_url_scheme">com.possibl.pos</string>
+</resources>

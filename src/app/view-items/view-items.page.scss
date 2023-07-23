@@ -1,0 +1,171 @@
+
+ion-content {
+
+    .header {
+
+        margin: 30px;
+        margin-bottom: 0;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-family: 'Poppins-SemiBold';
+
+        .title {
+
+            font-size: 26px;
+
+        }
+
+        ion-back-button {
+
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            padding: 5px;
+            align-items: center;
+            display: flex;
+            --padding-end: 0;
+            --padding-start: 0;
+            color: black;
+            background: #dddddd;
+            border-radius: 10px;
+
+            ::part(icon) {
+
+                width: 100%;
+                height: 100%;
+
+            }
+
+        }
+
+        ion-back-button::part(icon) {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+    }
+
+}
+
+.parent {
+
+    .topSection {
+
+        display: flex;
+        flex-flow: column;
+        padding: 30px;
+        gap: 20px;
+        font-family: 'Poppins-Regular', sans-serif;
+
+        .delete-cat-button {
+
+            width: fit-content;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: flex;
+            gap: 10px;
+            background: black;
+            position: absolute;
+            right: 30px;
+
+        }
+
+        select {
+
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+            padding: 0 10px;
+
+        }
+
+    }
+
+    .itemsSection {
+
+        padding: 30px;
+        padding-top: 0;
+        display: flex;
+        gap: 30px;
+        flex-flow: wrap;
+
+        .itemContainer {
+
+            // width: 220px;
+            // height: 340px;
+            border: 2px solid black;
+            border-radius: 14px;
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+            padding: 10px;
+
+            img {
+
+                height: 220px;
+                border-radius: 14px;
+
+            }
+
+            .item-name {
+
+                font-family: 'Poppins-Medium';
+
+
+            }
+
+            .options {
+
+                display: flex;
+                gap: 12px;
+                justify-content: end;
+
+                button {
+
+                    padding: 10px 15px;
+                    border-radius: 14px;
+                    font-family: 'Poppins-Regular';
+
+                }
+
+                button.edit {
+
+                    border: 2px solid blue;
+                    color: black;
+                    background: white;
+
+                }
+
+                .edit:hover {
+
+                    background: blue;
+                    color: white;
+
+                }
+
+                button.delete {
+
+                    border: 2px solid red;
+                    color: black;
+                    background: white;
+
+                }
+
+                .delete:hover {
+
+                    background: red;
+                    color: white;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

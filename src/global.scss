@@ -1,0 +1,223 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+//@import '~swiper/swiper-bundle';
+//@import '~@ionic/angular/css/ionic-swiper';
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import 'swiper/css/autoplay';
+@import 'swiper/css/a11y';
+
+@import 'setting-tabs-style.scss'; // For setting tabs styling
+//@import 'mdb-angular-ui-kit-4.1.0/package/assets/scss/mdb.scss';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import 'simple-keyboard/build/css/index.css';
+
+.settingsTab.parent {
+
+  --background: white;
+  --color: black;
+  --padding-start: 20px;
+  --padding-bottom: 120px;
+  --padding-end: 20px;
+  --padding-top: 20px;
+  --overflow: auto;
+
+}
+
+.settingsTab.header {
+
+  background: transparent;
+  text-align: center;
+  color: black;
+  padding: 20px;
+  background: #0000000d;
+  box-shadow: none;
+  background-image: none;
+  font-family: 'Poppins-Medium';
+
+}
+
+.dialogDefault {
+
+  --width: fit-content;
+  --height: fit-content;
+  --border-radius: 10px;
+  --background: white;
+  //--backdrop-opacity: .5;
+
+}
+
+.draftOrdersPopup {
+
+  --width: 90vw;
+  --height: 90vh;
+  --border-radius: 10px;
+  --background: white;
+
+}
+
+.optionsPopup {
+
+  --background: white;
+  --width: fit-content;
+  --height: fit-content;
+
+}
+
+.notesDialog {
+
+  --width: 80%;
+  --height: 80%;
+  --border-radius: 16px;
+
+}
+
+.saveDialog {
+
+  --width: 85%;
+  --height: 85%;
+  --border-radius: 16px;
+
+}
+
+.discountDialog {
+
+  --width: 500px;
+  --height: fit-content;
+  --border-radius: 16px;
+
+}
+
+.searchCustomerDialog {
+
+  --width: 70%;
+  --height: 90%;
+  --border-radius: 0px;
+  backdrop-filter: blur(4px);
+  --background: transparent;
+  --box-shadow: none;
+
+}
+
+.editItemDialog {
+
+  --border-radius: 10px;
+  --background: white;
+  //backdrop-filter: blur(4px);
+  --box-shadow: 0 0 50px rgba(0, 0, 0, 0.4) !important;
+
+}
+
+.orderLookupDialog {
+
+  --width: 90%;
+  --height: 90%;
+  --border-radius: 16px;
+
+}
+
+.reprintDialog {
+
+  --width: 90%;
+  --height: 90%;
+  --border-radius: 10px;
+
+}
+
+.item-hold-popup {
+
+  --width: 320px;
+  //--width: fit-content;
+  //--height: 85%;
+
+}
+
+// Customizing scrollbar 
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+// Custom fonts >>>>
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(./assets/fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(./assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url(./assets/fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Light;
+  src: url(./assets/fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: Oswald-SemiBold;
+  src: url(./assets/fonts/Oswald/Oswald-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Oswald-Medium;
+  src: url(./assets/fonts/Oswald/Oswald-Medium.ttf);
+}

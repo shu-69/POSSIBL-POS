@@ -1,0 +1,105 @@
+<ion-content>
+
+  <div class="header">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+
+    <span class="title">{{isUpdating ? 'Update Customer' : 'Create Customer'}}</span>
+
+  </div>
+
+  <section class="parent">
+
+    <section class="form-section">
+
+      <div class="input-row one">
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="customerDetails.name">
+          <label class="user-label">Customer Name</label>
+        </div>
+
+      </div>
+
+      <div class="input-row two">
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="customerDetails.contact">
+          <label class="user-label">Contact</label>
+        </div>
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="customerDetails.email">
+          <label class="user-label">Email</label>
+        </div>
+
+      </div>
+
+      <div class="input-row one">
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="customerDetails.address">
+          <label class="user-label">Address</label>
+        </div>
+
+      </div>
+
+      <div class="input-row two">
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="customerDetails.gstno">
+          <label class="user-label">GST No.</label>
+        </div>
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="customerDetails.dlno">
+          <label class="user-label">DL No.</label>
+        </div>
+
+      </div>
+
+      <div class="input-row two">
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="customerDetails.state">
+          <label class="user-label">State</label>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="other-details-section">
+
+      <!-- <div class="item-image-container">
+
+        <span class="label">Customer display image</span>
+
+        <div class="item-display-image-chooser" >
+
+          <img src="">
+
+          <input type="file" accept="image/*" (change)="selectDisplayImage($event)">
+          
+        </div>
+
+      </div> -->
+
+      <div class="right-footer">
+
+        <div class="options">
+
+
+        </div>
+
+        <button class="submit" (click)="isUpdating ? update() : submit()">{{isUpdating ? 'Update' : 'Submit'}}</button>
+
+      </div>
+
+    </section>
+
+  </section>
+
+</ion-content>

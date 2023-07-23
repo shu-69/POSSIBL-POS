@@ -1,0 +1,45 @@
+<ion-content class="parent">
+
+  <div class="header">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+
+    <span class="title">View Item</span>
+
+  </div>
+
+  <section class="topSection">
+
+    <ion-label>Item Category</ion-label>
+
+    <button class="delete-cat-button" (click)="deleteCategory(categorySelector.value)"><ion-icon name="trash"></ion-icon>Delete Category</button>
+
+    <select #categorySelector (change)="selectItemCategory($event)" >
+      <option [value]="category.id" *ngFor="let category of itemCategories">{{category.name}}</option>
+    </select>
+
+  </section>
+
+  <section class="itemsSection">
+
+    <div class="itemContainer" *ngFor="let item of selectedCatItems">
+
+      <img [src]="item.images[0]" alt="">
+
+      <span class="item-name">{{item.name}}</span>
+
+      <div class="options">
+
+        <button class="delete" (click)="deleteItem(item)">Delete</button>
+
+        <button class="edit" (click)="editItem(item)">Edit</button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</ion-content>

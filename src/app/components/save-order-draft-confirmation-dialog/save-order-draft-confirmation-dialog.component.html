@@ -1,0 +1,23 @@
+<div class="parent">
+
+  <img src="assets/icon/question_mark.png">
+
+  <h3>{{confirmationMessage}}</h3>
+
+  <div class="orderLabelContainer">
+    <input type="text" [(ngModel)]="orderLabel">
+  </div>
+
+  <div class="buttons">
+
+    <ion-button class="cancel" (click)="close(false)">
+      Cancel
+    </ion-button>
+
+    <ion-button class="draft" (click)="close(true)">
+      Move to draft
+    </ion-button>
+
+  </div>
+
+</div>

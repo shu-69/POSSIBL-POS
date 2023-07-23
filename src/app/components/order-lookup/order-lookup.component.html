@@ -1,0 +1,93 @@
+<section class="parent"> 
+
+  <div class="header">
+
+    <span class="title">Order Lookup</span>
+
+  </div>
+
+  <div class="options">
+
+    <div class="first">
+      <span class="totalTransactions">Showing </span>
+    </div>
+    <div class="second">
+      <span class="imageContainer" (click)="toggleExpand()">
+        <img [src]="isExpanded ? 'assets/iconspichon/icons8_collapse_100px.png' : 'assets/iconspichon/icons8_expand_100px.png'">
+      </span>
+    </div>
+
+  </div>
+
+  <section class="content">
+      
+    <div class="transactionCard" *ngFor="let order of orders">
+
+      <div class="transactionHeader">
+
+        <span class="invoiceId">{{order.billid}}</span>
+
+        <div class="headerContent">
+
+          <div>
+
+            <span class="invoiceDate"><ion-icon name="calendar-outline"></ion-icon>{{order.docdate}}</span>
+
+          </div>
+
+          <div>
+
+            <span class="share"><ion-icon name="share-social"></ion-icon></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="transactionContent" [ngStyle]="{'display' : isExpanded ? 'grid' : 'none'}">
+
+        <section class="content1">
+
+          <div class="card customerDetails">
+
+            <span class="title">Customer details</span>
+
+            <span class="field">ID: <span class="bold">{{order.customer?.id}}</span> <span class="copyIcon"><ion-icon name="copy-outline"></ion-icon></span> </span>
+            <span class="field">Name: <span class="bold">{{order.customer?.name}}</span></span>
+            <div style="display: flex; gap: 20px;">
+              <span class="field">Contact: <span class="bold">{{order.customer?.contact}}</span></span>
+              <span class="field">Email: <span class="bold">{{order.customer?.email}}</span></span>
+            </div>
+            <span class="field">Address: <span class="bold">{{order.customer?.address}}</span></span>
+
+          </div>
+
+          <div class="card amountDetails">
+
+            <span class="title">Amount details</span>
+
+            <span class="field">Sub Total: <span class="bold">{{order.charges?.subtotal}}</span></span>
+            <span class="field">Round off: <span class="bold">{{order.charges?.roundoff}}</span></span>
+            <span class="field">Discount: <span class="bold">{{order.charges?.discount?.discountAmount}}</span></span>
+            <span class="field">Charges: <span class="bold">{{order.charges?.charges}}</span></span>
+            <span class="field">TAX: <span class="bold">{{order.charges?.tax}}</span></span>
+
+          </div>
+
+        </section>
+
+        <section class="content2">
+
+          <button class="viewInvoice" (click)="openInvoicePdf(order.billurl)"><ion-icon name="document"></ion-icon>View Invoice</button>
+          <button class="downloadInvoice" (click)="downloadAndSaveFile(order.billurl, order.billdocfilename)"><ion-icon name="download"></ion-icon>Download Invoice</button>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</section>

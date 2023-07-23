@@ -1,0 +1,128 @@
+<section class="parent">
+
+  <div class="reprint-container">
+
+    <div class="loadingContainer-lastOrder" *ngIf="isLastOrderLoading">
+
+      <ion-spinner name="crescent"></ion-spinner>
+
+      <span>Loading last order</span>
+
+    </div>
+
+    <div class="lastOrder" *ngIf="!isLastOrderLoading && lastOrder">
+
+      <span class="title">Last Order&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+      <div class="orderInfo">
+
+        <div>
+
+          <span>Invoice Id: <span class="bold">{{lastOrder.billid}}</span></span>
+
+          <span>Bill Amount: <span class="bold">{{lastOrder.amount}}</span></span>
+
+          <span>Billing to: <span class="bold">{{lastOrder.customer?.name}}</span></span>
+
+        </div>
+
+        <div style="text-align: end; align-self: end;">
+
+          <span>Date: <span class="bold">{{lastOrder.docdate}}</span></span>
+
+          <span>{{compareDates(lastOrder.docdate)}}</span>
+
+        </div>
+
+      </div>
+
+      <div class="imageContainer" (click)="downloadAndPrintFile(lastOrder.billurl)">
+
+        <img src="assets/images/printer_img.png" alt="">
+
+      </div>
+
+      <div class="otherOptions">
+
+        <button class="view" (click)="openInvoicePdf(lastOrder.billurl)">
+
+          <ion-icon name="open-outline"></ion-icon>
+
+          View Invoice
+
+        </button>
+
+        <div></div>
+
+        <button class="download" (click)="downloadAndSaveFile(lastOrder.billurl, lastOrder.billdocfilename)">
+
+          <ion-icon name="cloud-download-outline"></ion-icon>
+
+          Download Invoice
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="loadingContainer-prevOrders" *ngIf="isPreviousOrdersLoading">
+
+      <ion-spinner name="crescent"></ion-spinner>
+
+      <span>Loading previous orders</span>
+
+    </div>
+
+    <div class="prevOrders">
+
+      <span class="title">Previous Orders&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+      <div class="orders">
+
+        <div class="order" *ngFor="let order of previousOrders">
+
+          <div style="width: 100%;">
+
+            <span>Invoice Id: <span class="bold">{{order.billid}}</span></span>
+
+            <div style="display: flex; flex-flow: row; gap: 10px;">
+              <span>Bill Amount: <span class="bold">{{order.amount}}</span></span>
+              <span>Date: <span class="bold">{{order.docdate}}</span></span>
+            </div>
+
+            <span>Billing to: <span class="bold">{{order.customer?.name}}</span></span>
+
+          </div>
+
+          <div class="options">
+
+            <button class="view" (click)="openInvoicePdf(order.billurl)">
+
+              <ion-icon name="open-outline"></ion-icon>
+
+              View
+
+            </button>
+
+            <div></div>
+
+            <button class="download" (click)="downloadAndSaveFile(order.billurl, order.billdocfilename)">
+
+              <ion-icon name="cloud-download-outline"></ion-icon>
+
+              Download
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

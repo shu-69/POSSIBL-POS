@@ -1,0 +1,46 @@
+.parent{
+
+    width: 400px;
+    height: 500px;
+    padding: 15px;
+
+    .optionsContainer {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        span {
+
+          width: 100%;
+          display: flex;
+          flex-flow: column;
+          color: black;
+          border: 1px solid #d5d5d5fc;
+          border-radius: 6px;
+          padding: 5px 5px;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          font-family: 'Poppins-regular', sans-serif;
+          font-size: 14px;
+          text-align: center;
+
+          background: #ededff;
+
+          img {
+            width: 30px;
+          }
+
+        }
+
+        span:hover{
+          box-shadow: 0 0 12px 0px #e1e1e1;
+        }
+
+
+      }
+
+
+
+}

@@ -1,0 +1,27 @@
+<div class="parent">
+
+  <div class="option" (click)="isItemIsFavItem ? removeFromFav() : addToFav()">
+
+    <span class="label">{{ isItemIsFavItem ? 'Remove from favorite items' : 'Add to favorite items' }}</span>
+    
+    <ion-icon [name]="isItemIsFavItem ? 'heart' : 'heart-outline'" [ngStyle]="{ 'color' : isItemIsFavItem ? 'red' : 'black' }"></ion-icon>
+
+  </div>
+
+  <div class="option" (click)="active.toLowerCase() == 'no' ? enableItem() : disableItem()">
+
+    <span class="label">{{ active.toLowerCase() == 'no' ? 'Enable item' : 'Disable item'}}</span>
+
+    <ion-icon [name]="active.toLowerCase() == 'no' ? 'checkmark-circle-outline' : 'ban-outline'"></ion-icon>
+
+  </div>
+
+  <div class="option close" (click)="close(false)">
+
+    <span class="label">Close</span>
+
+    <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
+
+  </div>
+
+</div>

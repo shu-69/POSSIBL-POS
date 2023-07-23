@@ -1,0 +1,88 @@
+.parent {
+
+    width: 100%;
+    height: fit-content;
+    padding: 30px;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+
+    .titleImage {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 180px;
+        border-radius: 14px;
+        background: linear-gradient(225deg, rgba(35, 36, 0, 0) 0%, rgba(159, 221, 241, 0.6896008403361344) 34%, rgba(145, 200, 227, 0.48511904761904767) 63%, rgba(214, 232, 65, 0.26102941176470584) 100%);
+
+        img {
+
+            height: 80%;
+
+        }
+
+    }
+
+    .content {
+
+        color: black;
+        font-family: 'Poppins-Medium';
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+
+        .percentInput {
+
+            display: flex;
+            border: 2px solid black;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-family: 'Poppins-Medium';
+
+            input {
+
+                background: white;
+                border: none;
+                outline: none;
+                width: -webkit-fill-available;
+                margin-right: 15px;
+
+            }
+
+        }
+
+    }
+
+    .footer {
+
+        display: flex;
+        gap: 20px;
+
+        button {
+
+            width: 50%;
+            height: 45px;
+            font-family: 'Poppins-Regular';
+            border-radius: 12px;
+
+        }
+
+        .close {
+
+            border: 2px solid #5e40a2;
+            background: white;
+            color: black;
+
+        }
+
+        .done {
+
+            background: #5e40a2;
+
+        }
+
+    }
+
+
+}

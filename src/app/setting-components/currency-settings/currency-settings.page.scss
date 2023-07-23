@@ -1,0 +1,43 @@
+.parent {
+
+    .option {
+
+        .content.currencySettings {
+
+            width: fit-content;
+
+            .currencyOptions {
+
+                width: 300px;
+                height: 60px;
+                background: lightgray;
+                border-radius: 18px;
+                border: none;
+                padding: 20px;
+
+                // For removing default select icon >>
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+
+                ion-select-option {
+
+                    --background: white;
+                    color: black;
+
+                }
+
+            }
+
+            .dropDownIcon {
+                    
+                align-self: center;
+                margin-left: -35px;
+            
+            }
+
+        }
+
+    }
+
+}

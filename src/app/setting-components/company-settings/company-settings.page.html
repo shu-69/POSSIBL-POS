@@ -1,0 +1,270 @@
+<ion-header class="settingsTab header ion-no-border">
+  <ion-title>Company</ion-title>
+</ion-header>
+
+<ion-content class="settingsTab parent">
+
+  <div class="option">
+
+    <ion-label class="label">Company details</ion-label>
+
+    <div class="content companyDetails">
+
+      <div class="field">
+
+        <ion-label>Company logo</ion-label>
+
+        <div class="input">
+          <img [src]="companyLogo" style="height: 100%; margin-right: 20px;">
+          <button style="padding: 12px 15px; border-radius: 13px; background: black;" (click)="companyImageSelector.click()">Select image</button>
+          <input style="display: none;" type="file" accept="image/*" #companyImageSelector (change)="selectDisplayImage($event)">
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Company name</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="Enter Company name" #companyName [value]="userDetals.getCompany().name ? userDetals.getCompany().name : ''">
+        </div>
+
+      </div>
+
+      <div class="field address">
+
+        <ion-label>Company address</ion-label>
+
+        <div class="input">
+          <textarea cols="30" rows="10" placeholder="Enter Company address" #companyAddress [value]="userDetals.getCompany().address ? userDetals.getCompany().address : ''"></textarea>
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Company contact</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="Enter Company contact" #companyCotact [value]="userDetals.getCompany().contact ? userDetals.getCompany().contact : ''">
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Company GSTIN</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="Enter Company GST No" #companyGST [value]="userDetals.getCompany().gstno ? userDetals.getCompany().gstno : ''">
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Company DL No</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="Enter Company DL No" #companyDL [value]="userDetals.getCompany().dlno ? userDetals.getCompany().dlno : ''">
+        </div>
+
+      </div>
+
+      <button class="update" (click)="updateCompanyDetails({'logo' : companyLogo, 'name' : companyName.value.trim(), 'address': companyAddress.value.trim(), 'contact': companyCotact.value.trim(),
+        'gstno': companyGST.value.trim(), 'dlno': companyDL.value.trim()})">
+        <ion-icon name="sync-circle"></ion-icon>Update</button>
+
+    </div>
+
+    <span class="divider"></span>
+
+  </div>
+
+  <div class="option">
+    
+    <ion-label class="label">Billing details</ion-label>
+
+    <div class="content billingDetails">
+
+      <div class="field">
+
+        <ion-label>Invoice type</ion-label>
+
+        <div class="input invoicetype">
+          <div>
+            <label for="invoicesmall">
+              <input type="radio" name="invoiceType" id="invoicesmall" [checked]="userDetals.getBilling() ? userDetals.getBilling()!.invoiceType == 'SMALL' : false"
+               (change)="updateBillingsDetails({ 'invoiceType': 'SMALL', 'invoiceTemplate' : userDetals.getBilling()!.invoiceTemplate, 'invoiceOrientation' : userDetals.getBilling()!.invoiceOrientation, 'termsNconditions': termsNconditions })"> SMALL
+            </label>
+          </div>
+          <div>
+            <label for="invoica4">
+              <input type="radio" name="invoiceType" id="invoica4" [checked]="userDetals.getBilling() ? userDetals.getBilling()!.invoiceType == 'A4' : false"
+              (change)="updateBillingsDetails({ 'invoiceType': 'A4', 'invoiceTemplate' : userDetals.getBilling()!.invoiceTemplate, 'invoiceOrientation' : userDetals.getBilling()!.invoiceOrientation, 'termsNconditions': termsNconditions })"> A4
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Invoice template</ion-label>
+
+        <div class="input invoiceTemplate">
+
+          <div class="template">
+
+            <span class="label"><input type="radio" id="invoiceDefault" name="invoiceTemplateRadio" #invoiceDefault
+              [checked]="userDetals.getBilling()?.invoiceTemplate == 'default'"
+              (change)="invoiceDefault.checked ? updateBillingsDetails({ 'invoiceType': userDetals.getBilling()!.invoiceType, 'invoiceTemplate' : 'default', 'invoiceOrientation' : userDetals.getBilling()!.invoiceOrientation, 'termsNconditions': termsNconditions }) : ''"
+              >&nbsp;&nbsp;Default</span>
+
+            <label for="invoiceDefault">
+              <img class="invoice-preview" src="assets/invoice_template_images/default.png">
+            </label>
+
+          </div>
+
+          <div class="template">
+
+            <span class="label"><input type="radio" id="invoiceProfessional" name="invoiceTemplateRadio" #invoiceProfessional
+              [checked]="userDetals.getBilling()?.invoiceTemplate == 'professional'"
+              (change)="invoiceProfessional.checked ? updateBillingsDetails({ 'invoiceType': userDetals.getBilling()!.invoiceType, 'invoiceTemplate' : 'professional', 'invoiceOrientation' : userDetals.getBilling()!.invoiceOrientation, 'termsNconditions': termsNconditions }) : ''"
+              >&nbsp;&nbsp;Professional Proforma</span>
+
+            <label for="invoiceProfessional">
+              <img class="invoice-preview" src="assets/invoice_template_images/professional_profoma.png" />
+            </label>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Invoice orientation</ion-label>
+
+        <div class="input invoiceOrientation">
+
+          <label for="invoicePortrait">
+            <input type="radio" #invoicePortraitRadio id="invoicePortrait" name="invoiceOrientation" 
+            [checked]="userDetals.getBilling()!.invoiceOrientation == 'portrait'"
+            (change)="invoicePortraitRadio.checked ? updateBillingsDetails({ 'invoiceType': userDetals.getBilling()!.invoiceType, 'invoiceTemplate' : userDetals.getBilling()!.invoiceTemplate, 'invoiceOrientation' : 'portrait', 'termsNconditions': termsNconditions }) : ''">
+            Portrait
+          </label>
+
+          <label for="invoiceLandscape">
+            <input type="radio" #invoiceLandscapeRadio id="invoiceLandscape" name="invoiceOrientation"
+            [checked]="userDetals.getBilling()!.invoiceOrientation == 'landscape'"
+            (change)="invoiceLandscapeRadio.checked ? updateBillingsDetails({ 'invoiceType': userDetals.getBilling()!.invoiceType, 'invoiceTemplate' : userDetals.getBilling()!.invoiceTemplate, 'invoiceOrientation' : 'landscape', 'termsNconditions': termsNconditions }) : ''">
+            Landscape
+          </label>
+
+        </div>
+
+      </div>
+
+      <div class="field" hidden>
+
+        <ion-label>Invoice id index</ion-label>
+
+        <div class="input invoiceid" >
+          <span>INVOICE#</span>
+          <input type="number" #invoiceIdIndex disabled >
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Invoice Terms & Conditions</ion-label>
+
+        <div class="input invoiceterms" >
+
+          <div class="options">
+
+            <button class="addTNCButton" (click)="addTnc()"><ion-icon name="add"></ion-icon></button>
+
+          </div>
+          
+          <div class="tncContainer" *ngFor="let tnc of termsNconditions; let i = index">
+
+            <span class="bullet"></span>
+            <input type="text" [(ngModel)]="tnc.editedValue">
+            <button (click)="tnc.value == tnc.editedValue ? deleteTnc(tnc) : updateTnc(tnc)"><ion-icon [name]="tnc.value == tnc.editedValue ? 'trash' : 'checkmark-outline'"
+              ></ion-icon></button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <span class="divider"></span>
+
+  </div>
+
+  <div class="option">
+
+    <ion-label class="label">Payment details</ion-label>
+
+    <div class="content paymentDetails">
+
+      <div class="field">
+
+        <ion-label>UPI ID</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="Enter UPI ID" #upiId [value]="userDetals.getCompanyPaymentDetails().upiId"
+          (change)="updateCompanyPaymentDetails({'bankName': bankName.value, 'upiId': upiId.value, 'accountNumber': accNo.value, 'ifscCode': IFSCCode.value})">
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Bank Name</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="Enter Bank Name" #bankName [value]="userDetals.getCompanyPaymentDetails().bankName"
+          (change)="updateCompanyPaymentDetails({'bankName': bankName.value, 'upiId': upiId.value, 'accountNumber': accNo.value, 'ifscCode': IFSCCode.value})">
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>Account Number</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="Enter Account Number" #accNo [value]="userDetals.getCompanyPaymentDetails().accountNumber"
+          (change)="updateCompanyPaymentDetails({'bankName': bankName.value, 'upiId': upiId.value, 'accountNumber': accNo.value, 'ifscCode': IFSCCode.value})">
+        </div>
+
+      </div>
+
+      <div class="field">
+
+        <ion-label>IFSC Code</ion-label>
+
+        <div class="input">
+          <input type="text" placeholder="IFSC Code" #IFSCCode [value]="userDetals.getCompanyPaymentDetails().ifscCode"
+          (change)="updateCompanyPaymentDetails({'bankName': bankName.value, 'upiId': upiId.value, 'accountNumber': accNo.value, 'ifscCode': IFSCCode.value})">
+        </div>
+
+      </div>
+
+    </div>
+
+    <span class="divider"></span>
+
+  </div>
+
+</ion-content>

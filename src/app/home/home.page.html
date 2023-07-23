@@ -1,0 +1,547 @@
+<!-- Added ion-header inside ion-content bcs draggable menu goes inside header on dragging to header -->
+
+<ion-content [fullscreen]="true" id="main-content">
+
+  <ion-header #header class="ion-no-border" [translucent]="true">
+
+    <img src="assets/logo.png" style="width: 70%; margin: auto;">
+    <!-- <img [src]="userDetails.getCompany() && userDetails.getCompany().logo != '' ? userDetails.getCompany().logo : 'assets/logo.png'" style="width: 70%; margin: auto;"> -->
+
+    <div class="billingDetailsContainer">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="4">Billing to</th>
+            <th colspan="5">Amount & Charges</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="labelTd defaultBorder">Name</td>
+            <td colspan="3" class="defaultBorder"> <ion-input [(ngModel)]="customer.name"></ion-input> </td>
+            <td class="labelTd defaultBorder">Subtotal</td>
+            <td class="chargesInputTd defaultBorder chargesTd">
+              <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{genralServices.addCommas(charges.subtotal.toFixed(2))}}
+            </td>
+
+            <td class="labelTd defaultBorder">Tips</td>
+            <td class="chargesInputTd defaultBorder chargesTd">
+              <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{genralServices.addCommas(charges.tips)}}
+            </td>
+            <td rowspan="3" class="defaultBorder totalTd" style="width: 14%;">
+              <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>
+              {{genralServices.addCommas(genralServices.calculateTotalAmount(charges).toFixed(2))}}
+            </td>
+            <!-- <td rowspan="3" class="defaultBorder totalTd" style="width: 14%;"><span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>
+              {{genralServices.addCommas(charges.subtotal + charges.tips + charges.charges - charges.roundoff + charges.tax - charges.discount)}}
+            </td> -->
+          </tr>
+
+          <tr>
+            <td class="labelTd defaultBorder">Contact</td>
+            <td class="defaultBorder"> <ion-input [(ngModel)]="customer.contact"></ion-input> </td>
+            <td class="labelTd defaultBorder">Email</td>
+            <td class="defaultBorder"> <ion-input [(ngModel)]="customer.email"></ion-input> </td>
+
+            <td class="labelTd defaultBorder">Charges</td>
+            <td class="chargesInputTd defaultBorder chargesTd" (click)="openChargesPopup()">
+              <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{genralServices.addCommas(charges.charges)}}
+            </td>
+            <td class="labelTd defaultBorder">Round off</td>
+            <td class="chargesInputTd defaultBorder chargesTd">
+              <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{genralServices.addCommas(charges.roundoff)}}
+            </td>
+          </tr>
+          <tr>
+            <td class="labelTd defaultBorder">Address</td>
+            <td colspan="3" class="defaultBorder"> <ion-input [(ngModel)]="customer.address"></ion-input> </td>
+            <!-- <td class="labelTd defaultBorder">Road</td>
+            <td class="defaultBorder"> <ion-input [(ngModel)]="customer.address.road"></ion-input> </td> -->
+
+            <td class="labelTd defaultBorder">Tax</td>
+            <td class="chargesInputTd defaultBorder chargesTd">
+              <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{genralServices.addCommas(charges.tax.toFixed(2))}}
+            </td>
+            <td class="labelTd defaultBorder">Discount</td>
+            <td class="chargesInputTd defaultBorder chargesTd" (click)="openDiscountDialog()">
+              <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>{{genralServices.addCommas(charges.discount.discountAmount!.toFixed(2))}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </ion-header>
+
+  <!-- appMovable -> Not using -->
+
+  <div class="draggableMenu" id="movableMenu" #movableMenu hidden>
+
+    <div id="circularMenu" class="circular-menu circular-menu-left">
+
+      <span class="floating-btn" (click)="toogleMenu()">
+        <i class="fa fa-bars"></i>
+      </span>
+
+      <menu class="items-wrapper">
+        <a *ngFor="let menu of menuItems" [id]="menu.id" [class]="menu.classlist" (click)="menu.f()">
+
+        </a>
+      </menu>
+
+    </div>
+
+  </div>
+
+  <div id="movableMenu2" #movableMenu2 hidden>
+    <ion-fab slot="fixed" horizontal="end" vertical="bottom" #movableMenuFab>
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button>
+          <ion-icon name="chevron-up"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="end">
+        <ion-fab-button>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="bottom">
+        <ion-fab-button>
+          <ion-icon name="chevron-down"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="start">
+        <ion-fab-button>
+          <ion-icon name="chevron-back"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="chevron-back"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+  <!-- <ngx-moveable (click)="toogleFabMenu()" className="movable" [target]="movableMenu2" [hideDefaultLines]="true" [origin]="false" [draggable]="true" 
+  [preventClickDefault]="false" [preventClickEventOnDrag]="false"
+  (dragStart)="onDragStart($event)" (drag)="onDrag($event)" >
+
+</ngx-moveable> -->
+
+  <div class="parentContainer" id="parentContainer" #parentContainer [ngStyle]="{'height': 'calc(100% - 15%)'}">
+
+    <div class="seg1">
+
+      <div class="topButtonsContainer" hidden>
+
+        <div class="options">
+
+          <!-- <ion-button
+            *ngFor="let button of [ { id: '1', label: 'Delivery' }, { id: '2', label: 'Take Away' }, { id: '3', label: 'Dining' }, { id: '4', label: 'Online' } ]"
+             for="buttonid">
+            {{button.label}}
+            <input type="radio" [id]="button.id" name="vehicle" value="Car">
+          </ion-button> -->
+
+          <input type="radio" name="option" id="1" value="Delivery" checked />
+          <label for="1">Delivery</label>
+
+          <input type="radio" name="option" id="2" value="Take Away" />
+          <label for="2">Take Away</label>
+
+          <input type="radio" name="option" id="3" value="Dining" />
+          <label for="3">Dining</label>
+
+          <input type="radio" name="option" id="4" value="Online" />
+          <label for="4">Online</label>
+
+          <!-- 
+          <input type="radio" id="html" name="fav_language" value="HTML"> -->
+
+        </div>
+
+      </div>
+
+      <div class="billTableContainer" style="display: flex; flex-flow: column; justify-content: space-between;">
+
+        <div style="overflow-y: auto;">
+
+          <table>
+
+            <thead>
+              <tr>
+                <th style="width: 8%;">Sn</th>
+                <th style="width: 30%;">Description</th>
+                <th style="width: 15%;">Quantity</th>
+                <th style="width: 15%;">Price</th>
+                <th style="width: 14%">Tax</th>
+                <th style="width: 18%;">Amount</th>
+              </tr>
+            </thead>
+
+            <tbody id="billTableBody">
+
+              <tr *ngFor="let item of selectedItems; let i = index" [attr.data-index]="i + 1">
+                <td class="text-center">{{i + 1}}</td>
+                <td>{{item.item.name}}</td>
+                <td class="text-right">
+                  <img src="assets/iconsaxicons/bold/message-edit.svg" style="float: left;"
+                    (click)="openQuantityChangerDialog(item.cat_id, item.item)">
+                  {{item.details.quantity}}
+                </td>
+                <td class="text-right">{{userDetails.getCurrency()?.symbol != undefined ?
+                  userDetails.getCurrency()?.symbol + ' ' + item.item.price : item.item.price}}</td>
+                <!-- <td class="text-right">{{item.item.tax_value != undefined && item.item.tax_value != 'undefined' ? ((item.item.price * (item.item.tax_value / 100)) * item.details.quantity).toFixed(2) + '\n' + '(' + item.item.tax_value + '%' + ')' : ''}}</td> -->
+                <td class="text-right">{{item.item.tax_value != undefined && item.item.tax_value != 'undefined' &&
+                  item.item.tax_value != '' ?
+                  userDetails.getCurrency()?.symbol != undefined ? userDetails.getCurrency()?.symbol + ' ' +
+                  ((item.item.price * (item.item.tax_value / 100))).toFixed(2) :
+                  ((item.item.price * (item.item.tax_value / 100))).toFixed(2) :
+                  ''}}
+                  <span style="font-size: 12px;">{{item.item.tax_value != undefined && item.item.tax_value !=
+                    'undefined'
+                    && item.item.tax_value != ''
+                    ? '(' + item.item.tax_value + '%' + ')' : ''}}</span>
+                </td>
+                <td class="text-right">
+                  <span>{{userDetails.getCurrency()?.symbol}}&nbsp;</span>
+                  {{item.item.tax_value != undefined && item.item.tax_value != 'undefined' &&
+                  item.item.tax_value != '' ?
+                  (((item.item.price * (item.item.tax_value / 100)) * item.details.quantity) + (item.item.price *
+                  item.details.quantity)).toFixed(2) : userDetails.getCurrency()?.symbol != undefined ?
+                  userDetails.getCurrency()?.symbol : ' ' +
+                  (item.item.price * item.details.quantity).toFixed(2)}}
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+
+        </div>
+
+        <table>
+
+          <tbody>
+
+            <tr style="border: none; border-top: 1px solid black;">
+              <td style="width: 0%;" hidden><ion-spinner *ngIf="isSearchingItemCode" name="crescent"
+                  style="display: flex;"></ion-spinner></td>
+              <td style="width: 50%;">
+
+                <div class="itemNameSearchAutoComp">
+                  <input type="text" placeholder="Enter item name" matInput [formControl]="myControl"
+                    [matAutocomplete]="auto" #itemSelectInput
+                    (click)="!platform.is('electron') && !platform.is('desktop') ? openOnScreenKeyboard(itemCodeInput) : ''"
+                    [readOnly]="!platform.is('electron') && !platform.is('desktop')">
+                  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                    (optionSelected)="handleItemDropDownSelect($event.option.value); itemSelectInput.value = $event.option.viewValue">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option._id">
+                      {{option.name}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </div>
+
+              </td>
+
+              <td style="width: 50%;">
+                <div style=" display: flex; gap: 10px;">
+                  <input type="text" placeholder="Enter item code" #itemCodeInput (input)="handleItemCodeChange($event)"
+                    (click)="!platform.is('electron') && !platform.is('desktop') ? openOnScreenKeyboard(itemCodeInput) : ''"
+                    [readOnly]="!platform.is('electron') && !platform.is('desktop')">
+                  <span class="barcodescan" (click)="startBarCodeScan(itemCodeInput)">
+                    <i class="fa fa-barcode" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div class="bottomOptionsContainer">
+
+        <div class="options">
+
+          <span (click)="openReprint()">
+            <img src="assets/iconspichon/color/icons8_print_100px.png">
+            Re-Print
+          </span>
+
+          <span (click)="openCustomerSearchDialog()">
+            <img src="assets/iconspichon/color/icons8_find_user_male_100px.png">
+            Customer Search
+          </span>
+
+          <span (click)="openOrderLookup()">
+            <img src="assets/iconspichon/color/icons8_shopping_basket_100px_1.png">
+            Order Lookup
+          </span>
+
+          <span (click)="openSavDialog()">
+            <img src="assets/iconspichon/color/icons8_save_close_100px.png">
+            Save
+          </span>
+
+        </div>
+
+        <div class="options">
+
+          <span (click)="openOptions($event)">
+            <img src="assets/iconspichon/color/icons8_list_100px_3.png">
+            Options
+          </span>
+
+          <span (click)="clearSelectedItems()">
+            <img src="assets/iconspichon/color/icons8_delete_view_100px.png">
+            Clear
+          </span>
+
+          <span (click)="saveOrderToDraft()">
+            <img src="assets/iconspichon/color/icons8_draft_100px.png">
+            Draft
+          </span>
+
+          <span>
+            <img src="assets/iconspichon/color/icons8_star_100px.png">
+            Royality
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seg2" #seg2ParentContainer>
+
+      <diV class="container" id="seg2Container">
+
+        <div class="itemsCategoryContainer" id="itemsCategoryContainer" #itemsCategoryContainer>
+
+          <span *ngFor="let category of items; let i = index" (click)="selectCategory(category._id)"
+            [ngStyle]="{'letter-spacing' : selectedCategoryIndex == i ? '2px' : '0px' }">
+            {{category.category_name}}
+          </span>
+
+        </div>
+
+        <div class="itemsParentContainer" id="itemsParentContainer">
+
+          <div class="header">
+
+            <ion-grid>
+              <ion-row>
+                <ion-col class="firstContainer">
+                  <ion-button class="triggerItemsCategoryButton" id="triggerItemsCategoryButton"
+                    (click)="triggerItemCategoryContainer()">
+                    <ion-icon slot="icon-only" name="chevron-back-outline" class="triggerIcon"
+                      id="triggerItemsCategoryButtonIcon"></ion-icon>
+                  </ion-button>
+                  <ion-label class="categoryLabel"
+                    *ngIf="items != undefined">{{items[selectedCategoryIndex].category_name}} </ion-label>
+                </ion-col>
+                <ion-col class="square iconcontainer" (click)="goCategoryOneStepTop()">
+                  <img src="assets/iconsaxicons/outline/arrow-square-up.svg">
+                </ion-col>
+                <ion-col class="square iconcontainer" (click)="goCategoryOneStepDown()">
+                  <img src="assets/iconsaxicons/outline/arrow-square-down.svg">
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </div>
+
+          <div class="content" id="itemsContainerContent">
+
+            <div class="items" id="itemsContainer" *ngIf="items != undefined && items[selectedCategoryIndex]">
+
+              <div class="item" #itemContainer *ngFor="let item of items[selectedCategoryIndex].items; let i = index"
+                [id]="'item' + '-' + item.cat_id + '-' + item._id"
+                (click)="checkItemSelected(this.items[selectedCategoryIndex]._id, item._id) ? '' : selectItem(items[selectedCategoryIndex]._id, item)"
+                data-itemId="item" appPress (press)="itemLongPress($event, item.cat_id , item._id, item.active)"
+                (contextmenu)="itemLongPress($event, item.cat_id , item._id, item.active);">
+
+                <div class="infoContainer">
+
+                  <span class="info"
+                    *ngIf="checkItemExpDate(item.exp_date).expired || checkItemExpDate(item.exp_date).daysLeft <= ITEM_EXP_DATE_WARNING_DAYS_BEFORE"
+                    [ngClass]="{ 'warning' : checkItemExpDate(item.exp_date).daysLeft <= ITEM_EXP_DATE_WARNING_DAYS_BEFORE, 'danger' : checkItemExpDate(item.exp_date).expired }">
+
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+
+                    <span>{{checkItemExpDate(item.exp_date).value}}</span>
+
+                  </span>
+
+                </div>
+
+                <div class="itemDisabledContainer" *ngIf="item.active.toLowerCase() == 'no'">
+
+                  <span class="label">ITEM DISABLED</span>
+
+                </div>
+
+                <div class="imageContainer">
+
+                  <img [src]="item.images[0]"
+                    [ngStyle]="{ 'mix-blend-mode' : item.active == 'NO' ? 'luminosity' : 'normal' }">
+
+                </div>
+
+                <div class="itemControllsContainer"
+                  *ngIf="checkItemSelected(this.items[selectedCategoryIndex]._id, item._id)">
+
+                  <ion-grid class="itemQuantity">
+                    <ion-row>
+                      <ion-col
+                        (click)="updateSelectedItemQuantity(this.items[selectedCategoryIndex]._id, item._id, -1); $event.stopPropagation();">
+                        <ion-icon name="remove-sharp"></ion-icon>
+                      </ion-col>
+                      <ion-col>
+                        <ion-label>
+                          {{getSelectedItemDetails(this.items[selectedCategoryIndex]._id, item._id).quantity}}
+                        </ion-label>
+                      </ion-col>
+                      <ion-col
+                        (click)="updateSelectedItemQuantity(this.items[selectedCategoryIndex]._id, item._id, 1); $event.stopPropagation();">
+                        <ion-icon name="add-sharp"></ion-icon>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+
+                </div>
+
+                <span class="label">{{item.name}}</span>
+
+              </div>
+
+            </div>
+
+            <span class="bottomMessageSpan">
+              <span>You reached at the end of the list</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </diV>
+
+      <div class="footer active" #seg2Footer>
+
+        <div class="favItems">
+
+          <span class="label">
+            Favorite Items
+          </span>
+
+          <div class="favItemsContainer">
+
+            <div class="item" *ngFor="let item of userDetails.getFavItems(); let i = index;"
+              (click)="checkItemSelected(item.cat_id, item.item_id) ? '' : selectItem(item.cat_id, genralServices.getItemDetails(item.cat_id, item.item_id)[0])">
+
+              <div class="imageCon">
+
+                <img [src]="genralServices.getItemDetails(item.cat_id, item.item_id)[0]?.images[0]" alt="">
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <button class="close" (click)="closeSeg2Footer()"><ion-icon name="close-outline"></ion-icon></button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>
+
+<div class="floatingProgressStatusContainer inactive" #floatingLoader>
+  <ion-spinner name="crescent" style="--color: white;"></ion-spinner>
+  <ion-text>{{loaderMessage}}</ion-text>
+</div>
+
+<div class="floatingOrderSuccessPopup" #floatingOrderSuccessPopup>
+
+  <div class="card">
+    <div class="card__content"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <div class="container">
+
+    <div class="animationContainer">
+
+      <ng-lottie [options]="saveSuccessAnimationOption"></ng-lottie>
+
+      <span>Order Successfull!</span>
+
+    </div>
+
+    <button class="doneButton" (click)="removeOrderSuccessPopup()">Done!</button>
+
+  </div>
+
+</div>
+
+<app-home-page-right-menu [username]="logged_in_user_name"></app-home-page-right-menu>
+
+<ngx-moveable (click)="toogleMenu()" className="movable" [target]="movableMenu" [hideDefaultLines]="true"
+  [origin]="false" [draggable]="true" [preventClickDefault]="true" (dragStart)="onDragStart($event)"
+  (drag)="onDrag($event)">
+
+</ngx-moveable>
+
+<div class="simple-keyboard-container inactive" #simpleKeyboard appMovable>
+
+  <div class="keyboardHeader">
+
+    <div style="display: flex; align-items: center;">
+
+      <div class="keyboardLayoutSelector">
+
+        <div class="btn-container">
+
+          <label class="switch btn-color-mode-switch">
+            <input value="1" id="color_mode" name="color_mode" type="checkbox" (change)="changeKeyboardLayout($event)">
+            <label class="btn-color-mode-switch-inner" data-off="ABC" data-on="123" for="color_mode"></label>
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div style="display: flex; align-items: center;">
+
+      <ion-icon class="close" name="close-circle" (click)="closeOnScreenKeyboard()"></ion-icon>
+
+    </div>
+
+  </div>
+
+  <div class="simple-keyboard"></div>
+
+</div>

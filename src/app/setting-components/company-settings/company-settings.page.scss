@@ -1,0 +1,318 @@
+.parent {
+
+    .option .content.companyDetails {
+
+        display: flex;
+        flex-flow: column;
+        gap: 20px;
+
+        .field {
+
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+            font-family: 'Poppins-Medium', sans-serif;
+
+            ion-label {
+
+                font-family: 'Poppins-Medium';
+                font-size: 14px;
+
+            }
+
+            .input {
+
+                height: 60px;
+                display: flex;
+                align-items: center;
+                background: white;
+                width: fit-content;
+                padding: 20px 25px;
+                border: 2px solid rgb(211 211 211 / 60%);
+                border-radius: 18px;
+
+                input {
+
+                    background: transparent;
+                    outline: none;
+                    border: none;
+
+                }
+
+            }
+
+            .input:hover {
+
+                box-shadow: 0px 0px 20px 0px #d3d3d3ab;
+
+            }
+
+        }
+
+        .field.address {
+
+            .input {
+
+                width: 100%;
+                height: fit-content;
+
+                textarea {
+
+                    width: 100%;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+
+                }
+
+            }
+
+        }
+
+        .update {
+
+            width: fit-content;
+            align-self: flex-end;
+            padding: 15px 20px;
+            border-radius: 18px;
+            font-family: 'Poppins-Regular';
+            font-size: 18px;
+            display: flex;
+            gap: 10px;
+            background: black;
+            align-items: center;
+
+            ion-icon {
+
+                width: 30px;
+                height: 30px;
+
+            }
+
+        }
+
+    }
+
+    .option .content.billingDetails,
+    .content.paymentDetails {
+
+        display: flex;
+        flex-flow: column;
+        gap: 20px;
+
+        .field {
+
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+            font-family: 'Poppins-Medium', sans-serif;
+
+            ion-label {
+
+                font-family: 'Poppins-Medium';
+                font-size: 14px;
+
+            }
+
+            .input {
+
+                height: 60px;
+                display: flex;
+                align-items: center;
+                background: white;
+                width: fit-content;
+                padding: 20px 25px;
+                border: 2px solid rgb(211 211 211 / 60%);
+                border-radius: 18px;
+
+                input {
+
+                    background: transparent;
+                    outline: none;
+                    border: none;
+
+                }
+
+            }
+
+            .input.invoiceid {
+
+                gap: 20px;
+                height: fit-content;
+                padding: 10px 20px;
+
+                input {
+
+                    border: 2px solid rgb(211 211 211 / 60%);
+                    border-radius: 10px;
+                    padding: 10px;
+                    width: 160px;
+                    text-align: center;
+
+                }
+
+            }
+
+            .input.invoicetype {
+
+                gap: 20px;
+
+                label {
+
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    input {
+
+                        width: 16px;
+                        height: 16px;
+
+                    }
+
+                }
+
+            }
+
+            .input.invoiceTemplate {
+
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                gap: 20px;
+
+                .template {
+
+                    display: flex;
+                    flex-flow: column;
+                    gap: 12px;
+
+                    .label {
+
+                        font-size: 16px;
+
+                        .input {
+
+                            width: 16px;
+                            height: 16px;
+
+                        }
+
+                    }
+
+
+
+                    .invoice-preview {
+
+                        min-width: 200px;
+                        max-width: 200px;
+                        height: 240px;
+                        border: 2px solid lightgray;
+                        border-radius: 12px;
+                        min-height: 240px;
+                        max-height: 240px;
+                        font-size: 14px;
+
+                    }
+
+                }
+
+            }
+
+            .input.invoiceOrientation {
+
+                gap: 20px;
+
+            }
+
+            .input.invoiceterms {
+
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                flex-flow: column;
+                gap: 20px;
+
+                .options {
+
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+
+                    .addTNCButton {
+
+                        padding: 10px 20px;
+                        background: black;
+                        border-radius: 8px;
+
+                    }
+
+                }
+
+                .tncContainer {
+
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    span.bullet {
+
+                        width: 25px;
+                        height: 25px;
+                        background: black;
+                        border-radius: 50%;
+                        aspect-ratio: 1;
+
+                    }
+
+                    input {
+
+                        width: -webkit-fill-available;
+                        border: 2px solid lightgray;
+                        border-radius: 8px;
+                        height: 100%;
+                        padding: 0 15px;
+
+                    }
+
+                    button {
+
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 8px;
+                        background: black;
+                        aspect-ratio: 1;
+
+                        ion-icon {
+
+                            width: 20px;
+                            height: 20px;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .input:hover {
+
+                box-shadow: 0px 0px 20px 0px #d3d3d3ab;
+
+            }
+
+        }
+
+    }
+
+}
+
+ion-content::part(scroll) {
+
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+
+}

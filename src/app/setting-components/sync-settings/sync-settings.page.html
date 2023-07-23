@@ -1,0 +1,57 @@
+<ion-header class="settingsTab header ion-no-border">
+    <ion-title>Sync</ion-title>
+</ion-header>
+
+<ion-content class="settingsTab parent">
+
+  <div class="option">
+
+    <ion-label class="label">Items</ion-label>
+
+    <div class="content sync">
+
+      <div class="container1">
+        <span class="syncStatus">{{ itemSyncOptions.isSyncing ? 'Syncing now...' : 'Last synced : ' + itemSyncOptions.lastSync }}</span>
+        <div class="progressContainer" *ngIf="itemSyncOptions.isSyncing">
+          <ion-progress-bar type="indeterminate"></ion-progress-bar>
+        </div>
+      </div>
+      
+      <div>
+        <button class="syncButton" (click)="startItemSync()">
+          <ion-icon [ngClass]="{'rotate': itemSyncOptions.isSyncing}" name="sync-outline"></ion-icon>
+          {{ itemSyncOptions.isSyncing ? 'Syncing' : 'Sync now' }}</button>
+      </div>
+
+    </div>
+
+    <span class="divider"></span>
+
+  </div>
+
+  <div class="option">
+
+    <ion-label class="label">Orders</ion-label>
+
+    <div class="content itemsUpload">
+
+      <div class="container1">
+        <span class="syncStatus">{{ orderUploadOptions.isUploading ? 'Uploading now...' : orderUploadOptions.totalUnUnploadedItems == 0 ? 'Looks fine! 👍 No order details to upload. ' : 'You have ' + orderUploadOptions.totalUnUnploadedItems + ' order(s) to upload.'}}</span>
+        <div class="progressContainer" *ngIf="orderUploadOptions.isUploading">
+          <ion-progress-bar type="indeterminate"></ion-progress-bar>
+        </div>
+      </div>
+      
+      <div>
+        <button class="syncButton" (click)="startOrderUpload()">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+          {{ orderUploadOptions.isUploading ? 'Uploading' : 'Upload now' }}</button>
+      </div>
+
+    </div>
+
+    <span class="divider"></span>
+
+  </div>
+
+</ion-content>

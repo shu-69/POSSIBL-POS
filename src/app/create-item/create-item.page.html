@@ -1,0 +1,242 @@
+<ion-content>
+
+  <div class="header">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+
+    <span class="title">{{isUpdating ? 'Update Item' : 'Create Item'}}</span>
+
+  </div>
+
+  <section class="parent">
+
+    <section class="form-section">
+
+      <div class="input-row one">
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.name">
+          <label class="user-label">Item Name</label>
+        </div>
+
+      </div>
+
+      <div class="input-row two">
+
+        <div class="input-group">
+          <select class="input" [(ngModel)]="itemDetails.cat_id">
+            <option value="" selected>Select item category</option>
+            <option [value]="category.id" *ngFor="let category of itemCategories">{{category.name}}</option>
+          </select>
+          <label class="user-label">Item Category</label>
+        </div>
+
+        <div class="input-group">
+          <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.description">
+          <label class="user-label">Item Description</label>
+        </div>
+
+      </div>
+
+      <section class="details-section">
+
+        <span class="label">Pricing details</span>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <input required="" type="number" step="0.01" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.cp">
+            <label class="user-label">Cost price</label>
+          </div>
+
+          <div class="input-group">
+            <input required="" type="number" step="0.01" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.price">
+            <label class="user-label">Selling price(Rate)</label>
+          </div>
+
+        </div>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <input required="" type="number" step="0.01" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.mrp">
+            <label class="user-label">MRP</label>
+          </div>
+
+          <div class="input-group">
+            <input required="" type="number" step="0.01" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.ptr">
+            <label class="user-label">PTR</label>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="details-section">
+
+        <span class="label">Unit details</span>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.unit">
+            <label class="user-label">Item unit</label>
+          </div>
+
+          <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.net_qty">
+            <label class="user-label">Net Qty</label>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="details-section">
+
+        <span class="label">Manufacture details</span>
+
+        <div class="input-row one">
+
+          <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.mfd_by">
+            <label class="user-label">Mfd. by</label>
+          </div>
+
+        </div>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <input required="" type="month" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.mfg_date">
+            <label class="user-label">Mfg. date</label>
+          </div>
+
+          <div class="input-group">
+            <input required="" type="month" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.exp_date">
+            <label class="user-label">Exp. date</label>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="details-section">
+
+        <span class="label">TAX details</span>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <select class="input" [(ngModel)]="itemDetails.tax_type">
+              <option value="GST">GST</option>
+            </select>
+            <label class="user-label">TAX Type</label>
+          </div>
+
+          <div class="input-group">
+            <input required="" type="number" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.tax_value">
+            <label class="user-label">Value(in %)</label>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="details-section">
+
+        <span class="label">Other details</span>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.batch_no">
+            <label class="user-label">Batch no.</label>
+          </div>
+
+          <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.bonus">
+            <label class="user-label">Free/Bonus</label>
+          </div>
+
+        </div>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.hsn_code">
+            <label class="user-label">HSN Code</label>
+          </div>
+
+          <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.bar_code">
+            <label class="user-label">Bar Code</label>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="details-section">
+
+        <span class="label">Stock details</span>
+
+        <div class="input-row two">
+
+          <div class="input-group">
+            <select name="" id="" class="input" [(ngModel)]="itemDetails.stock">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <label class="user-label">In Stock</label>
+          </div>
+
+          <div class="input-group">
+            <select name="" id="" class="input" [(ngModel)]="itemDetails.active">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <label class="user-label">Active</label>
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+    <section class="other-details-section">
+
+      <div class="item-image-container">
+
+        <span class="label">Item display image</span>
+
+        <div class="item-display-image-chooser" >
+
+          <img [src]="isUpdating && !itemDisplayImage || itemDisplayImage == '' ? itemDetails.images[0] : itemDisplayImage">
+
+          <input type="file" accept="image/*" (change)="selectDisplayImage($event)">
+          
+        </div>
+
+      </div>
+
+      <div class="right-footer">
+
+        <div class="options">
+
+            <button (click)="showAddItemCatPopup()"><i class="fa fa-plus" aria-hidden="true"></i>Add item category</button>
+
+        </div>
+
+        <button class="submit" (click)="isUpdating ? update() : submit()">{{isUpdating ? 'Update' : 'Submit'}}</button>
+
+      </div>
+
+    </section>
+
+  </section>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header class="settingsTab header ion-no-border">
+  <ion-title>Currency</ion-title>
+</ion-header>
+
+<ion-content class="settingsTab parent">
+
+  <div class="option">
+
+    <ion-label class="label">Currency Preference</ion-label>
+
+    <div class="content currencySettings">
+
+      <select class="currencyOptions" (change)="changeCurrency($event)">
+        <option value="" disabled selected hidden>Select Currency</option>
+        <option [value]="currency.id" [selected]="userDetails.getCurrency()?.id == currency.id"
+          *ngFor="let currency of currencies"><i class="flag flag-united-states"></i>{{currency.currency}} -
+          {{currency.country}}</option>
+      </select>
+
+      <!-- <ion-select class="currencyOptions" color="light" interface="popover" placeholder="Select Currency" (ionChange)="changeCurrency($event)" ">
+        <ion-select-option [value]="currency.id" *ngFor="let currency of currencies"><i class="flag flag-united-states"></i>{{currency.currency}} - {{currency.country}}</ion-select-option>
+      </ion-select> -->
+
+      <ion-icon class="dropDownIcon" name="chevron-down-outline"></ion-icon>
+
+    </div>
+
+    <span class="divider"></span>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header class="settingsTab header ion-no-border">
+  <ion-title>Tax</ion-title>
+</ion-header>
+
+<ion-content class="settingsTab parent">
+
+  <div class="option">
+
+    <ion-label class="label">Tax Consumption Type</ion-label>
+
+    <div class="content taxesSettings">
+
+      <div class="taxRadioOptions">
+
+        <label class="inputContainer" for="gst">
+          <input type="radio" name="taxOption" id="gst" value="gst" [checked]="userDetails.getTax()?.taxType == 'gst'" #gstradio (change)="gstradio.checked ? selectedTaxTypeValue = 'gst' : ''; updateTax({ 'taxType' : selectedTaxTypeValue!, 'valueInPercent' : taxvalue.value })">
+          GST
+        </label>
+        
+        <label class="inputContainer" for="vat">
+          <input type="radio" name="taxOption" id="vat" value="vat" [checked]="userDetails.getTax()?.taxType == 'vat'" #vatradio (change)="vatradio.checked ? selectedTaxTypeValue = 'vat' : ''; updateTax({ 'taxType' : selectedTaxTypeValue!, 'valueInPercent' : taxvalue.value })">
+          VAT
+        </label>
+
+      </div>
+
+      <div class="at">
+        <span>@</span>
+      </div>
+      
+      <div class="taxInput">
+
+        <input type="number" [value]="userDetails.getTax()?.valueInPercent" [disabled]="!selectedTaxTypeValue" #taxvalue (change)="updateTax({ 'taxType' : selectedTaxTypeValue!, 'valueInPercent' : taxvalue.value })">
+
+        <span style="font-size: 26px;">%</span>
+
+      </div>
+
+    </div>
+
+    <span class="divider"></span>
+  
+  </div>
+
+</ion-content>

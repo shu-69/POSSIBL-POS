@@ -1,0 +1,547 @@
+$def-bg-color: #0cb96e;
+
+ion-content {
+    --overflow: hidden;
+
+    .bottomMessageContainer {
+
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        bottom: 25px;
+        right: -30%;
+        max-width: 30%;
+        border-radius: 12px;
+        padding: 25px 25px;
+        background: black;
+        transition: all .2s ease;
+
+        .message {
+
+            font-family: 'Poppins-Regular';
+
+        }
+
+        .okay {
+
+            background: transparent;
+            font-family: 'Poppins-Medium';
+            font-size: 18px;
+
+        }
+
+    }
+
+    .bottomMessageContainer.active {
+
+        right: 25px;
+
+    }
+
+    .bottomMessageContainer.inactive {
+
+        right: -30%;
+
+    }
+
+}
+
+.parentGrid {
+
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(2, 60% 40%);
+
+}
+
+.seg1 {
+
+    background: black;
+    display: flex;
+    flex-flow: column;
+
+    .svgBg {
+        // background: url("assets/login_assets/bg_design.svg") center/cover;
+        // background-size: 100%;
+        // background-repeat: no-repeat;
+        // background-clip: 0px;
+        // height: 100%;
+        // background-position-x: left;
+        // background-position-y: top;
+    }
+
+    .topContainer {
+        padding: 40px;
+    }
+
+    .swiperContainer {
+
+        margin-top: -15%;
+        margin-bottom: 20px;
+        height: calc(10% + 15%); // Top container height is 90% and this container have some to margin, so i'm filling this container height to (remaining space + margin-top)
+
+        .swiper {
+
+            height: 100%;
+            background: transparent;
+            color: black;
+            padding-bottom: 55px; // TODO :
+
+            //--swiper-pagination-color: #FFBA08;
+            --swiper-pagination-bullet-inactive-color: rgb(82, 82, 82, 40%);
+            --swiper-pagination-bullet-inactive-opacity: 1;
+            --swiper-pagination-bullet-size: 16px;
+            --swiper-pagination-bullet-width: 42px;
+            --swiper-pagination-bullet-height: 10px;
+            --swiper-pagination-bullet-horizontal-gap: 6px;
+            --swiper-theme-color: white;
+
+            .slide {
+
+                backdrop-filter: blur(4px);
+                background: rgb(44 44 44 / 60%);
+                padding: 3% 4%;
+                color: white;
+                font-size: 18px;
+                font-family: 'Poppins-Regular';
+                height: 100%;
+                border-radius: 20px;
+                margin-left: 40px;
+                margin-right: 40px;
+
+            }
+
+            .swiper-pagination {
+                //bottom: -20px;
+
+                .swiper-pagination-bullet {
+                    border-radius: 20px;
+                }
+
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: #ffffff !important;
+            }
+
+        }
+
+        .swiper > .swiper-pagination-bullets {
+
+            .swiper-pagination-bullet {
+
+                width: 48px;
+                border-radius: 10px;
+
+            }
+
+        }
+
+    }
+
+    .dottedDesign {
+        position: absolute;
+        left: 45%;
+        top: 20%;
+    }
+
+    .deviceCircleContainer {
+
+        background: white;
+        width: 20vw;
+        height: 20vw;
+        margin-top: 40px;
+        border-radius: 200px;
+        display: flex;
+        align-items: center;
+
+    }
+}
+
+.seg2 {
+    background: white;
+    display: flex;
+    flex-flow: column;
+    padding: 30px;
+
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    height: 100%;
+    //justify-content: center;
+}
+
+.logoContainer {
+    width: 140px;
+    align-self: flex-end;
+    background: #cacaca29;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.inputContainer {
+    --background: #F2F2F2;
+    border-radius: 10px;
+    height: 65px;
+    color: black;
+    display: flex;
+    --border-radius: 10px;
+    width: 100%;
+    flex-flow: wrap;
+    height: fit-content;
+    --padding-start: 0px; // 25px
+    border: 2.5px solid white;
+}
+
+.rememberMeContainer {
+    --padding-start: 0;
+    --background: transparent;
+    --min-height: fit-content;
+}
+
+.rememberMeCheckbox {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    --background: #F2F2F2;
+    --border-width: 2.5px;
+    --border-color: #6464647a;
+    --border-radius: 8px;
+    --border-color-checked: black;
+    --checkmark-color: white;
+    --background-checked: black;
+    --checkmark-width: 3;
+}
+
+.loginButton {
+    --background: black;
+    --box-shadow: none;
+    height: 8vh;
+    --border-radius: 10px;
+    font-family: 'Poppins-Regular';
+    font-size: 18px;
+    margin: 0;
+    margin-top: 6%;
+}
+
+.switchAccountButton {
+    --background: white;
+    --box-shadow: none;
+    --border-width: 4px;
+    --border-style: solid;
+    --color: black;
+    height: 8vh;
+    --border-radius: 10px;
+    font-family: 'Poppins-Regular';
+    font-size: 18px;
+    margin: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+.inputIcon {
+    color: #8E8E8E;
+    width: 25px;
+    height: 25px;
+}
+
+.focusField {
+    border: 2.5px solid #c5c5c5;
+}
+
+.svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.clipped {
+    width: 100%;
+    height: 90%;
+    background: $def-bg-color url(https://source.unsplash.com/600x600?tech);
+    background-size: cover;
+    -webkit-clip-path: url(#bg-clip-path);
+    clip-path: url(#bg-clip-path);
+    transition: background 2s ease 2s;
+}
+
+.welcomeText {
+
+    font-family: 'Poppins-Bold';
+    font-size: 4vw;
+
+
+}
+
+.input {
+    height: 60px;
+    font-family: 'Poppins-Regular';
+    font-size: 20px;
+    --padding-end: 15px;
+    --padding-start: 20px !important;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.fieldError {
+    --background: #e64a4a;
+    color: white;
+}
+
+.loderContainer {
+
+    height: 100vh;
+    background: url('../../assets/login_assets/bg2.jpg') center/cover;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    .centerContainer {
+
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90%;
+        justify-content: center;
+        padding-top: 10%;
+
+        .profileImageContainer {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            padding: 30px;
+            background: rgb(0, 0, 0, 0.05%);
+            border-radius: 100px;
+            backdrop-filter: blur(6px);
+        }
+
+        .welcomeText {
+            color: black;
+            font-family: 'Poppins-SemiBold', sans-serif;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .loadingMessage {
+            color: black;
+            font-family: 'Poppins-Regular', sans-serif;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+    }
+
+    .bottomContainer {
+
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        height: 10%;
+
+        .welcomeText {
+            color: black;
+            font-family: 'Poppins-SemiBold', sans-serif;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .loadingMessage {
+            color: black;
+            font-family: 'Poppins-Regular', sans-serif;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+    }
+
+
+}
+
+.loginButtonLoader {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto;
+    position: relative;
+    color: #FFF;
+    left: -100px;
+    box-sizing: border-box;
+    animation: shadowRolling 2s linear infinite;
+}
+
+@keyframes shadowRolling {
+    0% {
+        box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    12% {
+        box-shadow: 100px 0 white, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    25% {
+        box-shadow: 110px 0 white, 100px 0 white, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    36% {
+        box-shadow: 120px 0 white, 110px 0 white, 100px 0 white, 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    50% {
+        box-shadow: 130px 0 white, 120px 0 white, 110px 0 white, 100px 0 white;
+    }
+
+    62% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 white, 120px 0 white, 110px 0 white;
+    }
+
+    75% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 white, 120px 0 white;
+    }
+
+    87% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 white;
+    }
+
+    100% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.switchAccountModal {
+    --width: 50%;
+    --height: 70%;
+    --background: white;
+    color: black;
+    --min-width: 250px;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    font-family: 'Poppins-Regular', sans-serif;
+    backdrop-filter: blur(4px);
+    --border-radius: 20px;
+
+    .wrapper {
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        padding: 10px 10px 0px 10px;
+        //overflow: auto;
+    }
+
+    .header {
+        margin-left: 20px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            font-family: 'Poppins-SemiBold', sans-serif;
+        }
+
+    }
+
+    .content {
+
+        margin: 15px 0px 0px 20px;
+        height: 100%;
+        overflow: auto;
+        padding-bottom: 30px;
+        padding-right: 20px;
+
+        .usersListContainer {
+
+            background: transparent;
+            gap: 30px;
+            display: flex;
+            flex-flow: column;
+
+            ion-item {
+
+                --background: white;
+                color: black;
+                --padding-start: 0;
+
+                ion-icon {
+                    color: black;
+                }
+
+            }
+
+            .userContainer {
+
+                display: -webkit-inline-box;
+                gap: 15px;
+
+                .profileImg {
+
+                    display: flex;
+                    align-items: center;
+                    background: rgb(0, 0, 0, 10%);
+                    border-radius: 20px;
+                    width: 60px;
+                    height: 60px;
+                    padding: 10px;
+
+                }
+
+                .details {
+                    width: 100%;
+                    display: flex;
+                }
+
+            }
+
+
+
+        }
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .parentGrid {
+
+        grid-template-columns: repeat(1, 100%);
+
+        .seg1 {
+            display: none;
+        }
+
+    }
+
+    .switchAccountModal {
+
+        --width: 80%
+    }
+}
+
+
+/*
+
+Use circle height like this if device image is not working as expected
+
+:root {
+  --hex-parent-height: 10px;
+}
+
+.hexagon.parent { 
+  width: var(--hex-parent-height);
+}
+
+.hexagon {
+  height: 100%;
+  width: calc(100% * var(--hex-parent-height));
+  display: inline-block;
+}
+
+
+*/

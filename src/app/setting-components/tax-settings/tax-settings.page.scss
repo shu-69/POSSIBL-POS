@@ -1,0 +1,95 @@
+.parent {
+
+    .option {
+
+        .content.taxesSettings {
+
+            gap: 20px;
+            align-items: center;
+
+            .taxRadioOptions {
+
+                display: flex;
+                gap: 20px;
+
+                label.inputContainer {
+
+                    background: #d3d3d35e;
+                    display: flex;
+                    flex-flow: row;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px 25px;
+                    border-radius: 20px;
+                    gap: 15px;
+                    font-family: 'Poppins-Medium';
+                    font-size: 16px;
+
+                    input {
+
+                        width: 20px;
+                        height: 20px;
+
+                    }
+
+                    input[type='radio']:checked {
+
+                        accent-color: black;
+
+                    }
+
+                }
+
+            }
+
+            .at {
+
+                width: 30px;
+                height: 30px;
+                display: flex;
+                background: #d3d3d35e;
+                padding: 6px;
+                border-radius: 30px;
+                font-family: 'Poppins-SemiBold';
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .taxInput {
+
+                height: 60px;
+                display: flex;
+                align-items: center;
+                background: white;
+                width: fit-content;
+                padding: 20px 25px;
+                border: 2px solid rgb(211 211 211 / 60%);
+                border-radius: 18px;
+
+                input {
+
+                    width: 90px;
+                    background: transparent;
+                    color: black;
+                    outline: none;
+                    border: none;
+                    font-family: 'Poppins-Regular', sans-serif;
+                    font-size: 22px;
+                    text-align: center;
+
+                }
+
+            }
+
+            .taxInput:hover {
+
+                box-shadow: 0px 0px 20px 0px #d3d3d3ab;
+
+            }
+
+        }
+
+    }
+
+}

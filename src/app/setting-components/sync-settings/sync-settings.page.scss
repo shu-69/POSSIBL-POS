@@ -1,0 +1,135 @@
+.parent {
+
+    .option {
+
+        .content.sync {
+
+            justify-content: space-between;
+            gap: 30px;
+
+            .container1 {
+
+                width: 100%;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-around;
+
+                .syncStatus {}
+
+                .progressContainer {
+
+
+                }
+
+            }
+
+            .syncButton {
+
+                padding: 15px 20px;
+                border-radius: 30px;
+                font-family: 'Poppins-Regular';
+                background: black;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                white-space: nowrap;
+
+                ion-icon {
+
+                    width: 20px;
+                    height: 20px;
+
+                }
+
+                ion-icon.rotate {
+
+                    animation: rotation 2s infinite linear;
+
+                }
+
+                @keyframes rotation {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(359deg);
+                    }
+                }
+
+            }
+
+
+        }
+
+        .content.itemsUpload {
+
+            justify-content: space-between;
+            gap: 30px;
+
+            .container1 {
+
+                width: 100%;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-around;
+
+                .syncStatus {}
+
+                .progressContainer {
+
+
+                }
+
+            }
+
+            .syncButton {
+
+                padding: 15px 20px;
+                border-radius: 30px;
+                font-family: 'Poppins-Regular';
+                background: black;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                white-space: nowrap;
+
+                ion-icon {
+
+                    width: 20px;
+                    height: 20px;
+
+                }
+
+                ion-icon.rotate {
+
+                    animation: rotation 2s infinite linear;
+
+                }
+
+                @keyframes rotation {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(359deg);
+                    }
+                }
+
+            }
+
+
+        }
+
+    } 
+
+}
+
+ion-content::part(scroll) {
+
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+
+}

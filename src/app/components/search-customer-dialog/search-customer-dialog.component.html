@@ -1,0 +1,44 @@
+<section class="parent">
+
+  <div class="inputContainer">
+    
+    <input type="text" autocomplete="new-password"  placeholder="Enter Customer Name / Contact" #searchInput [(ngModel)]="searchValue" (input)="doSearch(searchValue)">
+
+  </div>
+
+  <div class="searchDetailsContainer">
+
+    <span class="totalSearchCount" *ngIf="searchValue != ''">{{'Found ' + searchResults.length  + ' results'}}</span>
+
+  </div>
+
+  <div class="searchResults">
+
+    <div class="result" *ngFor="let result of searchResults">
+
+      <!-- <span>Id: <span class="bold">{{result.id}}}</span></span> -->
+
+      <div class="first">
+
+        <span>Name: <span class="bold">{{result.name}}</span></span>
+
+        <div style="display: flex; gap: 10px;">
+          <span>Contact: <span class="bold">{{result.contact}}</span></span>
+          <span>Email: <span class="bold">{{result.email}}</span></span>        
+        </div>
+  
+        <span>Address: <span class="bold">{{result.address}}</span></span>
+
+      </div>
+
+      <div style="display: flex;">
+
+        <button class="select" (click)="selectCustomer(result)">Select</button>
+
+      </div>      
+
+    </div>
+
+  </div>
+
+</section>

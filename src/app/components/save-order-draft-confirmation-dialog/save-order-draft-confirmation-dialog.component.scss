@@ -1,0 +1,80 @@
+.parent {
+
+    display: flex;
+    flex-flow: column;
+    width: 401px;
+    padding: 25px 25px 25px 25px;
+    background: white;
+    color: black;
+
+    img {
+
+        margin: auto;
+
+    }
+
+    h3 {
+        padding: 0 20px 0 20px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-family: 'Poppins-SemiBold', sans-serif;
+    }
+
+    .buttons {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        .cancel {
+
+            --background: white;
+            --box-shadow: none;
+            --border-color: gray;
+            --border-style: solid;
+            --border-width: 1px;
+            --border-radius: 8px;
+            text-transform: none;
+            color: black;
+            font-family: 'Poppins-Regular', sans-serif;
+
+        }
+
+        .draft {
+            --background: #3f43e3;
+            --box-shadow: none;
+            --border-color: #3f43e3;
+            --border-style: solid;
+            --border-width: 1px;
+            --border-radius: 8px;
+            text-transform: none;
+            color: white;
+            font-family: 'Poppins-Regular', sans-serif;
+        }
+
+
+    }
+
+
+}
+
+.orderLabelContainer {
+    
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input { 
+        background: #e6e6e6;
+    padding: 10px 10px;
+    border: 2px solid lightgray;
+    outline: none;
+    border-radius: 12px;
+    font-family: 'Poppins-Medium', sans-serif;
+    width: 50%;
+    text-align: start;
+    }
+
+}

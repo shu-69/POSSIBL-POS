@@ -1,0 +1,588 @@
+<section class="parent">
+
+  <div class="header">
+
+    <div class="flex">
+      <span class="bold">TAX INVOICE</span>
+      <span style="border: 2px solid gray; border-radius: 4px;
+      padding: 2px 4px; color: gray;">ORIGINAL FOR RECIPIENT</span>
+    </div>
+
+  </div>
+
+  <div class="companyDetailsContainer">
+
+    <img [src]="logo" class="companyImage">
+
+    <div class="details">
+
+      <span class="name bold">ARMAN PHARMA</span>
+      <span class="address">Bramsthan,Sahijana ,Garhwa 822114</span>
+      <div style="display: flex; gap: 30px;">
+        <span class="bold">Mobile:&nbsp;&nbsp;<span class="normal">9334848011</span></span>
+        <span class="bold">GSTIN:&nbsp;&nbsp;<span class="normal">20ARUPM8710A2Z0</span></span>
+        <span class="bold" style="white-space: nowrap;">DL No.:&nbsp;&nbsp;<span class="normal">20ARUPM8710A2Z0</span></span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="invoiceDetails">
+
+    <div style="background: #d27c19; height: 10px;"></div>
+
+    <div style="display: flex; justify-content: space-between; padding: 25px; background: lightgray;">
+
+      <div class="field">
+
+        <span class="bold">Invoice No.:</span>
+        <span class="normal">1221</span>
+
+      </div>
+
+      <div class="field">
+
+        <span class="bold">Invoice Date:</span>
+        <span class="normal">31/05/2023</span>
+
+      </div>
+
+      <div class="field">
+
+        <span class="bold">Due Date:</span>
+        <span class="normal">07/06/2023</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="customerDetails">
+
+    <div class="details">
+
+      <span class="bold" style="font-size: 20px;">BILL TO</span>
+      <span></span>
+      <span style="font-size: 22px; font-weight: bold;">Cheak</span>
+      <span></span>
+      <span>PROP ANUP KUMAR MISHRA, ARMAN PHARMA, BRAHMBH
+        ASTHAN NEAR AHAR, SAHIJNA, GARHWA, garhwa, 822114</span>
+      <span>Mobile:&nbsp;<span>1234567890</span></span>
+      <span>GSTIN:&nbsp;<span>20ARUPM8710A2Z0</span></span>
+      <span>DL Number:&nbsp;<span>ARUPM8710A</span></span>
+      <span>State:&nbsp;<span>Jharkhand</span></span>
+
+    </div>
+
+    <div></div>
+
+    <div class="details">
+
+      <span class="bold" style="font-size: 20px;">SHIP TO</span>
+      <span></span>
+      <span style="font-size: 22px; font-weight: bold;">Cheak</span>
+      <span></span>
+      <span style="font-size: 18px;">PROP ANUP KUMAR MISHRA, ARMAN PHARMA, BRAHMBH
+        ASTHAN NEAR AHAR, SAHIJNA, GARHWA, garhwa, 822114</span>
+
+    </div>
+
+  </div>
+
+  <div class="itemDetailsTable">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th style="text-align: start; padding-left: 10px;">ITEMS</th>
+          <th style="width: 8%;">EXP</th>
+          <th style="width: 8%;">BONUS</th>
+          <th style="width: 8%;">MFG</th>
+          <th style="width: 8%;">BATCH</th>
+          <th style="width: 8%;">HSN</th>
+          <th style="width: 8%;">QTY.</th>
+          <th style="width: 8%;">MRP</th>
+          <th style="width: 8%;">RATE</th>
+          <th style="width: 8%;">TAX</th>
+          <th style="width: 8%;">AMOUNT</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ANYZYME</td>
+          <td>06/24</td>
+          <td>10+2</td>
+          <td>12/22</td>
+          <td>546</td>
+          <td>FK656FFG</td>
+          <td>1 PCS</td>
+          <td>100</td>
+          <td>70</td>
+          <td>12.6 <span style="color: gray; font-size: 12px; padding: 0;
+            display: block; text-align: center;">(18%)</span> </td>
+          <td>82.6</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="subtotalDetailsTable">
+
+    <table>
+
+      <tbody>
+
+        <tr>
+          <td style="text-align: start; padding-left: 10px;">SUBTOTAL</td>
+          <td style="width: 10%;"></td>
+          <td style="width: 10%;"></td>
+          <td style="width: 10%;"></td>
+          <td style="width: 10%;">1</td>
+          <td style="width: 10%;"></td>
+          <td style="width: 10%;"></td>
+          <td style="width: 10%;">₹ 12.6</td>
+          <td style="width: 10%;">₹ 82.6</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="bill-and-payment-details">
+
+    <div class="row">
+
+      <div class="company-payment-details">
+
+        <div style="display: flex; flex-flow: column;
+        justify-content: space-between;">
+
+          <span class="bold">PAYMENT QR CODE</span>
+
+          <span>UPI ID:&nbsp;<span>anup98011@okaxis</span></span>
+          <span>Account No:&nbsp;<span>89873546135687</span></span>
+          <span>IFSC:&nbsp;<span>SD465SD1F85F6EW7</span></span>
+
+          <div class="upilogos">
+            <img
+              src="data:image/png;base64,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">
+            <img
+              src="data:image/png;base64,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">
+            <img
+              src="data:image/png;base64,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">
+            <img src="https://www.abhikant.in/wp-content/uploads/2023/03/UPI_logo_PNG_lyp5s5.png">
+          </div>
+
+        </div>
+
+        <div class="qrContainer">
+
+          <!-- <qr-code value="paymentQrString" size="300" errorCorrectionLevel="M"></qr-code> -->
+
+        </div>
+
+      </div>
+
+      <div class="tncs">
+
+        <div style="display: flex; flex-flow: column;
+        justify-content: space-between;">
+
+          <span class="bold">TERMS AND CONDITIONS</span>
+
+          <ul>
+            <li>Payment Strictly Within 21 Days on Credit</li>
+            <li>No return and replace after billing.</li>
+            <li>No return or exchange on expiry products.</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="amountDetailsContainer">
+
+        <div class="amount-field">
+          <span>TAXABLE AMOUNT</span>
+          <span>₹ 70</span>
+        </div>
+
+        <div class="amount-field">
+          <span>CGST @9%</span>
+          <span>₹ 6.3</span>
+        </div>
+
+        <div class="amount-field">
+          <span>SGST @9%</span>
+          <span>₹ 6.3</span>
+        </div>
+
+        <div class="totalAmount">
+
+          <span class="bold">TOTAL AMOUNT</span>
+
+          <span class="bold">₹ 82.6</span>
+
+        </div>
+
+        <div class="amount-field">
+          <span>Received Amount</span>
+          <span>₹ 0</span>
+        </div>
+
+      </div>
+
+      <div class="amountInWords">
+
+        <span class="bold">Total Amount (in words)</span>
+        <span>Eighty Two Rupees and Sixty Paise</span>
+
+      </div>
+
+      <div class="signature">
+
+        <div class="signature-container">
+
+
+
+        </div>
+
+        <span class="bold">AUTHORISED SIGNATORY FOR</span>
+        <span>ARMAN PHARMA</span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+<!-- 
+<style>
+  .parent {
+
+display: flex;
+flex-flow: column;
+gap: 20px;
+background: white;
+color: black;
+padding: 20px 30px;
+/* //width: 1000px;
+
+// overflow: visible; */
+
+.header {}
+
+.companyDetailsContainer {
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .companyImage {
+
+        width: 140px;
+        height: 140px;
+
+    }
+
+    .details {
+
+        display: flex;
+        flex-flow: column;
+        gap: 5px;
+        align-items: start;
+        font-size: 20px;
+
+        .name {
+
+            color: #d27c19;
+            font-size: 32px;
+
+        }
+
+
+
+    }
+
+}
+
+.invoiceDetails {
+
+    font-size: 18px;
+
+    .field {
+
+        display: flex;
+        gap: 20px;
+
+    }
+
+}
+
+.customerDetails {
+
+    display: grid;
+    grid-template-columns: repeat(3, calc((100% - 15px) / 2) 15px calc((100% - 15px) / 2));
+
+    .details {
+
+        display: flex;
+        flex-flow: column;
+        gap: 5px;
+        font-size: 18px;
+
+    }
+
+}
+
+.itemDetailsTable {
+
+    padding-bottom: 320px;
+
+    table {
+
+        width: 100%;
+
+        thead {
+
+            border-top: 3px solid #d27c19;
+            border-bottom: 3px solid #d27c19;
+            font-family: unset;
+            font-size: 18px;
+
+            tr {
+
+                th {
+
+                    padding: 20px 0;
+
+                }
+
+            }
+
+        }
+
+        tbody {
+
+            tr {
+
+                font-family: unset;
+                font-size: 18px;
+                border-bottom: 2px solid lightgray;
+
+                td {
+
+                    padding: 20px 0;
+                    text-align: center;
+
+                }
+
+                :first-child {
+
+                    padding: 20px 0 20px 10px;
+                    text-align: start;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.subtotalDetailsTable {
+
+    table {
+
+        width: 100%;
+
+        tbody {
+
+            font-weight: bold;
+            border-top: 3px solid #d27c19;
+            border-bottom: 3px solid #d27c19;
+
+            tr {
+
+                font-family: unset;
+                font-size: 18px;
+                border-bottom: 2px solid lightgray;
+
+                td {
+
+                    padding: 20px 0;
+                    text-align: center;
+
+                }
+
+                :first-child {
+
+                    padding: 20px 0 20px 10px;
+                    text-align: start;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.bill-and-payment-details {
+
+    display: flex;
+    justify-content: space-between;
+/* 
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr); */
+
+    .company-payment-details {
+
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+        height: fit-content;
+
+        .upilogos {
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            align-items: center;
+
+            img {
+
+                max-width: 40px;
+
+            }
+
+        }
+
+        .qrContainer {
+
+            img {
+
+                width: 140px;
+                height: 140px;
+
+            }
+
+        }
+
+    }
+
+    .amountDetailsContainer {
+
+        display: flex;
+        flex-flow: column;
+        gap: 6px;
+        font-size: 20px;
+        min-width: 350px;
+
+        .amount-field {
+
+            display: grid;
+            grid-template-columns: repeat(2, 60% 40%);
+            text-align: end;
+
+        }
+
+        .totalAmount {
+
+            padding: 10px 0;
+            margin: 10px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 60% 40%);
+            text-align: end;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+
+        }
+
+    }
+
+    .tncs {
+
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+        height: fit-content;
+        margin-top: 40px;
+        max-width: 500px;
+
+    }
+
+    .amountInWords {
+
+        display: flex;
+        flex-flow: column;
+        gap: 6px;
+        text-align: end;
+        font-size: 20px;
+        margin-top: 40px;
+
+    }
+
+    .signature {
+
+        display: flex;
+        flex-flow: column;
+        gap: 6px;
+        text-align: end;
+        font-size: 20px;
+        margin-top: 40px;
+
+        .signature-container {
+
+            height: 140px;
+
+        }
+
+    }
+
+}
+
+}
+
+.bold {
+
+font-weight: bold;
+
+}
+
+.normal {
+
+font-weight: normal;
+
+}
+
+.flex {
+
+display: flex;
+gap: 10px;
+align-items: center;
+
+}
+</style> -->
