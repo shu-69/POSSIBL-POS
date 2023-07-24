@@ -1805,6 +1805,8 @@ export class GeneralService {
 
   getComponentHTML(comp: any, invoiceTemplate: { html: string; scss: string; }) {
 
+    // page-break-inside: avoid; // TODO :: 
+
 
     // return new Promise((resolve, reject) => {
 
@@ -2009,7 +2011,7 @@ export class GeneralService {
     
       </div>
     
-      <div class="subtotalDetailsTable">
+      <div class="subtotalDetailsTable"  style="page-break-inside: avoid;">
     
         <table>
     
@@ -2047,7 +2049,7 @@ export class GeneralService {
     
       </div>
     
-      <div class="bill-and-payment-details">
+      <div class="bill-and-payment-details" style="page-break-inside: avoid;">
     
         <div class="row">
     
@@ -2608,6 +2610,7 @@ export class GeneralService {
   }
 
 }
+
 function uuidv4() {
   throw new Error('Function not implemented.');
 }
