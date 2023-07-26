@@ -1978,7 +1978,7 @@ export class GeneralService {
           <tbody>
 
           ${params.items.map((element, i) => (`
-            <tr>
+            <tr style="page-break-inside: avoid;">
                 <td>${element.item.name}</td>
                 <td>${element.item.packing && element.item.packing != 'undefined' ? element.item.packing : ''}</td>
                 <td>${element.item.exp_date && element.item.exp_date != 'undefined' ? element.item.exp_date : ''}</td>
@@ -2005,7 +2005,7 @@ export class GeneralService {
     
       </div>
     
-      <div class="subtotalDetailsTable"  style="page-break-inside: avoid;">
+      <div class="subtotalDetailsTable" style="page-break-inside: avoid;">
     
         <table>
     
