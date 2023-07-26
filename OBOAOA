@@ -1,0 +1,439 @@
+[33mcommit 5432d40e55aed15ea06df4ad830c3f18ccaa5917[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Shubham <85009627+shu-69@users.noreply.github.com>
+Date:   Thu Jul 27 00:27:50 2023 +0530
+
+    Added packing option
+
+[1mdiff --git a/.firebase/hosting.d3d3.cache b/.firebase/hosting.d3d3.cache[m
+[1mindex 339aaa5..ae63176 100644[m
+[1m--- a/.firebase/hosting.d3d3.cache[m
+[1m+++ b/.firebase/hosting.d3d3.cache[m
+[36m@@ -1,49 +1,98 @@[m
+[31m-1033.0d4c404c719a46a0.js,1690095535665,99f9febf8e25d1b05dcc9525da3c9c6b6a1b411de8a9a69fcc60d0da8ed6ccf7[m
+[31m-1118.9551cef6d5be42fa.js,1690095535639,8974f17fdd3c707458b5a0162a96fdaaadc9a36d25fcd63282660d1a31a17fee[m
+[31m-1186.13cdb02e1e5115da.js,1690095535699,7376167b1dc438cc8d2bcb34579c755813d026dc7d02215ec36e1848c030e8e9[m
+[31m-1217.8efe405ade309c44.js,1690095535672,105b5f5039e73d4be04ca1d685ca78c39703c22fe1cd8a6583f8a29cf9028a15[m
+[31m-1536.b2f069ab89df5283.js,1690095535734,c0a3821637dde3c5fc91fe15a9dc080c2bd1989888d576e09ee0cf8b0fd4f5a5[m
+[31m-1650.86a51fc754eca05d.js,1690095535733,e0ca2c8bcea7ecaf7772eeef9a3cbc19058f010454995f814c7ca64b4a666c4d[m
+[31m-1709.354bf33ffe6e2795.js,1690095535699,f2e108a7941f6e2a2848e3beca5be21fe9ebc9bc012b3db0335d4e69472ebc14[m
+[31m-2073.09dd14edea3b2a7d.js,1690095535662,91feae74e9393d8526ed788d41d61d748bae8d778088c2af6023640317a3d87e[m
+[31m-2289.069bdb8594488ffe.js,1690095535734,d103841d792b5582fc65eb9e59c83944ec7a7af0a86a2d405a49c1cec9ce1ebc[m
+[31m-2349.76a64fd89cda96b6.js,1690095535698,a93d9118fc1fc310707a93940995337b8a88a4343c48a396ef1a1e0122614fd0[m
+[31m-1988.9cb5917f5a1841c1.js,1690095535638,52dad96b98a7ea50c5140f76015cf8eed6597bbb78efa0c67ed2ce4d5e8de9f1[m
+[31m-2735.744ff827d0771e01.js,1690095535745,cc7c5fc2737cd505c7db49d75fe3d168db1d24769da1e3fddb84a82536063f15[m
+[31m-2773.b8eb2d82e6e9c967.js,1690095535733,c6befeccb0993d9e666e2389d55ccc1fce90b3691eb877ebfee79b027ded6c79[m
+[31m-2907.cd48c3ceef270524.js,1690095535626,3808559060471374a9905c951f39439246be9bdc0d8f5b84d8cb2e0d0e4d06dc[m
+[31m-3648.9ac4a14e5f7fc280.js,1690095535638,500cd40c71b484ac9d48c0b98f24e73e7355fe33262fecd7854bdefd99bab81d[m
+[31m-3236.1d73d6ce118b4c0a.js,1690095535649,88a42bc15db2cab3305818f15693bde3e70e60b2388b749d250d6bb913b0c2b9[m
+[31m-388.6f2d8f047fa7b893.js,1690095535665,ae8c6a89660f14a85027052f44537132a773c292560188e85e848c21abceda22[m
+[31m-3804.d79eb470b6187e90.js,1690095535698,d91466e9bc71b27f2a6e04735144502d48f68efca5f7494353ed258801be534b[m
+[31m-2490.001da474878dfa33.js,1690095535638,1a7b90cf1952bf371b576572fa6fb6951d086b63eb8746efec0a27a2204fb9fe[m
+[31m-4174.d9562d521e0fd60f.js,1690095535698,73e327b7188e2b4e8c9464af083206843e143a9408f611f9b7f08c8dc7bd87a3[m
+[31m-4203.ff8211153f099599.js,1690095535744,fc0986e49dc1dfeac63d66cd2578051356df2785d620745463c9862bf6675322[m
+[31m-4376.a83e8bc2a2be8454.js,1690095535734,bb60d6f293f84ab18326356adeee67ece1fb15107fedc3e6a73af46df560fad0[m
+[31m-4330.a930135a568fe32b.js,1690095535705,b82ba69f90a90c1ee264312cf86c4ca44da1e2b5fe2c23e6fb0d350377554c13[m
+[31m-4432.823181c431981ce9.js,1690095535698,d14c7dd6b89657e4363d50fa80a12f4795c4e769a82c0e6734b005df6b62c957[m
+[31m-4651.09bae089c037779c.js,1690095535675,c10c845e9bc9cd409252b5267079a2b24530af9d9176e9e4b08a6002388ab3e5[m
+[31m-438.0c894ccae61e4cf3.js,1690095535738,da0d62bbb61dc7b065ecc4f453d0a7c7b061353d3e3018fb6a6c66b63e4b0b1c[m
+[31m-4753.8ce67b175f1f0d7e.js,1690095535641,ad5c833f11aa9b92e9f783ec54b24b4a0f7cda31efe753be8ea76d13e8a46e25[m
+[31m-4908.0be1c5bcd09ee979.js,1690095535733,b172f513d68090898687abe2ac8317dcc87e25c584e78852d6c686a86cb1fb9a[m
+[31m-5168.67c955a1a6d8662a.js,1690095535734,3fa65d32ad5931afed7ac52867263fff0fbeeea62f7c53dab860bf574d8f43a8[m
+[31m-5227.35c7d300ef9a68e7.js,1690095535745,cdbc5a6669793f56f76d9cecf6b44c165194dca0ae191b7923fa40ab35bf6eb3[m
+[31m-5326.f1814b5412b49118.js,1690095535745,352f883ac9042349d3219e1d93d8288759272dbfac10fb5de3f308299d0b1f86[m
+[31m-5429.ecaf7a5f0c3b4a55.js,1690095535638,3e0a558bc278bf6b4ef682f0ddb5a1bde1110a35d801bfe2a1016314cb8c3bc1[m
+[31m-5349.702af37071eea0b0.js,1690095535698,2f5e971ed2edfb9d76513dd0c3bfc953a0069e5c5d48e4b9ad468ad75157f185[m
+[31m-5817.939459b690f37977.js,1690095535667,35865e49f33373a8fd0286d074058b6c576a36480a0d106e0bcf033be95c901a[m
+[31m-5652.abaf141259e841d8.js,1690095535664,54908ee202fe8893e9fc51d29a331006b98be94c25d13c8539aad649b13f115e[m
+[31m-5836.fc11fb9e993467f5.js,1690095535665,bc1f741b3802a83a281584ae2bd3ed154439d449d6b748db076d3fb2c314e440[m
+[31m-6364.c5ece73a60133923.js,1690095535748,40f2a346f7738db1d9778b8799697e9eb96634649be843e92268abd8c1d28261[m
+[31m-6120.a337ebcf7a9a749c.js,1690095535734,5cf8e35d6a9e655680104109dccd3b2fb0f24dd8a7a48f3ff8b88ed2355f3cfb[m
+[31m-657.32281aecfea48d93.js,1690095535665,21d51f62a7b8111b1c002e467b7fab0ec5b4f0a2506c7dd50c10fe4dd0a4d8cd[m
+[32m+[m[32m1033.0d4c404c719a46a0.js,1690223642415,99f9febf8e25d1b05dcc9525da3c9c6b6a1b411de8a9a69fcc60d0da8ed6ccf7[m
+[32m+[m[32m1118.9551cef6d5be42fa.js,1690223642397,8974f17fdd3c707458b5a0162a96fdaaadc9a36d25fcd63282660d1a31a17fee[m
+[32m+[m[32m1143.675bec616d906480.js,1690223642395,deea7efda5555bce59c76be9698fd0f7392d0e231fbcfcfb75c9f99270651b1c[m
+[32m+[m[32m1186.13cdb02e1e5115da.js,1690223642450,7376167b1dc438cc8d2bcb34579c755813d026dc7d02215ec36e1848c030e8e9[m
+[32m+[m[32m1217.8efe405ade309c44.js,1690223642415,105b5f5039e73d4be04ca1d685ca78c39703c22fe1cd8a6583f8a29cf9028a15[m
+[32m+[m[32m1536.b2f069ab89df5283.js,1690223642465,c0a3821637dde3c5fc91fe15a9dc080c2bd1989888d576e09ee0cf8b0fd4f5a5[m
+[32m+[m[32m1650.86a51fc754eca05d.js,1690223642465,e0ca2c8bcea7ecaf7772eeef9a3cbc19058f010454995f814c7ca64b4a666c4d[m
+[32m+[m[32m1709.354bf33ffe6e2795.js,1690223642450,f2e108a7941f6e2a2848e3beca5be21fe9ebc9bc012b3db0335d4e69472ebc14[m
+[32m+[m[32m1988.72f042f56cc48b02.js,1690223642397,4beadd0103194baae040a68e9f25e9ce64c7a53de86edb26f2992935f5c4ada9[m
+[32m+[m[32m2073.09dd14edea3b2a7d.js,1690223642412,91feae74e9393d8526ed788d41d61d748bae8d778088c2af6023640317a3d87e[m
+[32m+[m[32m2175.5246cb6b76b7142e.js,1690223642450,06740c36545cf01edf1d1287dce60a3f3579c9ee1cff3d6046d85b76683ce967[m
+[32m+[m[32m2289.069bdb8594488ffe.js,1690223642467,d103841d792b5582fc65eb9e59c83944ec7a7af0a86a2d405a49c1cec9ce1ebc[m
+[32m+[m[32m2349.76a64fd89cda96b6.js,1690223642435,a93d9118fc1fc310707a93940995337b8a88a4343c48a396ef1a1e0122614fd0[m
+[32m+[m[32m2490.77bf08ff5b536541.js,1690223642397,6b43be250caf52c26889afb580690e0893d4dec7464b325a69ed60c169335e2b[m
+[32m+[m[32m2698.118cf490b992512b.js,1690223642495,bcd0c4ea440f7d5ef5bdca64f13bbc8b8327f93445e573c3acedec4186fd09fa[m
+[32m+[m[32m2735.744ff827d0771e01.js,1690223642495,cc7c5fc2737cd505c7db49d75fe3d168db1d24769da1e3fddb84a82536063f15[m
+[32m+[m[32m2773.b8eb2d82e6e9c967.js,1690223642464,c6befeccb0993d9e666e2389d55ccc1fce90b3691eb877ebfee79b027ded6c79[m
+[32m+[m[32m2907.cd48c3ceef270524.js,1690223642396,3808559060471374a9905c951f39439246be9bdc0d8f5b84d8cb2e0d0e4d06dc[m
+[32m+[m[32m3236.1d73d6ce118b4c0a.js,1690223642398,88a42bc15db2cab3305818f15693bde3e70e60b2388b749d250d6bb913b0c2b9[m
+[32m+[m[32m3648.9ac4a14e5f7fc280.js,1690223642397,500cd40c71b484ac9d48c0b98f24e73e7355fe33262fecd7854bdefd99bab81d[m
+[32m+[m[32m3804.d79eb470b6187e90.js,1690223642435,d91466e9bc71b27f2a6e04735144502d48f68efca5f7494353ed258801be534b[m
+[32m+[m[32m388.6f2d8f047fa7b893.js,1690223642414,ae8c6a89660f14a85027052f44537132a773c292560188e85e848c21abceda22[m
+[32m+[m[32m3rdpartylicenses.txt,1690223642496,6c528855e1f484cc2a0c35ea02a966fdb6864b3602b817bcfe6148d8e31aeff4[m
+[32m+[m[32m4174.d9562d521e0fd60f.js,1690223642450,73e327b7188e2b4e8c9464af083206843e143a9408f611f9b7f08c8dc7bd87a3[m
+[32m+[m[32m4203.ff8211153f099599.js,1690223642500,fc0986e49dc1dfeac63d66cd2578051356df2785d620745463c9862bf6675322[m
+[32m+[m[32m4330.a930135a568fe32b.js,1690223642450,b82ba69f90a90c1ee264312cf86c4ca44da1e2b5fe2c23e6fb0d350377554c13[m
+[32m+[m[32m4376.a83e8bc2a2be8454.js,1690223642466,bb60d6f293f84ab18326356adeee67ece1fb15107fedc3e6a73af46df560fad0[m
+[32m+[m[32m438.0c894ccae61e4cf3.js,1690223642465,da0d62bbb61dc7b065ecc4f453d0a7c7b061353d3e3018fb6a6c66b63e4b0b1c[m
+[32m+[m[32m4432.823181c431981ce9.js,1690223642450,d14c7dd6b89657e4363d50fa80a12f4795c4e769a82c0e6734b005df6b62c957[m
+[32m+[m[32m4651.09bae089c037779c.js,1690223642415,c10c845e9bc9cd409252b5267079a2b24530af9d9176e9e4b08a6002388ab3e5[m
+[32m+[m[32m4711.fac43db1284f113a.js,1690223642432,de18da64da10b0e1d972fa4dd68fab80672b39b4b30586069f970044a25476af[m
+[32m+[m[32m4753.8ce67b175f1f0d7e.js,1690223642398,ad5c833f11aa9b92e9f783ec54b24b4a0f7cda31efe753be8ea76d13e8a46e25[m
+[32m+[m[32m4908.0be1c5bcd09ee979.js,1690223642465,b172f513d68090898687abe2ac8317dcc87e25c584e78852d6c686a86cb1fb9a[m
+[32m+[m[32m4959.6374a4390ba59816.js,1690223642414,396dd719aadfa91fb121809fcc697d71bbae5004af7ed54a2bc053d8bf81e2c4[m
+[32m+[m[32m5168.67c955a1a6d8662a.js,1690223642467,3fa65d32ad5931afed7ac52867263fff0fbeeea62f7c53dab860bf574d8f43a8[m
+[32m+[m[32m5227.35c7d300ef9a68e7.js,1690223642495,cdbc5a6669793f56f76d9cecf6b44c165194dca0ae191b7923fa40ab35bf6eb3[m
+[32m+[m[32m5326.f1814b5412b49118.js,1690223642495,352f883ac9042349d3219e1d93d8288759272dbfac10fb5de3f308299d0b1f86[m
+[32m+[m[32m5349.702af37071eea0b0.js,1690223642435,2f5e971ed2edfb9d76513dd0c3bfc953a0069e5c5d48e4b9ad468ad75157f185[m
+[32m+[m[32m5429.ecaf7a5f0c3b4a55.js,1690223642396,3e0a558bc278bf6b4ef682f0ddb5a1bde1110a35d801bfe2a1016314cb8c3bc1[m
+[32m+[m[32m5652.abaf141259e841d8.js,1690223642413,54908ee202fe8893e9fc51d29a331006b98be94c25d13c8539aad649b13f115e[m
+[32m+[m[32m5817.939459b690f37977.js,1690223642415,35865e49f33373a8fd0286d074058b6c576a36480a0d106e0bcf033be95c901a[m
+[32m+[m[32m5836.fc11fb9e993467f5.js,1690223642415,bc1f741b3802a83a281584ae2bd3ed154439d449d6b748db076d3fb2c314e440[m
+[32m+[m[32m6120.a337ebcf7a9a749c.js,1690223642466,5cf8e35d6a9e655680104109dccd3b2fb0f24dd8a7a48f3ff8b88ed2355f3cfb[m
+[32m+[m[32m6364.c5ece73a60133923.js,1690223642495,40f2a346f7738db1d9778b8799697e9eb96634649be843e92268abd8c1d28261[m
+[32m+[m[32m6560.0d4a0da53e526971.js,1690223642466,01efe44243194288d2c84d58befe83cc0e827f1cf8e4d8d186df5e340cde6fa6[m
+[32m+[m[32m657.32281aecfea48d93.js,1690223642414,21d51f62a7b8111b1c002e467b7fab0ec5b4f0a2506c7dd50c10fe4dd0a4d8cd[m
+[32m+[m[32m7040.d15dd73d88d40c3c.js,1690223642372,02d6f79cfe9de205c1b6766b1559942f174147c99afcc1dbf6e2166d019d6870[m
+[32m+[m[32m7130.a006952a88531515.js,1690223642495,571f0def1be9305e3d5f6436e5e286e8f28ada0d2863145dd78cff343ec67c4f[m
+[32m+[m[32m7206.dcab40402b78f5d4.js,1690223642495,b9b6b9e72d9454bde63a335ebe529e5f5ff70c6dae71302f792a084c4f8597bb[m
+[32m+[m[32m7273.e137eb05158cfbad.js,1690223642396,4d109c33ba44bfdf230365d3b268f68fc40e5ac0da19e8a305a7a74288970cbe[m
+[32m+[m[32m7494.1262ca76eb14c4b2.js,1690223642396,1eb6178f91dfad6b2868485f830cf51b313b5073311e215237ced112dc76c401[m
+[32m+[m[32m7544.37f9ebb7fd9ecf1e.js,1690223642413,ffb434c0f4e868b849ad73d052abac6deed0f44f8d68691c93795f9c42952f6f[m
+[32m+[m[32m7602.18a1fd310aae81bf.js,1690223642435,9bb8aa52ae771217fab9d01ffb2e74f6fe64197d9fbd22067956f6bcb9c6f88d[m
+[32m+[m[32m8136.d709481950fa3343.js,1690223642434,0ca696d902a71b2f867f453da11028fdce763d9c34ee75ac31041543fc544f6c[m
+[32m+[m[32m8234.ad08e8e76bec7caa.js,1690223642397,3711cde55292a92943352cde9ede2631fadd814749a2742ef2d66097288b91c2[m
+[32m+[m[32m8628.84366d83f118ea6e.js,1690223642463,b4bcf73191df654e22e24f02be9e9a0c453dbfd00d1de0819c7a419df125d8ea[m
+[32m+[m[32m8766.86553a4073f31820.js,1690223642495,dc266ba33110e04c0e029853f0fe1f2238ab50e5f62c9e981268bf8c7be33c34[m
+[32m+[m[32m8939.4734c10cd219622c.js,1690223642413,3841abb5f30d47ee3492f4c00223a2ce9b716ae6fc778f3d9cfac06f656e0506[m
+[32m+[m[32m9016.c5274acf0968a2f2.js,1690223642435,56b0b5d0530db51de253b058d5ed90ff7f403eb37c3198d90e597b3051a8add8[m
+[32m+[m[32m904.1dca459b6f3748e7.js,1690223642395,fea91dddd6bc9e10154441cab1c23ee8407456d1426c359a4f81b48f19565ead[m
+[32m+[m[32m9062.75dea7bd34f08233.js,1690223642372,b32004ab00e1a535df60c31bb645b22d9b059bbc20017ebc36ca40cd858586c9[m
+[32m+[m[32m9201.fbad008ef96e3589.js,1690223642397,0d93a55b01646e405e02eb8d7f66416c3ac3ceac37b73abd8eaf83e6bd82d37f[m
+[32m+[m[32m9230.757cd67fca66f432.js,1690223642414,0b7f8b2efccf2180671af0a1a9f703788055e4e0b18946e4e17c87ab15468ebd[m
+[32m+[m[32m9259.ba25e432c819a9a1.js,1690223642497,69f2cc6134638d49cf58adf7cf8acb3f07b86ef37deab03ebdf98e516a49563a[m
+[32m+[m[32m9325.4691b43b9f17ff9b.js,1690223642464,d4be8d461bd26a40f53c53365123cdd16cbde07fa05b547e2578bf4d87df7b44[m
+[32m+[m[32m9434.56fe3178010f4948.js,1690223642434,9fdfa5199f7bc9d88a17a685e9392bb69b32f1beb0189b03c18251fce227f757[m
+[32m+[m[32m9536.7dc9cd26695028a1.js,1690223642465,b80d2e735c18bcc343caa30385718676c9a711caecffe1a53820630f9faeba91[m
+[32m+[m[32m9654.09e709dec8e1a63c.js,1690223642397,fec46691da64a0532b722c5162e97f27e188e411ee65ecef8fc99c444524b975[m
+[32m+[m[32m9824.c512b904cf4c8833.js,1690223642414,b4a48ebdffb8f5163ef8b1757ed5c7befd6e08e1a6e213e1841174b742646caa[m
+[32m+[m[32m9922.44ec96e4d7f86d18.js,1690223642414,7373aa7d35a2e559f262a8997ec68e7ac5b2b3f7a7cf43c35972e7cb07cc57f1[m
+[32m+[m[32m9958.44374a7d6137eb2d.js,1690223642450,73e1fa238d6777778dca867baa3fa2e64d968e38164641b8d79811b1ae7946d0[m
+[32m+[m[32mbg2.5369aca2b791e56b.jpg,1690223642370,f585515ff5e054012376559df8e7698c247fb054a413d705a453cb17f6cc67bc[m
+[32m+[m[32mcommon.d03b9aa4dd23e34b.js,1690223642496,e08158a2dbe9b9d9f3bc7fc1dea58a962c062a8b11307574b1ea524666e9f902[m
+[32m+[m[32mgradient_bg2.ecd581e8e1714ca1.jpg,1690223642370,83946a1c0e1257ec409e1dd38d50c5c1716e9e0e230d57f9120700e9967b9d18[m
+[32m+[m[32mindex.html,1690223671417,2d30ee453cfe98bdd51bf8fd6c53f24ce27d296756d673b2240338e678448b01[m
+[32m+[m[32mmain.b662566c1dfa8b51.js,1690223642372,fad9eb2b3f404ba13c88f7cf2837a011084d46ba313e394ffea43eaad1dfa13d[m
+[32m+[m[32mOswald-Medium.514e8e7b9d47df91.ttf,1690223642371,fc5e83a37dfac7610ff82ab071a332074e806772a47311f9dc1f082a8218386e[m
+[32m+[m[32mOswald-SemiBold.8f6f7832d861a0c0.ttf,1690223642371,8c9233fe55857b94233328fc9c7471ad46c4150ac1e1c07a347df638a06cd3c0[m
+[32m+[m[32mpolyfills-core-js.20e9fb5568c66479.js,1690223642495,a74f1cd0de60e8859079b84990a29c5efb1a36d5eecfcaa7dcb48175f582b424[m
+[32m+[m[32mpolyfills-dom.3a5e3168052f1fc5.js,1690223642495,14cf86a57b3b1565c192b7e72525e757beb67a3f4c3f73359a2e2b9c76e07321[m
+[32m+[m[32mpolyfills.3830370253077b52.js,1690223642371,46e3dc319bb98386230826ebc7f49e5cb8115a9e55645b04641066cb52ede9ec[m
+[32m+[m[32mPoppins-Bold.8001a01b32b71ef5.ttf,1690223642370,b7825fbc8e745ecf82d89e2319d824fb8563e72e476860396d3cd3afa33be2a7[m
+[32m+[m[32mPoppins-Light.8b20023e8f811f53.ttf,1690223642371,3eb89e08448bd48cf4a177cb6e0097bb65f328e098b6b22afe939af49520b5d8[m
+[32m+[m[32mPoppins-Medium.a52d0bf095c248da.ttf,1690223642370,9419198af572c9e3e641cdd14d24dd603a6a640ad9d196b05ec333ee71dff2f8[m
+[32m+[m[32mPoppins-Regular.4b4ebe20759bdbf2.ttf,1690223642370,eb452d878bcf994bfbc5917276f7822adbbff25a0d68ed2311325ada1d01f240[m
+[32m+[m[32mPoppins-SemiBold.98512bf8da1afe43.ttf,1690223642370,cce39ac285e2ae09d90699d59d6ccfad0a4717b7f9a9cbe43b4962428403b707[m
+[32m+[m[32mruntime.50a1493618bf973c.js,1690223642372,69f2bcce8bfb2acc1e4877fefbf74b7f4d55956c248997ad2a412ea8ef763bc4[m
+[32m+[m[32mstyles.74611914398b91bc.css,1690223642372,0c2a43068c4df9b0644445142f54dea0374fd8fd8848e3095c24b940459fb094[m
+ assets/data.db,1684757027133,46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e[m
+ assets/default_user_icon.png,1677050112716,f0efdb6308c51c1b7da57c2ad59f86d7d0b58d8747a996007137b935aaddbe9e[m
+ assets/logo.png,1684669670000,f692fa2569e2104f5957eb870a9c9306e8b866052face5b019c724f562a73563[m
+ assets/logo_small.png,1686489857631,b2ea931f1c56d79c0c0224b8cede4b35eb98d6770e62488c60e6a1d748ddf783[m
+ assets/logo_small_default.png,1684689945487,3ba404f1bbb32350afb7bc9ae0ce8b63c86cd7b77b6182fb49351c5158d815e9[m
+ assets/shapes.svg,1676570687000,a693c8add33240771b31a5860298071da16ee8f74e23040eb0b872e7f1a5958a[m
+[31m-assets/sql-wasm.js,1662581444000,d775da7c9e76f08d6d6a96048bb4d8942782960a5c8363e28d8346e0782f71f1[m
+[32m+[m[32massets/sql-wasm.js,1662581445000,d775da7c9e76f08d6d6a96048bb4d8942782960a5c8363e28d8346e0782f71f1[m
+ assets/anims/checkmark-animation.json,1683798937044,fd2892a4c9e5e583b20e79e04c51d5d3f81c6034f2a0d56c5375cde9d8a75d7f[m
+ assets/anims/default_profile_animated.json,1677056755848,fbf5e84a4ae0f6e7b576deec76bdd00caa8ea3ba79c9af027091b05bd52129c5[m
+ assets/anims/settings.json,1679038735835,10cdddf44f369cefa24a226ab461878c969f7bf231fe3cdbf15ab91eaedae1c9[m
+[36m@@ -7446,52 +7495,3 @@[m [msvg/wine.svg,1687084561315,5b32112b57223e98700b474fa019f1ea762ca4ee41d9c686bc4fa[m
+ svg/woman-outline.svg,1687084561352,b7200c921efc088b6eed32bccb44afb2d51d96f1f609e20cdea5e048cd6687cb[m
+ svg/woman-sharp.svg,1687084561358,48d9edb00a4639b05499a84b644845d3b299d85de7a9bbd37ce79f3340597bf6[m
+ svg/woman.svg,1687084561366,515727f8f03eca6d2c4bd8886ac5385fb233a15455d7fa30178b8dda663f8602[m
+[31m-6560.0d4a0da53e526971.js,1690095535734,01efe44243194288d2c84d58befe83cc0e827f1cf8e4d8d186df5e340cde6fa6[m
+[31m-2175.5246cb6b76b7142e.js,1690095535699,06740c36545cf01edf1d1287dce60a3f3579c9ee1cff3d6046d85b76683ce967[m
+[31m-7206.dcab40402b78f5d4.js,1690095535747,b9b6b9e72d9454bde63a335ebe529e5f5ff70c6dae71302f792a084c4f8597bb[m
+[31m-7273.ea4138edea164091.js,1690095535638,7bedcf141489550fa40a9dca42773c4521c164723aa283fc410d13ad1c02c8f2[m
+[31m-1143.c7079d4487a88a98.js,1690095535625,430727c84ca696bc3b842151914dd5e57bb96f9e1bd44b0049b0567a07b30fa9[m
+[31m-3rdpartylicenses.txt,1690095535748,6c528855e1f484cc2a0c35ea02a966fdb6864b3602b817bcfe6148d8e31aeff4[m
+[31m-4711.fac43db1284f113a.js,1690095535696,de18da64da10b0e1d972fa4dd68fab80672b39b4b30586069f970044a25476af[m
+[31m-4959.6374a4390ba59816.js,1690095535665,396dd719aadfa91fb121809fcc697d71bbae5004af7ed54a2bc053d8bf81e2c4[m
+[31m-2698.118cf490b992512b.js,1690095535745,bcd0c4ea440f7d5ef5bdca64f13bbc8b8327f93445e573c3acedec4186fd09fa[m
+[31m-7544.37f9ebb7fd9ecf1e.js,1690095535663,ffb434c0f4e868b849ad73d052abac6deed0f44f8d68691c93795f9c42952f6f[m
+[31m-7602.18a1fd310aae81bf.js,1690095535698,9bb8aa52ae771217fab9d01ffb2e74f6fe64197d9fbd22067956f6bcb9c6f88d[m
+[31m-8136.d709481950fa3343.js,1690095535697,0ca696d902a71b2f867f453da11028fdce763d9c34ee75ac31041543fc544f6c[m
+[31m-7494.beb704f1bf5b8369.js,1690095535638,269f19be427a7297601328c9d6516a549e602d43585896108d1b040a71683208[m
+[31m-8628.84366d83f118ea6e.js,1690095535731,b4bcf73191df654e22e24f02be9e9a0c453dbfd00d1de0819c7a419df125d8ea[m
+[31m-8766.86553a4073f31820.js,1690095535745,dc266ba33110e04c0e029853f0fe1f2238ab50e5f62c9e981268bf8c7be33c34[m
+[31m-8939.4734c10cd219622c.js,1690095535663,3841abb5f30d47ee3492f4c00223a2ce9b716ae6fc778f3d9cfac06f656e0506[m
+[31m-9016.c5274acf0968a2f2.js,1690095535698,56b0b5d0530db51de253b058d5ed90ff7f403eb37c3198d90e597b3051a8add8[m
+[31m-904.1dca459b6f3748e7.js,1690095535625,fea91dddd6bc9e10154441cab1c23ee8407456d1426c359a4f81b48f19565ead[m
+[31m-8234.80df5b1862beab05.js,1690095535638,47003846b14de9a386bfc2c5c2b5cbb096191193f175f2a0ba32ea5ce8d1aa3f[m
+[31m-9230.757cd67fca66f432.js,1690095535665,0b7f8b2efccf2180671af0a1a9f703788055e4e0b18946e4e17c87ab15468ebd[m
+[31m-9062.6bbd9b43f037321a.js,1690095535605,140bb83b9fc459d64dd0a3720cc0488df7a8580a608390ef2debb5aa9098b68a[m
+[31m-9434.56fe3178010f4948.js,1690095535696,9fdfa5199f7bc9d88a17a685e9392bb69b32f1beb0189b03c18251fce227f757[m
+[31m-9325.4691b43b9f17ff9b.js,1690095535733,d4be8d461bd26a40f53c53365123cdd16cbde07fa05b547e2578bf4d87df7b44[m
+[31m-9536.7dc9cd26695028a1.js,1690095535734,b80d2e735c18bcc343caa30385718676c9a711caecffe1a53820630f9faeba91[m
+[31m-9654.09e709dec8e1a63c.js,1690095535638,fec46691da64a0532b722c5162e97f27e188e411ee65ecef8fc99c444524b975[m
+[31m-9824.c512b904cf4c8833.js,1690095535665,b4a48ebdffb8f5163ef8b1757ed5c7befd6e08e1a6e213e1841174b742646caa[m
+[31m-9201.0652fe3dfe1ac6dc.js,1690095535638,18a3f1cc60e581847aa9cef1368d16ac376ff8063277ad0ae40710f14a96119f[m
+[31m-9922.44ec96e4d7f86d18.js,1690095535665,7373aa7d35a2e559f262a8997ec68e7ac5b2b3f7a7cf43c35972e7cb07cc57f1[m
+[31m-9958.44374a7d6137eb2d.js,1690095535703,73e1fa238d6777778dca867baa3fa2e64d968e38164641b8d79811b1ae7946d0[m
+[31m-common.d03b9aa4dd23e34b.js,1690095535748,e08158a2dbe9b9d9f3bc7fc1dea58a962c062a8b11307574b1ea524666e9f902[m
+[31m-index.html,1690095633822,4e19932f688a171e2043609358af496c368f29b276e1bf290af79ef19b968a03[m
+[31m-polyfills-dom.3a5e3168052f1fc5.js,1690095535759,14cf86a57b3b1565c192b7e72525e757beb67a3f4c3f73359a2e2b9c76e07321[m
+[31m-polyfills.3830370253077b52.js,1690095535594,46e3dc319bb98386230826ebc7f49e5cb8115a9e55645b04641066cb52ede9ec[m
+[31m-runtime.befe26d4b97a5aac.js,1690095535594,7ac2c983842f8d10e171dfe50266eb6396786cf9e43a30313193504f376a8dcb[m
+[31m-7130.a006952a88531515.js,1690095535745,571f0def1be9305e3d5f6436e5e286e8f28ada0d2863145dd78cff343ec67c4f[m
+[31m-Oswald-Medium.514e8e7b9d47df91.ttf,1690095535594,fc5e83a37dfac7610ff82ab071a332074e806772a47311f9dc1f082a8218386e[m
+[31m-Oswald-SemiBold.8f6f7832d861a0c0.ttf,1690095535594,8c9233fe55857b94233328fc9c7471ad46c4150ac1e1c07a347df638a06cd3c0[m
+[31m-polyfills-core-js.20e9fb5568c66479.js,1690095535742,a74f1cd0de60e8859079b84990a29c5efb1a36d5eecfcaa7dcb48175f582b424[m
+[31m-styles.74611914398b91bc.css,1690095535594,0c2a43068c4df9b0644445142f54dea0374fd8fd8848e3095c24b940459fb094[m
+[31m-Poppins-Light.8b20023e8f811f53.ttf,1690095535576,3eb89e08448bd48cf4a177cb6e0097bb65f328e098b6b22afe939af49520b5d8[m
+[31m-Poppins-Bold.8001a01b32b71ef5.ttf,1690095535575,b7825fbc8e745ecf82d89e2319d824fb8563e72e476860396d3cd3afa33be2a7[m
+[31m-Poppins-Regular.4b4ebe20759bdbf2.ttf,1690095535575,eb452d878bcf994bfbc5917276f7822adbbff25a0d68ed2311325ada1d01f240[m
+[31m-Poppins-SemiBold.98512bf8da1afe43.ttf,1690095535576,cce39ac285e2ae09d90699d59d6ccfad0a4717b7f9a9cbe43b4962428403b707[m
+[31m-Poppins-Medium.a52d0bf095c248da.ttf,1690095535575,9419198af572c9e3e641cdd14d24dd603a6a640ad9d196b05ec333ee71dff2f8[m
+[31m-gradient_bg2.ecd581e8e1714ca1.jpg,1690095535575,83946a1c0e1257ec409e1dd38d50c5c1716e9e0e230d57f9120700e9967b9d18[m
+[31m-7040.a1eff9bc7173cd6d.js,1690095535595,b3e4ad9bb5c98acff73e15434c90e125023549d252b97585d33369a333e41e9b[m
+[31m-bg2.5369aca2b791e56b.jpg,1690095535575,f585515ff5e054012376559df8e7698c247fb054a413d705a453cb17f6cc67bc[m
+[31m-main.3973833ec63590e6.js,1690095535595,465904f3fe261298905ebb9106d35c0abded979cb6ad73d918f30b5fdeb29618[m
+[31m-9259.a90d3e14ff41ddc6.js,1690095535747,af90319d2f6fc20430e39a23eff571e3358f531d6d69a57ecf3e784363361932[m
+[1mdiff --git a/.firebaserc b/.firebaserc[m
+[1mindex 087e07b..790d67e 100644[m
+[1m--- a/.firebaserc[m
+[1m+++ b/.firebaserc[m
+[36m@@ -1,5 +1,5 @@[m
+ {[m
+   "projects": {[m
+[31m-    "default": "possibl-f85d9"[m
+[32m+[m[32m    "default": "morekind-pharma-possibl-pos"[m
+   }[m
+ }[m
+[1mdiff --git a/src/app/Params.ts b/src/app/Params.ts[m
+[1mindex b39c91b..b72d41e 100644[m
+[1m--- a/src/app/Params.ts[m
+[1m+++ b/src/app/Params.ts[m
+[36m@@ -162,7 +162,8 @@[m [mexport class DB_PARAMS {[m
+         'BONUS': 'bonus',[m
+         'BAR_CODE': 'bar_code',[m
+         'BATCH_NO': 'batch_no',[m
+[31m-        'HSN_CODE': 'hsn_code'[m
+[32m+[m[32m        'HSN_CODE': 'hsn_code',[m
+[32m+[m[32m        'PACKING': 'packing'[m
+ [m
+     }[m
+ [m
+[36m@@ -264,6 +265,7 @@[m [mexport class DB_PARAMS {[m
+                 { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.BAR_CODE, 'COLUMN_DATATYPE': 'TEXT' },[m
+                 { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.BATCH_NO, 'COLUMN_DATATYPE': 'TEXT' },[m
+                 { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.HSN_CODE, 'COLUMN_DATATYPE': 'TEXT' },[m
+[32m+[m[32m                { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.PACKING, 'COLUMN_DATATYPE': 'TEXT' },[m
+             ][m
+         },[m
+         {[m
+[1mdiff --git a/src/app/create-item/create-item.page.html b/src/app/create-item/create-item.page.html[m
+[1mindex 605c2ef..6b66f37 100644[m
+[1m--- a/src/app/create-item/create-item.page.html[m
+[1m+++ b/src/app/create-item/create-item.page.html[m
+[36m@@ -177,6 +177,15 @@[m
+ [m
+         </div>[m
+ [m
+[32m+[m[32m        <div class="input-row two">[m
+[32m+[m
+[32m+[m[32m          <div class="input-group">[m
+[32m+[m[32m            <input required="" type="text" name="text" autocomplete="off" class="input" [(ngModel)]="itemDetails.packing">[m
+[32m+[m[32m            <label class="user-label">Packing</label>[m
+[32m+[m[32m          </div>[m
+[32m+[m
+[32m+[m[32m        </div>[m
+[32m+[m
+       </section>[m
+ [m
+       <section class="details-section">[m
+[1mdiff --git a/src/app/create-item/create-item.page.ts b/src/app/create-item/create-item.page.ts[m
+[1mindex b5b5048..e590c84 100644[m
+[1m--- a/src/app/create-item/create-item.page.ts[m
+[1m+++ b/src/app/create-item/create-item.page.ts[m
+[36m@@ -4,7 +4,6 @@[m [mimport { GeneralService } from '../services/general.service';[m
+ import { AlertController, LoadingController, NavController, Platform } from '@ionic/angular';[m
+ import { Subscription } from 'rxjs';[m
+ import { AngularFireStorage } from '@angular/fire/compat/storage';[m
+[31m-import { v4 as uuidv4 } from 'uuid';[m
+ import { ActivatedRoute } from '@angular/router';[m
+ [m
+ export interface ItemCategory {[m
+[36m@@ -38,7 +37,8 @@[m [mexport interface ItemDetails {[m
+   bonus: string,[m
+   tax_type: string,[m
+   bar_code: string,[m
+[31m-  tax_value: number | undefined | string[m
+[32m+[m[32m  tax_value: number | undefined | string,[m
+[32m+[m[32m  packing: string[m
+ [m
+ }[m
+ [m
+[36m@@ -78,7 +78,8 @@[m [mexport class CreateItemPage implements OnInit {[m
+     bar_code: '',[m
+     bonus: '',[m
+     tax_type: 'GST',[m
+[31m-    tax_value: undefined[m
+[32m+[m[32m    tax_value: undefined,[m
+[32m+[m[32m    packing: ''[m
+   }[m
+ [m
+   private itemsCollection!: AngularFirestoreCollection<any>;[m
+[36m@@ -123,6 +124,7 @@[m [mexport class CreateItemPage implements OnInit {[m
+         this.itemDetails.tax_value = data.tax_value[m
+         this.itemDetails.hsn_code = data.hsn_code[m
+         this.itemDetails.bar_code = data.bar_code[m
+[32m+[m[32m        this.itemDetails.packing = data.packing[m
+ [m
+         //  console.log(this.itemDetails)[m
+ [m
+[1mdiff --git a/src/app/home/home.page.ts b/src/app/home/home.page.ts[m
+[1mindex 27c7237..d05c998 100644[m
+[1m--- a/src/app/home/home.page.ts[m
+[1m+++ b/src/app/home/home.page.ts[m
+[36m@@ -4,7 +4,6 @@[m [mimport { AlertController, IonFab, MenuController, ModalController, NavController[m
+ import { Observable, Subscription, interval as observableInterval } from "rxjs";[m
+ import { takeWhile, scan, tap, startWith, map } from "rxjs/operators";[m
+ [m
+[31m-import items from '../../json/items.json';[m
+ import { ClearItemsDialogComponent } from '../components/clear-items-dialog/clear-items-dialog.component';[m
+ import { OptionsComponent } from '../components/options/options.component';[m
+ import { QuantityChangerDialogComponent } from '../components/quantity-changer-dialog/quantity-changer-dialog.component';[m
+[36m@@ -57,7 +56,8 @@[m [mexport interface Items {[m
+     bonus: string,[m
+     tax_type: string,[m
+     tax_value: string,[m
+[31m-    bar_code: string[m
+[32m+[m[32m    bar_code: string,[m
+[32m+[m[32m    packing: string[m
+ [m
+   }[][m
+ }[m
+[1mdiff --git a/src/app/services/general.service.ts b/src/app/services/general.service.ts[m
+[1mindex 1c64181..1da485d 100644[m
+[1m--- a/src/app/services/general.service.ts[m
+[1m+++ b/src/app/services/general.service.ts[m
+[36m@@ -1,19 +1,15 @@[m
+[31m-import { ApplicationRef, Compiler, Component, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injectable, Injector, ModuleWithComponentFactories, NgModule, NgModuleRef, ReflectiveInjector, StaticProvider, ViewContainerRef } from '@angular/core';[m
+[32m+[m[32mimport { ComponentRef, Injectable } from '@angular/core';[m
+ import { Charges, Items, ShippingDetails } from '../home/home.page';[m
+ import { Bill, Customer, DB_PARAMS, DraftOrder, FavouriteItem, Params, User } from '../Params';[m
+ import { SQLiteService } from './sqlite.service';[m
+[31m-import items from '../../json/items.json';[m
+[31m-import { Observable, Subject, Subscription, elementAt, first, forkJoin, of, retry } from 'rxjs';[m
+[32m+[m[32mimport { Subject, Subscription, first, forkJoin } from 'rxjs';[m
+ import { UserDetails } from '../UserDetails';[m
+[31m-import { HttpClient, HttpHeaders } from '@angular/common/http';[m
+[32m+[m[32mimport { HttpClient } from '@angular/common/http';[m
+ import { Storage } from '@ionic/storage-angular';[m
+ import { Platform, ToastController } from '@ionic/angular';[m
+ import { PDFGenerator, PDFGeneratorOptions } from '@awesome-cordova-plugins/pdf-generator/ngx';[m
+ import { Network, NetworkStatus } from '@capacitor/network';[m
+[31m-//import { FileTransfer, FileUploadOptions, FileTransferObject, FileUploadResult, } from '@awesome-cordova-plugins/file-transfer/ngx';[m
+[31m-import { File } from '@awesome-cordova-plugins/file';[m
+[31m-import { Filesystem, Directory, Encoding, WriteFileOptions } from '@capacitor/filesystem';[m
+[31m-import { Tracing } from 'trace_events';[m
+[32m+[m[32mimport { Filesystem, Directory, WriteFileOptions } from '@capacitor/filesystem';[m
+ import { Billing, Company, CompanyPaymentDetails, TermsNCondition } from '../setting-components/company-settings/company-settings.page';[m
+ import { AngularFirestore } from '@angular/fire/compat/firestore';[m
+ import html2canvas from 'html2canvas';[m
+[36m@@ -26,11 +22,7 @@[m [mpdfMake.vfs = pdfFonts.pdfMake.vfs;[m
+ import { AngularFireStorage } from '@angular/fire/compat/storage';[m
+ import { AngularFireDatabase } from '@angular/fire/compat/database';[m
+ import { UserDetailsService } from './userdetails.service';[m
+[31m-import axios from 'axios';[m
+[31m-import { BufferOptions, TFontDictionary } from 'pdfmake/interfaces';[m
+ import { ItemDetails } from '../create-item/create-item.page';[m
+[31m-import { Invoice1Component } from '../invoice-pdf-components/invoice1/invoice1.component';[m
+[31m-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';[m
+ [m
+ import html2pdf from 'html2pdf.js';[m
+ [m
+[36m@@ -44,7 +36,6 @@[m [mdeclare module 'qrcode' {[m
+   ): Promise<string>;[m
+ }[m
+ [m
+[31m-[m
+ @Injectable({[m
+   providedIn: 'root'[m
+ })[m
+[36m@@ -334,7 +325,7 @@[m [mexport class GeneralService {[m
+             name: itemRow.name,[m
+             cat_id: itemRow.cat_id,[m
+             images: JSON.parse(itemRow.images),[m
+[31m-            image_source_tpye: "",  // TODO :: [m
+[32m+[m[32m            image_source_tpye: "", // TODO :: ::[m
+             price: itemRow.price,[m
+             mrp: itemRow.mrp,[m
+             ptr: itemRow.ptr,[m
+[36m@@ -349,7 +340,8 @@[m [mexport class GeneralService {[m
+             bonus: itemRow.bonus,[m
+             tax_type: itemRow.tax_type,[m
+             tax_value: itemRow.tax_value,[m
+[31m-            bar_code: itemRow.bar_code[m
+[32m+[m[32m            bar_code: itemRow.bar_code,[m
+[32m+[m[32m            packing: itemRow.packing[m
+ [m
+           }[m
+ [m
+[36m@@ -488,9 +480,9 @@[m [mexport class GeneralService {[m
+       , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.NAME}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.PRICE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.MRP}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.PTR},  ${DB_PARAMS.ITEMS_TABLE_COLUMNS.UNIT}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.STOCK}[m
+       , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.ACTIVE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.IMAGES}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.MFG_DATE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.EXP_DATE} [m
+       , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.TAX_TYPE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.TAX_VALUE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BONUS}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BAR_CODE}[m
+[31m-      , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BATCH_NO}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.HSN_CODE} ) [m
+[32m+[m[32m      , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BATCH_NO}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.HSN_CODE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.PACKING} )[m[41m [m
+       VALUES( '${item._id}', '${item.cat_id}', '${item.name}', '${item.price}', '${item.mrp}', '${item.ptr}'[m
+[31m-      , '${item.unit}', '${item.stock}', '${item.active}', '${JSON.stringify(item.images)}', '${item.mfg_date}', '${item.exp_date}', '${item.tax_type}', '${item.tax_value}', '${item.bonus}', '${item.bar_code}', '${item.batch_no}', '${item.hsn_code}');`[m
+[32m+[m[32m      , '${item.unit}', '${item.stock}', '${item.active}', '${JSON.stringify(item.images)}', '${item.mfg_date}', '${item.exp_date}', '${item.tax_type}', '${item.tax_value}', '${item.bonus}', '${item.bar_code}', '${item.batch_no}', '${item.hsn_code}', '${item.packing}');`[m
+ [m
+     return await this.sqliteService.executeQuery(query);[m
+ [m
+[36m@@ -1967,14 +1959,15 @@[m [mexport class GeneralService {[m
+     [m
+             <tr>[m
+               <th style="text-align: start; padding-left: 10px;">ITEMS</th>[m
+[32m+[m[32m              <th style="width: 4.3%;">PACKING</th>[m
+               <th style="width: 7.3%;">EXP</th>[m
+               <th style="width: 7.3%;">BONUS</th>[m
+               <th style="width: 7.3%;">MFG</th>[m
+               <th style="width: 7.3%;">BATCH</th>[m
+               <th style="width: 7.3%;">HSN</th>[m
+[31m-              <th style="width: 7.3%;">QTY.</th>[m
+[32m+[m[32m              <th style="width: 5%;">QTY.</th>[m
+               <th style="width: 7.3%;">MRP</th>[m
+[31m-              <th style="width: 7.3%;">PTR</th>[m
+[32m+[m[32m              <th style="width: 5%;">PTR</th>[m
+               <th style="width: 7.3%;">RATE</th>[m
+               <th style="width: 7.3%;">TAX</th>[m
+               <th style="width: 7.3%;">AMOUNT</th>[m
+[36m@@ -1987,6 +1980,7 @@[m [mexport class GeneralService {[m
+           ${params.items.map((element, i) => (`[m
+             <tr>[m
+                 <td>${element.item.name}</td>[m
+[32m+[m[32m                <td>${element.item.packing && element.item.packing != 'undefined' ? element.item.packing : ''}</td>[m
+                 <td>${element.item.exp_date && element.item.exp_date != 'undefined' ? element.item.exp_date : ''}</td>[m
+                 <td>${element.item.bonus && element.item.bonus != 'undefined' ? element.item.bonus : ''}</td>[m
+                 <td>${element.item.mfg_date && element.item.mfg_date != 'undefined' ? element.item.mfg_date : ''}</td>[m
+[36m@@ -2019,13 +2013,15 @@[m [mexport class GeneralService {[m
+     [m
+             <tr>[m
+               <td style="text-align: start; padding-left: 10px;">SUBTOTAL</td>[m
+[32m+[m[32m              <td style="width: 4.3%;"></td>[m
+               <td style="width: 7.3%;"></td>[m
+               <td style="width: 7.3%;"></td>[m
+               <td style="width: 7.3%;"></td>[m
+               <td style="width: 7.3%;"></td>[m
+[31m-              <td style="width: 7.3%;">${params.items.reduce((sum, element) => sum + element.details.quantity, 0)}</td>[m
+               <td style="width: 7.3%;"></td>[m
+[32m+[m[32m              <td style="width: 5%; text-align: center;">${params.items.reduce((sum, element) => sum + element.details.quantity, 0)}</td>[m
+               <td style="width: 7.3%;"></td>[m
+[32m+[m[32m              <td style="width: 5%;"></td>[m
+               <td style="width: 7.3%;"></td>[m
+               <td style="width: 7.3%;">₹ [m
+               ${params.items.reduce((sum, element) =>[m
