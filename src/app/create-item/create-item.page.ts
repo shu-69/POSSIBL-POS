@@ -4,7 +4,6 @@ import { GeneralService } from '../services/general.service';
 import { AlertController, LoadingController, NavController, Platform } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { v4 as uuidv4 } from 'uuid';
 import { ActivatedRoute } from '@angular/router';
 
 export interface ItemCategory {
@@ -38,7 +37,8 @@ export interface ItemDetails {
   bonus: string,
   tax_type: string,
   bar_code: string,
-  tax_value: number | undefined | string
+  tax_value: number | undefined | string,
+  packing: string
 
 }
 
@@ -78,7 +78,8 @@ export class CreateItemPage implements OnInit {
     bar_code: '',
     bonus: '',
     tax_type: 'GST',
-    tax_value: undefined
+    tax_value: undefined,
+    packing: ''
   }
 
   private itemsCollection!: AngularFirestoreCollection<any>;
@@ -123,6 +124,7 @@ export class CreateItemPage implements OnInit {
         this.itemDetails.tax_value = data.tax_value
         this.itemDetails.hsn_code = data.hsn_code
         this.itemDetails.bar_code = data.bar_code
+        this.itemDetails.packing = data.packing
 
         //  console.log(this.itemDetails)
 

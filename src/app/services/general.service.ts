@@ -1,19 +1,15 @@
-import { ApplicationRef, Compiler, Component, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injectable, Injector, ModuleWithComponentFactories, NgModule, NgModuleRef, ReflectiveInjector, StaticProvider, ViewContainerRef } from '@angular/core';
+import { ComponentRef, Injectable } from '@angular/core';
 import { Charges, Items, ShippingDetails } from '../home/home.page';
 import { Bill, Customer, DB_PARAMS, DraftOrder, FavouriteItem, Params, User } from '../Params';
 import { SQLiteService } from './sqlite.service';
-import items from '../../json/items.json';
-import { Observable, Subject, Subscription, elementAt, first, forkJoin, of, retry } from 'rxjs';
+import { Subject, Subscription, first, forkJoin } from 'rxjs';
 import { UserDetails } from '../UserDetails';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage-angular';
 import { Platform, ToastController } from '@ionic/angular';
 import { PDFGenerator, PDFGeneratorOptions } from '@awesome-cordova-plugins/pdf-generator/ngx';
 import { Network, NetworkStatus } from '@capacitor/network';
-//import { FileTransfer, FileUploadOptions, FileTransferObject, FileUploadResult, } from '@awesome-cordova-plugins/file-transfer/ngx';
-import { File } from '@awesome-cordova-plugins/file';
-import { Filesystem, Directory, Encoding, WriteFileOptions } from '@capacitor/filesystem';
-import { Tracing } from 'trace_events';
+import { Filesystem, Directory, WriteFileOptions } from '@capacitor/filesystem';
 import { Billing, Company, CompanyPaymentDetails, TermsNCondition } from '../setting-components/company-settings/company-settings.page';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import html2canvas from 'html2canvas';
@@ -26,11 +22,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { UserDetailsService } from './userdetails.service';
-import axios from 'axios';
-import { BufferOptions, TFontDictionary } from 'pdfmake/interfaces';
 import { ItemDetails } from '../create-item/create-item.page';
-import { Invoice1Component } from '../invoice-pdf-components/invoice1/invoice1.component';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import html2pdf from 'html2pdf.js';
 
@@ -43,7 +35,6 @@ declare module 'qrcode' {
     options?: QRCodeToFileOptions | QRCodeToDataURLOptions
   ): Promise<string>;
 }
-
 
 @Injectable({
   providedIn: 'root'
@@ -334,7 +325,7 @@ export class GeneralService {
             name: itemRow.name,
             cat_id: itemRow.cat_id,
             images: JSON.parse(itemRow.images),
-            image_source_tpye: "",  // TODO :: 
+            image_source_tpye: "", // TODO :: ::
             price: itemRow.price,
             mrp: itemRow.mrp,
             ptr: itemRow.ptr,
@@ -349,7 +340,8 @@ export class GeneralService {
             bonus: itemRow.bonus,
             tax_type: itemRow.tax_type,
             tax_value: itemRow.tax_value,
-            bar_code: itemRow.bar_code
+            bar_code: itemRow.bar_code,
+            packing: itemRow.packing
 
           }
 
@@ -488,9 +480,9 @@ export class GeneralService {
       , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.NAME}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.PRICE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.MRP}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.PTR},  ${DB_PARAMS.ITEMS_TABLE_COLUMNS.UNIT}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.STOCK}
       , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.ACTIVE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.IMAGES}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.MFG_DATE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.EXP_DATE} 
       , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.TAX_TYPE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.TAX_VALUE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BONUS}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BAR_CODE}
-      , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BATCH_NO}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.HSN_CODE} ) 
+      , ${DB_PARAMS.ITEMS_TABLE_COLUMNS.BATCH_NO}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.HSN_CODE}, ${DB_PARAMS.ITEMS_TABLE_COLUMNS.PACKING} ) 
       VALUES( '${item._id}', '${item.cat_id}', '${item.name}', '${item.price}', '${item.mrp}', '${item.ptr}'
-      , '${item.unit}', '${item.stock}', '${item.active}', '${JSON.stringify(item.images)}', '${item.mfg_date}', '${item.exp_date}', '${item.tax_type}', '${item.tax_value}', '${item.bonus}', '${item.bar_code}', '${item.batch_no}', '${item.hsn_code}');`
+      , '${item.unit}', '${item.stock}', '${item.active}', '${JSON.stringify(item.images)}', '${item.mfg_date}', '${item.exp_date}', '${item.tax_type}', '${item.tax_value}', '${item.bonus}', '${item.bar_code}', '${item.batch_no}', '${item.hsn_code}', '${item.packing}');`
 
     return await this.sqliteService.executeQuery(query);
 
@@ -1967,14 +1959,15 @@ export class GeneralService {
     
             <tr>
               <th style="text-align: start; padding-left: 10px;">ITEMS</th>
+              <th style="width: 4.3%;">PACKING</th>
               <th style="width: 7.3%;">EXP</th>
               <th style="width: 7.3%;">BONUS</th>
               <th style="width: 7.3%;">MFG</th>
               <th style="width: 7.3%;">BATCH</th>
               <th style="width: 7.3%;">HSN</th>
-              <th style="width: 7.3%;">QTY.</th>
+              <th style="width: 5%;">QTY.</th>
               <th style="width: 7.3%;">MRP</th>
-              <th style="width: 7.3%;">PTR</th>
+              <th style="width: 5%;">PTR</th>
               <th style="width: 7.3%;">RATE</th>
               <th style="width: 7.3%;">TAX</th>
               <th style="width: 7.3%;">AMOUNT</th>
@@ -1987,6 +1980,7 @@ export class GeneralService {
           ${params.items.map((element, i) => (`
             <tr>
                 <td>${element.item.name}</td>
+                <td>${element.item.packing && element.item.packing != 'undefined' ? element.item.packing : ''}</td>
                 <td>${element.item.exp_date && element.item.exp_date != 'undefined' ? element.item.exp_date : ''}</td>
                 <td>${element.item.bonus && element.item.bonus != 'undefined' ? element.item.bonus : ''}</td>
                 <td>${element.item.mfg_date && element.item.mfg_date != 'undefined' ? element.item.mfg_date : ''}</td>
@@ -2019,13 +2013,15 @@ export class GeneralService {
     
             <tr>
               <td style="text-align: start; padding-left: 10px;">SUBTOTAL</td>
+              <td style="width: 4.3%;"></td>
               <td style="width: 7.3%;"></td>
               <td style="width: 7.3%;"></td>
               <td style="width: 7.3%;"></td>
               <td style="width: 7.3%;"></td>
-              <td style="width: 7.3%;">${params.items.reduce((sum, element) => sum + element.details.quantity, 0)}</td>
               <td style="width: 7.3%;"></td>
+              <td style="width: 5%; text-align: center;">${params.items.reduce((sum, element) => sum + element.details.quantity, 0)}</td>
               <td style="width: 7.3%;"></td>
+              <td style="width: 5%;"></td>
               <td style="width: 7.3%;"></td>
               <td style="width: 7.3%;">₹ 
               ${params.items.reduce((sum, element) =>

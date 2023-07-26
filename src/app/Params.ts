@@ -162,7 +162,8 @@ export class DB_PARAMS {
         'BONUS': 'bonus',
         'BAR_CODE': 'bar_code',
         'BATCH_NO': 'batch_no',
-        'HSN_CODE': 'hsn_code'
+        'HSN_CODE': 'hsn_code',
+        'PACKING': 'packing'
 
     }
 
@@ -264,6 +265,7 @@ export class DB_PARAMS {
                 { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.BAR_CODE, 'COLUMN_DATATYPE': 'TEXT' },
                 { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.BATCH_NO, 'COLUMN_DATATYPE': 'TEXT' },
                 { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.HSN_CODE, 'COLUMN_DATATYPE': 'TEXT' },
+                { 'COLUMN_NAME': this.ITEMS_TABLE_COLUMNS.PACKING, 'COLUMN_DATATYPE': 'TEXT' },
             ]
         },
         {

@@ -4,7 +4,6 @@ import { AlertController, IonFab, MenuController, ModalController, NavController
 import { Observable, Subscription, interval as observableInterval } from "rxjs";
 import { takeWhile, scan, tap, startWith, map } from "rxjs/operators";
 
-import items from '../../json/items.json';
 import { ClearItemsDialogComponent } from '../components/clear-items-dialog/clear-items-dialog.component';
 import { OptionsComponent } from '../components/options/options.component';
 import { QuantityChangerDialogComponent } from '../components/quantity-changer-dialog/quantity-changer-dialog.component';
@@ -57,7 +56,8 @@ export interface Items {
     bonus: string,
     tax_type: string,
     tax_value: string,
-    bar_code: string
+    bar_code: string,
+    packing: string
 
   }[]
 }
