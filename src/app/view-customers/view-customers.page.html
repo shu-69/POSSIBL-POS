@@ -1,0 +1,45 @@
+<ion-content class="parent">
+
+  <div class="header">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+
+    <span class="title">View Customers</span>
+
+  </div>
+
+  <section class="topSection">
+
+    <ion-label>Search Customer</ion-label>
+
+    <ion-searchbar mode="ios"></ion-searchbar>
+
+  </section>
+
+  <section class="itemsSection">
+
+    <div class="itemContainer" *ngFor="let customer of customers">
+
+      <img src="../../assets/iconsaxicons/twotone/user-square.svg" alt="">
+
+      <span class="item-field">Name: <span class="bold">{{customer.name}}</span></span>
+      <span class="item-field">Email: <span class="bold">{{customer.email}}</span></span>
+      <span class="item-field">Contact: <span class="bold">{{customer.contact}}</span></span>
+      <span class="item-field">GST No.: <span class="bold">{{customer.gstno}}</span></span>
+      <span class="item-field">Address: <span class="bold">{{customer.address}}</span></span>
+
+      <div class="options">
+
+        <button class="delete" (click)="deleteItem(customer)">Delete</button>
+
+        <button class="edit" (click)="editItem(customer)">Edit</button>
+
+      </div> 
+
+    </div>
+
+  </section>
+
+</ion-content>

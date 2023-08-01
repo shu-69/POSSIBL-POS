@@ -89,6 +89,16 @@ export class HomePageRightMenuComponent implements OnInit {
         }
       })
 
+      this.menuItems.push({
+        'img': 'assets/iconsaxicons/bold/user-search.svg',
+        'label': 'View Customers',
+        'click': () => {
+
+          this.navService.navigate('view-customers');
+
+        }
+      })
+
     }
 
     this.menuItems.push( {

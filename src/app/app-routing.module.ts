@@ -77,6 +77,10 @@ const routes: Routes = [
   {
     path: 'create-customer',
     loadChildren: () => import('./create-customer/create-customer.module').then( m => m.CreateCustomerPageModule)
+  },
+  {
+    path: 'view-customers',
+    loadChildren: () => import('./view-customers/view-customers.module').then( m => m.ViewCustomersPageModule)
   }
   
   
