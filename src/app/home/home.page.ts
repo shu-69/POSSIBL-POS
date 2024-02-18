@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ViewChild, ElementRef, OnInit, AfterViewChecked, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { StatusBar } from '@capacitor/status-bar';
-import { AlertController, IonFab, MenuController, ModalController, NavController, Platform, PopoverController, ToastController } from '@ionic/angular';
+import { AlertController, IonFab, MenuController, ModalController, NavController, Platform, PopoverController, ToastController, ViewDidEnter } from '@ionic/angular';
 import { Observable, Subscription, interval as observableInterval } from "rxjs";
 import { takeWhile, scan, tap, startWith, map } from "rxjs/operators";
 
@@ -95,7 +95,7 @@ export interface Discount {
   encapsulation: ViewEncapsulation.Emulated
 })
 
-export class HomePage implements OnInit, AfterViewChecked, AfterViewInit {
+export class HomePage implements OnInit, AfterViewChecked, AfterViewInit, ViewDidEnter {
 
   saveSuccessAnimationOption: AnimationOptions = {
     path: 'assets/anims/checkmark-animation.json',
@@ -346,6 +346,12 @@ export class HomePage implements OnInit, AfterViewChecked, AfterViewInit {
     // console.log("Transform", this.menuTranslate);
   }
 
+  ionViewDidEnter() {
+
+    
+
+  }
+
   ionViewWillEnter() {
 
     this.items = UserDetails.Items;
@@ -424,6 +430,9 @@ export class HomePage implements OnInit, AfterViewChecked, AfterViewInit {
 
     const itemCode = e.target.value
 
+    if(itemCode === '')
+      return
+
     this.isSearchingItemCode = true;
 
     for (let i = 0; i < this.items.length; i++) {
@@ -465,7 +474,6 @@ export class HomePage implements OnInit, AfterViewChecked, AfterViewInit {
       if (i == (this.items.length - 1)) {
         this.isSearchingItemCode = false;
       }
-
 
     }
 

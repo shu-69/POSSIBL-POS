@@ -10,7 +10,7 @@
 
       <div class="profileDetailsContainer">
 
-        <div>
+        <div class="div1">
 
           <span class="profileImageContainer">
 
@@ -23,6 +23,13 @@
             <ion-label>{{userDetails.getCompany() ? userDetails.getCompany().name : ''}}</ion-label>
           </div>
 
+        </div>
+
+        <div class="options">
+          <button (click)="openReportsModal()">
+            <img src="assets/icon/pie-chart.png" alt="">
+            <span>Reports</span>
+          </button>
         </div>
 
       </div>

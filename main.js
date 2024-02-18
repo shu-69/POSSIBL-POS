@@ -12,7 +12,7 @@ function createWindow() {
             nodeIntegration: true
         },
         autoHideMenuBar: true,
-        icon: __dirname + '/www/assets/logo_small.png'
+        icon: __dirname + '/www/assets/logo_small_default.png'
     });
 
     win.loadURL(

@@ -1,0 +1,117 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Reports</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content mode="ios">
+
+  <section class="parent">
+
+    <div class="card-reports">
+
+      <ion-card mode="ios" class="report-card">
+        <ion-card-header mode="ios">
+          <div>
+            <ion-card-subtitle mode="ios">Total Sale</ion-card-subtitle>
+            <ion-card-title mode="ios">Today</ion-card-title>
+          </div>
+          <div class="options-container">
+            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+          </div>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="value">
+            <span class="currency-symbol">{{ currencySymbol }}</span>
+            <span>&nbsp;</span>
+            <span class="currency-symbol">{{ reportValues.todaySales }}</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card mode="ios" class="report-card">
+        <ion-card-header mode="ios">
+          <div>
+            <ion-card-subtitle mode="ios">Total Sale</ion-card-subtitle>
+            <ion-card-title mode="ios">This Week</ion-card-title>
+          </div>
+          <div class="options-container">
+            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+          </div>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="value">
+            <span class="currency-symbol">{{ currencySymbol }}</span>
+            <span>&nbsp;</span>
+            <span class="currency-symbol">{{ reportValues.weekSales }}</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card mode="ios" class="report-card">
+        <ion-card-header mode="ios">
+          <div>
+            <ion-card-subtitle mode="ios">Total Sale</ion-card-subtitle>
+            <ion-card-title mode="ios">This Month</ion-card-title>
+          </div>
+          <div class="options-container">
+            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+          </div>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="value">
+            <span class="currency-symbol">{{ currencySymbol }}</span>
+            <span>&nbsp;</span>
+            <span class="currency-symbol">{{ reportValues.monthSales }}</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card mode="ios" class="report-card">
+        <ion-card-header mode="ios">
+          <div>
+            <ion-card-subtitle mode="ios">Total Sale</ion-card-subtitle>
+            <ion-card-title mode="ios">This Year</ion-card-title>
+          </div>
+          <div class="options-container">
+            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+          </div>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="value">
+            <span class="currency-symbol">{{ currencySymbol }}</span>
+            <span>&nbsp;</span>
+            <span class="currency-symbol">{{ reportValues.yearSales }}</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+    <div class="month-wise-sales-chart">
+      <div class="toolbar">
+        <div>
+          <ion-text>{{ 'Sales Chart ' + '(' + 'year ' +  monthWiseSalesChartOptions.selectedYear + ')' }}</ion-text>
+        </div>
+        <div>
+          <ion-select aria-label="Year" [value]="monthWiseSalesChartOptions.selectedYear" interface="popover" placeholder="Select year"
+          (ionChange)="onMonthWiseSalesChartOptionsYearChange($event)">
+            <ion-select-option [value]="year" *ngFor="let year of monthWiseSalesChartOptions.yearsOptions">{{ year }}</ion-select-option>
+          </ion-select>
+        </div>
+      </div>
+      <canvas #month_wise_sales_chart id="month-wise-sales-chart" #mychart></canvas>
+    </div>
+
+  </section>
+
+</ion-content>

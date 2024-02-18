@@ -1,0 +1,129 @@
+.parent {
+
+    .card-reports {
+
+        display: flex;
+        gap: 40px;
+        overflow: auto;
+        padding: 30px;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        ion-card.report-card {
+
+            margin: 0;
+            min-width: 300px;
+            border-radius: 18px;
+
+            ion-card-header {
+
+                border-bottom: 1px solid lightgray;
+                padding: 0;
+                margin: 20px;
+                padding-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+
+                .options-container {
+
+                    display: flex;
+                    align-items: flex-end;
+                    font-size: 28px;
+
+                }
+
+                .refresh-icon {
+
+                    color: black;
+
+                }
+
+            }
+
+            ion-card-content {
+
+                .value {
+
+                    font-family: "Poppins-Bold";
+                    font-size: 58px;
+                    color: black;
+
+                    .currency-symbol {}
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .month-wise-sales-chart {
+
+        margin: 20px;
+        background: beige;
+        width: auto;
+        padding: 20px;
+        border-radius: 20px;
+
+        .toolbar {
+
+            margin-bottom: 20px;
+            font-family: 'Poppins-Regular';
+            display: flex;
+            justify-content: space-between;
+
+            ion-text {
+
+                font-family: 'Poppins-SemiBold';
+                font-size: 18px;
+
+            }
+
+            ion-select {
+
+                background: white;
+                border-radius: 10px;
+                --padding-start: 15px;
+                --padding-end: 15px;
+
+            }
+
+        }
+
+        canvas {
+
+            width: auto !important;
+            height: auto !important;
+            max-height: calc(100vh - 250px);
+
+        }
+
+    }
+
+    ion-card {
+
+        width: fit-content;
+
+        ion-card-header {
+
+            ion-card-title {
+
+                font-family: 'Poppins-SemiBold';
+
+            }
+
+            ion-card-subtitle {
+
+                font-family: 'Poppins-regular';
+
+            }
+
+        }
+
+    }
+
+}

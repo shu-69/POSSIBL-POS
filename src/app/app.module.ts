@@ -51,6 +51,7 @@ import { SearchCustomerDialogComponent } from './components/search-customer-dial
 import { ReprintDialogComponent } from './components/reprint-dialog/reprint-dialog.component';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { ItemDetailsEditorComponent } from './components/item-details-editor/item-details-editor.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 export function playerFactory() {
   return player;
@@ -58,7 +59,7 @@ export function playerFactory() {
 
 @NgModule({
   declarations: [AppComponent, QuantityChangerDialogComponent, ClearItemsDialogComponent, AddTipsDialog, NotesDialog, DiscountDialogComponent, OrderLookupComponent, ItemDetailsEditorComponent,
-    SaveOrderDraftConfirmationDialogComponent, SearchCustomerDialogComponent, ReprintDialogComponent,
+    SaveOrderDraftConfirmationDialogComponent, SearchCustomerDialogComponent, ReprintDialogComponent, ReportsComponent,
     SettingsComponent, DraftOrdersComponent, SaveOrderDialogComponent, ItemHoldOptionsComponent, Invoice1Component ],
   imports: [BrowserModule, IonicModule.forRoot(), DragulaModule.forRoot(), AppRoutingModule, SwiperModule, FormsModule, LottieModule.forRoot({ player: playerFactory }), BrowserAnimationsModule,
             DraggableModule, HttpClientModule, SlideToConfirmModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule, QrCodeModule ],

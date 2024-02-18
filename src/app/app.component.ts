@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 
@@ -6,14 +6,18 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 import { machineId, machineIdSync } from 'node-machine-id'
 
 import { Title } from "@angular/platform-browser";
+import { ReportsComponent } from './components/reports/reports.component';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
-  constructor(private storage: Storage, private router: Router, private deviceService: DeviceDetectorService, private titleService : Title) {
+export class AppComponent implements OnInit {
+
+  constructor(private storage: Storage, private router: Router, private deviceService: DeviceDetectorService, private titleService : Title,
+    private modalCtrl: ModalController) {
 
     this.storage.create();
 
@@ -24,6 +28,18 @@ export class AppComponent {
       //  this.router.navigateByUrl('invoice1')  // TODO::: :: 
 
     //this.checkDevice()
+
+  }
+
+  async ngOnInit() {
+    
+    const reportsModal = await this.modalCtrl.create({
+      component: ReportsComponent,
+      backdropDismiss: true,
+      cssClass: ['reports-modal']
+    })
+
+    reportsModal.present()
 
   }
 

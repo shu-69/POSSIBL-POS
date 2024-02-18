@@ -51,10 +51,9 @@ ion-content {
             height: fit-content; // 35%;
             background: #121f60;
             border-radius: 15px;
-            padding-bottom: 50px;
             color: white;
 
-            :first-child {
+            .div1 {
 
                 display: flex;
                 gap: 15px;
@@ -94,6 +93,35 @@ ion-content {
 
                 img {
                     padding: 0;
+                }
+
+            }
+
+            .options {
+
+                display: flex;
+                padding: 20px;
+                padding-top: 5px;
+
+                button {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    background: white;
+                    color: black;
+                    border-radius: 10px;
+                    padding: 10px 15px;
+                    font-family: 'Poppins-Regular';
+
+                    img {
+
+                        width: 18px;
+                        height: 18px;
+
+                    }
+
                 }
 
             }

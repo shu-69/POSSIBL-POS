@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IonHeader, MenuController, ModalController } from '@ionic/angular';
 import { UserDetails } from 'src/app/UserDetails';
 import { DraftOrdersComponent } from 'src/app/components/draft-orders/draft-orders.component';
+import { ReportsComponent } from 'src/app/components/reports/reports.component';
 import { GeneralService } from 'src/app/services/general.service';
 import { NaivgationService } from 'src/app/services/naivgation.service';
 import { UserDetailsService } from 'src/app/services/userdetails.service';
@@ -26,7 +27,7 @@ export class HomePageRightMenuComponent implements OnInit {
   menuItems: MenuItem[] = [ ]
 
   constructor(private menu: MenuController, private navService: NaivgationService, private modalCtrl: ModalController,
-    private generalService: GeneralService, public userDetails: UserDetailsService) {
+    private generalService: GeneralService, public userDetails: UserDetailsService, private reportsModalCtrl: ModalController) {
 
     this.menuItems.push({
       'img': 'assets/iconspichon/win10/icons8_draft_100px_1.png',
@@ -124,6 +125,18 @@ export class HomePageRightMenuComponent implements OnInit {
 
   menuClicked() {
 
+
+  }
+
+  async openReportsModal() {
+
+    const reportsModal = await this.reportsModalCtrl.create({
+      component: ReportsComponent,
+      backdropDismiss: true,
+      cssClass: ['reports-modal']
+    })
+
+    reportsModal.present()
 
   }
 
