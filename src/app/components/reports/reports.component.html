@@ -1,11 +1,13 @@
 <ion-header mode="ios">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button>Cancel</ion-button>
+      <ion-button (click)="close()">Close</ion-button>
     </ion-buttons>
     <ion-title>Reports</ion-title>
     <ion-buttons slot="end">
-      <ion-button [strong]="true">Confirm</ion-button>
+      <ion-button [strong]="false">
+        <ion-icon name="arrow-redo-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +24,7 @@
             <ion-card-title mode="ios">Today</ion-card-title>
           </div>
           <div class="options-container">
-            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+            <ion-icon class="refresh-icon" name="refresh-circle" [ngClass]="{'rotate': loaders.isTodayLoaderActive}" (click)="onTodayRefreshClicked()"></ion-icon>
           </div>
         </ion-card-header>
 
@@ -30,7 +32,7 @@
           <div class="value">
             <span class="currency-symbol">{{ currencySymbol }}</span>
             <span>&nbsp;</span>
-            <span class="currency-symbol">{{ reportValues.todaySales }}</span>
+            <span class="currency-symbol">{{ generalServices.addCommas(reportValues.todaySales.toFixed(2)) }}</span>
           </div>
         </ion-card-content>
       </ion-card>
@@ -42,7 +44,7 @@
             <ion-card-title mode="ios">This Week</ion-card-title>
           </div>
           <div class="options-container">
-            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+            <ion-icon class="refresh-icon" name="refresh-circle" [ngClass]="{'rotate': loaders.isWeekLoaderActive}" (click)="onWeekRefreshClicked()"></ion-icon>
           </div>
         </ion-card-header>
 
@@ -50,7 +52,7 @@
           <div class="value">
             <span class="currency-symbol">{{ currencySymbol }}</span>
             <span>&nbsp;</span>
-            <span class="currency-symbol">{{ reportValues.weekSales }}</span>
+            <span class="currency-symbol">{{ generalServices.addCommas(reportValues.weekSales.toFixed(2)) }}</span>
           </div>
         </ion-card-content>
       </ion-card>
@@ -62,7 +64,7 @@
             <ion-card-title mode="ios">This Month</ion-card-title>
           </div>
           <div class="options-container">
-            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+            <ion-icon class="refresh-icon" name="refresh-circle" [ngClass]="{'rotate': loaders.isMonthLoaderActive}" (click)="onMonthRefreshClicked()"></ion-icon>
           </div>
         </ion-card-header>
 
@@ -70,7 +72,7 @@
           <div class="value">
             <span class="currency-symbol">{{ currencySymbol }}</span>
             <span>&nbsp;</span>
-            <span class="currency-symbol">{{ reportValues.monthSales }}</span>
+            <span class="currency-symbol">{{ generalServices.addCommas(reportValues.monthSales.toFixed(2)) }}</span>
           </div>
         </ion-card-content>
       </ion-card>
@@ -82,7 +84,7 @@
             <ion-card-title mode="ios">This Year</ion-card-title>
           </div>
           <div class="options-container">
-            <ion-icon class="refresh-icon" name="refresh-circle"></ion-icon>
+            <ion-icon class="refresh-icon" name="refresh-circle" [ngClass]="{'rotate': loaders.isYearLoaderActive}" (click)="onYearRefreshClicked()"></ion-icon>
           </div>
         </ion-card-header>
 
@@ -90,7 +92,7 @@
           <div class="value">
             <span class="currency-symbol">{{ currencySymbol }}</span>
             <span>&nbsp;</span>
-            <span class="currency-symbol">{{ reportValues.yearSales }}</span>
+            <span class="currency-symbol">{{ generalServices.addCommas(reportValues.yearSales.toFixed(2)) }}</span>
           </div>
         </ion-card-content>
       </ion-card>

@@ -7,6 +7,8 @@
         overflow: auto;
         padding: 30px;
         scrollbar-width: none;
+        display: grid;
+        grid-template-columns: repeat(4, max-content);
 
         &::-webkit-scrollbar {
             display: none;
@@ -39,6 +41,24 @@
 
                     color: black;
 
+                    &.rotate {
+                        animation: rotate180 1s linear infinite;
+                    }
+
+                    @keyframes rotate180 {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+
+                        50% {
+                            transform: rotate(180deg);
+                        }
+
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
                 }
 
             }
@@ -47,6 +67,7 @@
 
                 .value {
 
+                    display: flex;
                     font-family: "Poppins-Bold";
                     font-size: 58px;
                     color: black;

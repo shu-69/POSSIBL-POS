@@ -100,7 +100,9 @@ export class SaveOrderDialogComponent implements OnInit {
     //  let dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(); 
 
     let dateStr = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-
+    const utcDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
+    let dateIso = utcDate.toISOString();
+    
     let billIdStr = Params.InvoiceIdSuffix + this.billId;
 
     let billIdIntWithZeros = this.billId
@@ -206,7 +208,10 @@ export class SaveOrderDialogComponent implements OnInit {
                 notes: this.notes,
                 billdocfilename: invoiceFileName,
                 amount: this.calculateTotalAmount().toFixed(2),
-                docdate: dateStr + ' ' + date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+                docdate: {
+                  str: dateStr + ' ' + date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+                  iso: dateIso
+                },
                 billurl: data,
                 customer: this.customerDetails,
                 charges: this.charges
@@ -261,7 +266,7 @@ export class SaveOrderDialogComponent implements OnInit {
   async editItem(item: any) {
 
     console.log('Editing item', item)
-    
+
     const modal = await this.modalCtrl.create({
       component: ItemDetailsEditorComponent,
       cssClass: 'editItemDialog',
@@ -399,7 +404,7 @@ export class SaveOrderDialogComponent implements OnInit {
 
   }
 
-   convertDecimalToWords(decimalPart: any) {
+  convertDecimalToWords(decimalPart: any) {
     const tensWords = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
     const onesWords = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
 
@@ -419,7 +424,7 @@ export class SaveOrderDialogComponent implements OnInit {
     return words.trim();
   }
 
-  calculateTotalAmountInWords (amount: any) {
+  calculateTotalAmountInWords(amount: any) {
     const integerPart = Math.floor(amount);
     const decimalPart = Math.floor((amount - integerPart) * 100);
 

@@ -52,16 +52,16 @@ export class SyncSettingsPage implements OnInit {
 
     this.sqlService.executeQuery(`SELECT * FROM ${DB_PARAMS.DB_TABLES_NAMES.ORDERS} WHERE ${DB_PARAMS.ORDERS_TABLE_COLUMNS.SYNCED} = 'false'`).then((data) => {
 
-      if(data.rows){
+      if (data.rows) {
 
         this.orderUploadOptions.totalUnUnploadedItems = data.rows.length;
 
-      }else{
+      } else {
 
         this.orderUploadOptions.totalUnUnploadedItems = 0
 
       }
-    
+
       console.log('Orders count', data.rows.length)
 
     }).catch((err) => {
@@ -82,46 +82,46 @@ export class SyncSettingsPage implements OnInit {
 
     this.itemSyncOptions.isSyncing = true;
 
-     this.generalService.loadItems3().then(async (value) => {
+    this.generalService.loadItems3().then(async (value) => {
 
       this.itemSyncOptions.isSyncing = false;
 
-        let result = value;
+      let result = value;
 
-        await this.sqlService.deleteTableData(DB_PARAMS.DB_TABLES_NAMES.ITEM_CATEGORIES);
-        await this.sqlService.deleteTableData(DB_PARAMS.DB_TABLES_NAMES.ITEMS);
+      await this.sqlService.deleteTableData(DB_PARAMS.DB_TABLES_NAMES.ITEM_CATEGORIES);
+      await this.sqlService.deleteTableData(DB_PARAMS.DB_TABLES_NAMES.ITEMS);
 
-        await result.forEach((element: any, i: number) => {
+      await result.forEach((element: any, i: number) => {
 
-          this.generalService.insertCategory(element._id, element.category_name)
+        this.generalService.insertCategory(element._id, element.category_name)
 
-          element.items.forEach((itemelement: any, i: number) => {
+        element.items.forEach((itemelement: any, i: number) => {
 
-            this.generalService.insertItem(itemelement)
-
-          });
+          this.generalService.insertItem(itemelement)
 
         });
 
-        this.generalService.initItems();
+      });
 
-        let date = new Date();
+      this.generalService.initItems();
 
-        let sycedOn = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear() + ' at ' + date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+      let date = new Date();
 
-        this.generalService.setValueInSP(Params.SP_KEYS.LAST_ITEM_SYNC, sycedOn)
+      let sycedOn = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear() + ' at ' + date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 
-        this.itemSyncOptions.lastSync = sycedOn
+      this.generalService.setValueInSP(Params.SP_KEYS.LAST_ITEM_SYNC, sycedOn)
 
-     }).catch((error) => {
+      this.itemSyncOptions.lastSync = sycedOn
+
+    }).catch((error) => {
 
       console.error(error)
 
       this.itemSyncOptions.isSyncing = false;
 
-        this.presentAlert('Sync failed due to an unknown error', 'Sync Failed', 'Alert')
+      this.presentAlert('Sync failed due to an unknown error', 'Sync Failed', 'Alert')
 
-     })
+    })
 
   }
 
@@ -129,9 +129,9 @@ export class SyncSettingsPage implements OnInit {
 
     this.sqlService.executeQuery(`SELECT * FROM ${DB_PARAMS.DB_TABLES_NAMES.ORDERS} WHERE ${DB_PARAMS.ORDERS_TABLE_COLUMNS.SYNCED} = 'false'`).then(async (data) => {
 
-      if(data.rows){
+      if (data.rows) {
 
-        for(let i=0; i<data.rows.length; i++){
+        for (let i = 0; i < data.rows.length; i++) {
 
           this.orderUploadOptions.isUploading = true
 
@@ -142,7 +142,9 @@ export class SyncSettingsPage implements OnInit {
           let notes = order.notes
           let date = new Date(order.date);
           let dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-          let charges : Charges = JSON.parse(order.charges)
+          const utcDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
+          let dateIso = utcDate.toISOString()
+          let charges: Charges = JSON.parse(order.charges)
 
           let options: ReadFileOptions = {
             path: invoiceFileName,
@@ -163,7 +165,10 @@ export class SyncSettingsPage implements OnInit {
                 notes: notes,
                 billdocfilename: invoiceFileName,
                 amount: this.generalService.calculateTotalAmount(charges),
-                docdate: dateStr,
+                docdate: {
+                  str: dateStr + ' ' + date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+                  iso: dateIso
+                },
                 billurl: data,
                 customer: {
                   id: '',
@@ -187,11 +192,11 @@ export class SyncSettingsPage implements OnInit {
                   this.orderUploadOptions.isUploading = false;
 
                 })
-                
+
               }).catch((err) => {
 
                 this.orderUploadOptions.isUploading = false;
-                
+
               });
 
             } else {
@@ -205,22 +210,22 @@ export class SyncSettingsPage implements OnInit {
 
           })
 
-          if(i == (data.rows.length - 1)){
+          if (i == (data.rows.length - 1)) {
 
             setTimeout(() => {
 
               this.initOrderUploadDetails();
-              
+
             }, 400);
-              
+
           }
 
         }
 
-      }else{
+      } else {
 
         this.orderUploadOptions.isUploading = false;
-        
+
       }
 
     }).catch((err) => {

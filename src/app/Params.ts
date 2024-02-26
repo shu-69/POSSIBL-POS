@@ -101,7 +101,7 @@ export interface Bill {
     'notes': string,
     'billdocfilename': string,
     'amount': string | number,
-    'docdate': string,
+    'docdate': { str: string, iso: string },
     'customer': Customer,
     'charges': Charges
 
